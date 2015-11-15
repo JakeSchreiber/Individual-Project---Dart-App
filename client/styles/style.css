@@ -1,0 +1,397 @@
+body {
+    background-image: url('http://www.wsandb.co.uk/IMG/627/248627/chalkboard55.png');
+}
+
+p{
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 24pt;
+    margin-top: -20pt;
+    font-weight: bold;
+}
+
+#boardContainer {
+    width: 65%;
+    display: inline-block;
+    margin-top: 0;
+
+}
+
+/*
+//////////////SCOREBOARD SETUP//////////////////
+*/
+
+#scoreboard {
+    position: relative;
+    width: 30%;
+    min-height: 300px;
+    display: inline-block;
+    background-color: #010101;
+    border: 2px solid white;
+    margin-top: 0;
+    margin-left: 2%;
+    float: right;
+    color: white;
+}
+
+#scoreHeader {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 36pt;
+    margin: 0px;
+    text-align: center;
+}
+
+#leftColumn {
+    display: inline-block;
+    height: 100%;
+
+    float: left;
+    width: 33.3%;
+}
+
+#centerColumn {
+    display: inline-block;
+    height: 100%;
+
+    width: 33.3%;
+}
+
+#rightColumn {
+    display: inline-block;
+    height: 100%;
+    float: right;
+    width: 33.3%;
+}
+
+#roundScore {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    /*margin-right: 5px;*/
+    text-align: center;
+    color: white;
+    width: 100%;
+
+
+}
+
+#score1 {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 36pt;
+    /*margin: auto;*/
+    /*margin-right: auto;*/
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+#roundScore2 {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-right: 5px;
+    text-align: center;
+    color: white;
+    width: 100%;
+
+}
+
+#dartsRemaining {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 8pt;
+    margin-left: 5px;
+    float: left;
+    color: white;
+}
+
+#dartsThrown {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 8pt;
+    margin: 0px;
+    float: right;
+    margin-right: 5px;
+    color: white;
+}
+
+
+#detailScoreboard{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#dart1 {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    /*margin: auto;*/
+    /*margin-right: auto;*/
+    text-align: center;
+    float: left;
+    color: white;
+    width: 33.3%;
+}
+
+#dart2 {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    margin: auto;
+    /*margin-right: auto;*/
+    text-align: center;
+    /*float: left;*/
+    color: white;
+    width: 33.3%;
+}
+
+#dart3 {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    /*margin: auto;*/
+    /*margin-right: auto;*/
+    text-align: center;
+    float: right;
+    color: white;
+    width: 33.3%;
+}
+
+
+/*
+//////////////DARTBOARD COLORS//////////////////
+*/
+
+.imageBG {
+    background-image: url('http://thumbs.dreamstime.com/x/dartboard-texture-13051032.jpg');
+}
+
+.color1 {
+    /*background-image: url('DBtextureWhite.png');*/
+    /*background: url('DBtextureWhite.png');*/
+    /*fill url('DBtextureWhite.png'):*/
+    /*fill: "url(#image)";*/
+    fill: #e6e6e6;
+    stroke: #7b7b7b;
+    stroke-width:2px;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+;
+}
+
+.color2 {
+    fill: black;
+    stroke: #7b7b7b;
+    stroke-width:2px;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+}
+
+.color3 {
+    fill: #006200;
+    stroke: #7b7b7b;
+    stroke-width:2px;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+}
+
+.color4 {
+    fill: #db0400;
+    stroke: #7b7b7b;
+    stroke-width:2px;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+}
+
+.colorSingleBull {
+    fill: #006200;
+    stroke: #7b7b7b;
+    stroke-width:2px;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+}
+
+.colorDoubleBull {
+    fill: #db0400;
+    stroke: #7b7b7b;
+    stroke-width:2px;
+    /*stroke-dasharray: 2,2;*/
+    stroke-linejoin: round;
+}
+
+.colorSingleBull:hover {
+    fill: #009000;
+}
+
+.colorDoubleBull:hover {
+    fill: #db3e25;
+}
+
+.color1:hover {
+    fill: #d7d7d7;
+    /*opacity: .75;*/
+}
+
+.color2:hover {
+    opacity: .75;
+}
+
+.color3:hover {
+    opacity: .75;
+}
+
+.color4:hover {
+    opacity: .75;
+}
+
+.st0{
+    fill: #9f9f9f;
+    box-shadow: inset;
+}
+/*.st1{fill: #004dff;}*/
+/*.st2{fill: #000dba;stroke:#FFFFFF;stroke-miterlimit:10;}*/
+
+
+
+/*///////////////////////CELL PHONE SCREEN SIZE/////////////////////////*/
+
+@media screen and (max-device-width: 400px){
+    #boardContainer {
+        width:100%;
+        display: block;
+        margin-top: 0;
+    }
+
+    #scoreboard {
+        position: relative;
+        width: 100%;
+        min-height: 600px;
+        display: block;
+        /*background-color: #010101;*/
+        /*border: 2px solid white;*/
+        /*margin-top: 0;*/
+        /*margin-left: 2%;*/
+        /*float: right;*/
+        /*color: white;*/
+    }
+
+    #scoreHeader {
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin: 0px;*/
+        /*text-align: center;*/
+    }
+
+
+    #roundScore {
+        /*display: inline-block;*/
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin-left: 5px;*/
+        /*text-align: center;*/
+        /*color: white;*/
+        /*float: left;*/
+        /*width: 33.3%;*/
+    }
+
+    #score1 {
+        /*display: inline-block;*/
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 72pt;
+        margin: auto;
+        /*/!*margin-right: auto;*!/*/
+        /*text-align: center;*/
+        /*/!*float: left;*!/*/
+        /*color: white;*/
+        /*width: 33.3%;*/
+    }
+
+    #roundScore2 {
+        /*display: inline-block;*/
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin-right: 5px;*/
+        /*text-align: center;*/
+        /*color: white;*/
+        /*float: right;*/
+        /*width: 33.3%;*/
+    }
+
+    #dartsRemaining {
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin: 0px;*/
+        /*text-align: center;*/
+        /*color: white;*/
+    }
+
+    #dart1 {
+        /*display: inline-block;*/
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin: auto;*/
+        /*margin-right: auto;*/
+        /*text-align: center;*/
+        /*float: left;*/
+        /*color: white;*/
+        /*width: 33.3%;*/
+    }
+
+    #dart2 {
+        /*display: inline-block;*/
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin: auto;*/
+        /*/!*margin-right: auto;*!/*/
+        /*text-align: center;*/
+        /*/!*float: left;*!/*/
+        /*color: white;*/
+        /*width: 33.3%;*/
+    }
+
+    #dart3 {
+        /*display: inline-block;*/
+        /*font-family: sans-serif;*/
+        /*font-weight: bold;*/
+        font-size: 36pt;
+        /*margin: auto;*/
+        /*margin-right: auto;*/
+        /*text-align: center;*/
+        /*float: right;*/
+        /*color: white;*/
+        /*width: 33.3%;*/
+    }
+
+}
+
+#scoreboardTest {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 30%;
+    min-height: 300px;
+    display: block;
+    background-color: #010101;
+    border: 2px solid white;
+    margin-top: 0;
+    margin-left: 2%;
+    float: right;
+    color: white;
+}
