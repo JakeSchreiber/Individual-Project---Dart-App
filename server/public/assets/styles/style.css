@@ -382,16 +382,46 @@ p{
 }
 
 #scoreboardTest {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 30%;
-    min-height: 300px;
-    display: block;
-    background-color: #010101;
-    border: 2px solid white;
-    margin-top: 0;
-    margin-left: 2%;
-    float: right;
-    color: white;
+     position: absolute;
+     right: 0;
+     top: 100%;
+     width: 30%;
+     min-height: 300px;
+     display: block;
+     background-color: #010101;
+     border: 2px solid white;
+     margin-top: 0;
+     margin-left: 2%;
+     float: right;
+     color: white;
+ }
+
+
+/*/////////////////STATS PAGE///////////////////////*/
+table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
 }
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+
+/*#stats {*/
+    /*position: relative;*/
+    /*/!*width: 100%;*!/*/
+    /*/!*min-height: 300px;*!/*/
+    /*display: inline-block;*/
+    /*margin-left: 2%;*/
+    /*/!*color: white;*!/*/
+/*}*/
+
+/*#stats p{*/
+    /*font-size: 12pt;*/
+    /*margin-top: 0;*/
+    /*line-height: 10pt;*/
+/*}*/

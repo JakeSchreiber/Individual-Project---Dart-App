@@ -230,7 +230,11 @@
 
         <div id="rightColumn">
 
-            <div id="roundScore2">Round Score</div>
+            <div id="roundScore2">
+                Round Score
+                <div ng-repeat="roundscore in p2roundArray track by $index">{{p2roundscore}}</div>
+
+            </div>
 
         </div>
 
@@ -257,11 +261,20 @@
     <div id="ton">Ton: {{ton}}</div>
     <div id="ton40">Ton40: {{ton40}}</div>
     <div id="ton80">Ton80: {{ton80}}</div>
+    <div id="hatTrick">Hat Trick: {{hatTrick}}</div>
+    <div id="deadEye">Dead Eye: {{deadEye}}</div>
+    <div id="dartAverage">Dart Average: {{dartAverage}}</div>
 
 
+
+
+
+    </div>
 
 
 </div>
+
+
 
 
 
