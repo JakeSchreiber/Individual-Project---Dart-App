@@ -27,19 +27,22 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
         gameplay();
     }
 
-    function switchPlayer(){
-        playerTwo();
-    }
+    //function switchPlayer(){
+    //    playerTwo();
+    //}
 
     playerOne();
 
     function gameplay() {
 
-       function initiateValues() {
+
+        //Initialize starting values for feats and scores.
+        function initiateValues() {
            $scope.score = 501;
            $scope.roundScore = 0;
            $scope.dartsRemaining = 3;
-
+           $scope.scoreForAverage = 0;
+           $scope.roundAverage = 0;
 
 
            $scope.dart1 = 0;
@@ -71,13 +74,18 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
            $scope.dartArray.push(x);
            $scope.dartsRemaining--;
            $scope.score -= $scope.value;
+           $scope.scoreForAverage += $scope.value;
+           console.log($scope.scoreForAverage);
            $scope.dart1 = $scope.dartArray[0];
            $scope.dart2 = $scope.dartArray[1];
            $scope.dart3 = $scope.dartArray[2];
-           roundScore();
+           $scope.dartsThrown++;
+           checkHatTrick();
            checkZero();
            dartAverage();
-           $scope.dartsThrown++;
+           roundScore();
+
+
 
 
            //when darts remaining = 0, meaning round is over. Popup confirms score.  Round score is pushed to
@@ -88,9 +96,11 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
                    $scope.roundArray.push($scope.roundScore);
                    //console.log($scope.roundArray);
                    checkTon();
-                   checkHatTrick();
+
+                   //roundScore();
                    resetRound();
-                   switchPlayer();
+                   //switchPlayer();
+                   roundAverage();
 
 
                } else {
@@ -118,7 +128,7 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
            }
        }
 
-
+       //Weird for loop that didn't work
        //function roundScore() {
        //    //for (var i in $scope.dartArray) {
        //    //    var tempScore = 0;
@@ -131,21 +141,9 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
        //}
 
 
-       function checkTon() {
-           if ($scope.roundScore >= 100 && $scope.roundScore <= 140) {
-               $scope.ton++;
-           }
-           if ($scope.roundScore >= 140 && $scope.roundScore < 180) {
-               $scope.ton40++;
-           }
-
-           if ($scope.roundScore == 180) {
-               $scope.ton80++;
-           }
-
-       }
 
 
+       //Resets variables after each round
        function resetRound() {
            $scope.roundScore = 0;
            $scope.dartsRemaining = 3;
@@ -155,11 +153,16 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
            $scope.dart3 = 0;
        }
 
+       //Checks score for value of zero, meaning the game has been won. Would have liked to require a double out.
        function checkZero() {
            //var e = angular.element(document.querySelector("[double]"));
            if ($scope.score == 0) {
                alert("Game complete");
-               resetRound();
+               checkTon();
+               //$scope.roundArray.push($scope.roundScore);
+               //roundScore();
+               //resetRound();
+               roundAverage();
 
            }
            if ($scope.score < 0) {
@@ -169,18 +172,39 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
            }
        }
 
+
        function dartAverage() {
-           $scope.dartAverage = parseFloat(501 / $scope.dartsThrown).toFixed(2);
+           $scope.dartAverage = parseFloat($scope.scoreForAverage / $scope.dartsThrown).toFixed(2);
        }
 
+        function roundAverage(){
+            $scope.roundAverage = parseFloat($scope.scoreForAverage / ($scope.dartsThrown / 3)).toFixed(2);
+        }
+
+
        function checkHatTrick() {
-           if (($scope.dart1 == 25 || 50) && ($scope.dart2 == 25 || 50) && ($scope.dart3 == 25 || 50)) {
+           if (($scope.dart1 === 25 || $scope.dart1 === 50) && ($scope.dart2 === 25 || $scope.dart2 === 50) && ($scope.dart3 === 25 || $scope.dart3 === 50)) {
                $scope.hatTrick++;
            }
-           if (($scope.dart1 == 50) && ($scope.dart2 == 50) && ($scope.dart3 == 50)) {
+           if (($scope.dart1 === 50) && ($scope.dart2 === 50) && ($scope.dart3 === 50)) {
                $scope.deadEye++;
            }
        }
+
+
+        function checkTon() {
+            if ($scope.roundScore >= 100 && $scope.roundScore < 140) {
+                $scope.ton++;
+            }
+            if ($scope.roundScore >= 140 && $scope.roundScore < 180) {
+                $scope.ton40++;
+            }
+
+            if ($scope.roundScore == 180) {
+                $scope.ton80++;
+            }
+
+        }
 
 
    }

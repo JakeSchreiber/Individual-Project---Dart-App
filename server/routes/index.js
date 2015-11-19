@@ -3,8 +3,8 @@ var router = express.Router();
 var path = require('path');
 var pg = require('pg');
 var bodyParser = require('body-parser');
-//var connectionString=process.env.DATABASE_URL || 'postgres://localhost:5432/Darts';
-var connectionString=process.env.DATABASE_URL+"?ssl=true"|| 'postgres://localhost:5432/Darts';
+var connectionString=process.env.DATABASE_URL || 'postgres://localhost:5432/Darts';
+//var connectionString=process.env.DATABASE_URL+"?ssl=true"|| 'postgres://localhost:5432/Darts';
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({expanded: true}));

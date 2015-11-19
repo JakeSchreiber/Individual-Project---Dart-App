@@ -7,11 +7,11 @@ myApp.config(['$routeProvider', function($routeProvider){
             controller: "SomeController"
 
         }).
-        when('/dartboardSVG', {
+        when('/dartapp', {
             templateUrl: "/assets/views/routes/dartboardSVG.html",
             controller: "DartController"
         }).
-        when('/projects', {
+        when('/scoreboard', {
             templateUrl: "/assets/views/routes/projects.html",
             controller: "AnotherController"
         }).
