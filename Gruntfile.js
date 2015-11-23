@@ -12,6 +12,10 @@ module.exports = function(grunt){
             controllers: {
                 src: 'client/scripts/controllers/*.js',
                 dest: 'server/public/assets/scripts/controllers/controllers.min.js'
+            },
+            data: {
+                src: 'client/scripts/data/*.js',
+                dest: 'server/public/assets/scripts/data/data.min.js'
             }
         },
         copy: {

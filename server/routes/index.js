@@ -3,6 +3,10 @@ var router = express.Router();
 var path = require('path');
 var pg = require('pg');
 var bodyParser = require('body-parser');
+
+var playerArray = require('../public/assets/scripts/data/playerArray');
+
+
 var connectionString=process.env.DATABASE_URL || 'postgres://localhost:5432/Darts';
 //var connectionString=process.env.DATABASE_URL+"?ssl=true"|| 'postgres://localhost:5432/Darts';
 
@@ -28,6 +32,12 @@ router.get('/stats', function(req, res){
 
     })
 });
+
+router.get("/players", function(req, res){
+    res.send(playerArray);
+});
+
+
 
 router.get('/*', function(req, res, next){
     var file = req.params[0] || 'assets/views/index.html';

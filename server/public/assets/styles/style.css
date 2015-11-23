@@ -1,106 +1,246 @@
 body {
-    background-image: url('http://www.wsandb.co.uk/IMG/627/248627/chalkboard55.png');
+    background-image: url('http://www.jakeschreiber.com/images/chalkboard55.png');
+    height: 100%;
 }
 
 p{
     display: block;
-    text-align: left;
-    margin-left: 10px;
-    font-size: 24pt;
-    margin-top: -20pt;
+    text-align: center;
+    /*margin-left: 10px;*/
+    font-size: 14pt;
+    line-height: 12pt;
+    /*margin-top: -20pt;*/
     font-weight: bold;
 }
+
+#playDartsContainer {
+    width: 100%;
+    height: 800px;
+}
+
 
 #boardContainer {
-    width: 65%;
+
+    position: relative;
+    width: 60%;
+    padding: 2%;
+    /*height: 100%;*/
     display: inline-block;
-    margin-top: 0;
+    margin-top: 5%;
+    margin-bottom: 2% ;
+    margin-left: 2%;
 
 }
 
-/*
-//////////////SCOREBOARD SETUP//////////////////
-*/
+/*.boardBorder {*/
+    /*box-shadow: 10px 10px 25px 50px rgba(0, 0, 0, 0.2);*/
+/*}*/
+
 
 #scoreboard {
-    position: relative;
-    width: 30%;
-    min-height: 300px;
+    width: 35%;
     display: inline-block;
-    background-color: #010101;
-    border: 2px solid white;
-    margin-top: 0;
-    margin-left: 2%;
+    position: relative;
     float: right;
-    color: white;
+    margin-right: 2%;
+    margin-top: 10%;
+    height: 90%;
+
 }
 
-#scoreHeader {
+#scoreboardImage {
+    background-image: url('http://www.jakeschreiber.com/images/scoreboard.png');
+    /*box-shadow: 0px 6px 2px 2px rgba(0, 0, 0, 0.7);*/
+    background-repeat:no-repeat;
+    /*background-size:contain;*/
+    background-position: top;
+    background-size: 100% 100%;
+    background-size: 100% auto;
+    height: inherit;
+    margin-right: 2%;
+    padding: 8%;
+    /*max-width:100%;*/
+    /*max-height:100%;*/
+    /*position: fixed;*/
+}
+
+#scoreboardHeader {
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 36pt;
+    font-size: 24pt;
     margin: 0px;
     text-align: center;
-}
-
-#leftColumn {
-    display: inline-block;
-    height: 100%;
-
-    float: left;
-    width: 33.3%;
-}
-
-#centerColumn {
-    display: inline-block;
-    height: 100%;
-
-    width: 33.3%;
-}
-
-#rightColumn {
-    display: inline-block;
-    height: 100%;
-    float: right;
-    width: 33.3%;
-}
-
-#roundScore {
-    display: inline-block;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-    /*margin-right: 5px;*/
-    text-align: center;
     color: white;
-    width: 100%;
-
-
 }
 
-#score1 {
+#teamScores {
+    display: inline-block;
+    width: 100%;
+}
+
+.team1Score {
     display: inline-block;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 36pt;
+    font-size: 24pt;
     /*margin: auto;*/
     /*margin-right: auto;*/
     text-align: center;
-    color: white;
-    width: 100%;
+    /*color: white;*/
+    width: 50%;
+    float: left;
 }
 
-#roundScore2 {
+
+
+.team2Score {
     display: inline-block;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 12pt;
-    margin-right: 5px;
+    font-size: 24pt;
+    /*margin: auto;*/
+    /*margin-right: auto;*/
     text-align: center;
-    color: white;
-    width: 100%;
-
+    /*color: white;*/
+    width: 50%;
+    float: right;
 }
+
+.active {
+    color: #cccc00;
+}
+
+.inactive {
+    color: white;
+}
+
+#roundDetails {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+
+
+
+/*
+//////////////SCOREBOARD SETUP OLD//////////////////
+*/
+
+
+/*#mainScoreboardContainer {*/
+
+
+    /*padding: 0;*/
+    /*width: 30%;*/
+    /*height: 100%;*/
+
+    /*position: fixed;*/
+    /*display: inline-block;*/
+    /*margin-top: 10%;*/
+    /*margin-left: 2%;*/
+    /*margin-right: 2%;*/
+
+    /*/!*z-index: 0;*!/*/
+
+
+    /*float: right;*/
+
+
+/*}*/
+
+/*#scoreboard {*/
+    /*min-height: 50%;*/
+    /*background-image: url('http://www.jakeschreiber.com/images/scoreboard.png');*/
+    /*box-shadow: 0px 12px 2px 2px rgba(0, 0, 0, 0.8);*/
+    /*background-repeat:no-repeat;*/
+    /*background-size:contain;*/
+    /*background-position: top;*/
+    /*width: 100%;*/
+    /*/!*position: relative;*!/*/
+
+    /*/!*background-color: #010101;*!/*/
+    /*/!*border: 2px solid white;*!/*/
+
+    /*color: white;*/
+
+
+/*}*/
+
+/*#scoreboardHeader {*/
+    /*font-family: sans-serif;*/
+    /*font-weight: bold;*/
+    /*font-size: 36pt;*/
+    /*margin: 0px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*#leftColumn {*/
+    /*display: inline-block;*/
+    /*height: 100%;*/
+
+    /*float: left;*/
+    /*width: 33.3%;*/
+/*}*/
+
+/*#centerColumn {*/
+    /*display: inline-block;*/
+    /*height: 100%;*/
+
+    /*width: 33.3%;*/
+/*}*/
+
+/*#rightColumn {*/
+    /*display: inline-block;*/
+    /*height: 100%;*/
+    /*float: right;*/
+    /*width: 33.3%;*/
+/*}*/
+
+/*#roundScore {*/
+    /*display: inline-block;*/
+    /*font-family: sans-serif;*/
+    /*font-weight: bold;*/
+    /*font-size: 12pt;*/
+    /*/!*margin-right: 5px;*!/*/
+    /*text-align: center;*/
+    /*color: white;*/
+    /*width: 100%;*/
+
+
+/*}*/
+
+/*#score1 {*/
+    /*display: inline-block;*/
+    /*font-family: sans-serif;*/
+    /*font-weight: bold;*/
+    /*font-size: 36pt;*/
+    /*/!*margin: auto;*!/*/
+    /*/!*margin-right: auto;*!/*/
+    /*text-align: center;*/
+    /*color: white;*/
+    /*width: 100%;*/
+/*}*/
+
+/*#roundScore2 {*/
+    /*display: inline-block;*/
+    /*font-family: sans-serif;*/
+    /*font-weight: bold;*/
+    /*font-size: 12pt;*/
+    /*margin-right: 5px;*/
+    /*text-align: center;*/
+    /*color: white;*/
+    /*width: 100%;*/
+
+/*}*/
+
+/*#detailScoreboard{*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+/*}*/
 
 #dartsRemaining {
     font-family: sans-serif;
@@ -122,11 +262,7 @@ p{
 }
 
 
-#detailScoreboard{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+
 
 #dart1 {
     display: inline-block;
@@ -167,6 +303,20 @@ p{
     width: 33.3%;
 }
 
+.startbutton {
+    margin-top: 20px;
+    bottom: 0;
+    float: right;
+}
+
+.missbutton {
+    margin-top: 20px;
+
+    bottom: 0;
+    float: left;
+}
+
+
 
 /*
 //////////////DARTBOARD COLORS//////////////////
@@ -182,7 +332,7 @@ p{
     /*fill url('DBtextureWhite.png'):*/
     /*fill: "url(#image)";*/
     fill: #e6e6e6;
-    stroke: #7b7b7b;
+    stroke: #c4c4c4;
     stroke-width:2px;
     /*stroke-dasharray: 2,2;*/
     stroke-linejoin: round;
@@ -191,7 +341,7 @@ p{
 
 .color2 {
     fill: black;
-    stroke: #7b7b7b;
+    stroke: #c4c4c4;
     stroke-width:2px;
     /*stroke-dasharray: 2,2;*/
     stroke-linejoin: round;
@@ -199,7 +349,7 @@ p{
 
 .color3 {
     fill: #006200;
-    stroke: #7b7b7b;
+    stroke: #c4c4c4;
     stroke-width:2px;
     /*stroke-dasharray: 2,2;*/
     stroke-linejoin: round;
@@ -207,7 +357,7 @@ p{
 
 .color4 {
     fill: #db0400;
-    stroke: #7b7b7b;
+    stroke: #c4c4c4;
     stroke-width:2px;
     /*stroke-dasharray: 2,2;*/
     stroke-linejoin: round;
@@ -255,7 +405,7 @@ p{
 }
 
 .st0{
-    fill: #9f9f9f;
+    fill: #c4c4c4;
     box-shadow: inset;
 }
 /*.st1{fill: #004dff;}*/
@@ -381,20 +531,20 @@ p{
 
 }
 
-#scoreboardTest {
-     position: absolute;
-     right: 0;
-     top: 100%;
-     width: 30%;
-     min-height: 300px;
-     display: block;
-     background-color: #010101;
-     border: 2px solid white;
-     margin-top: 0;
-     margin-left: 2%;
-     float: right;
-     color: white;
- }
+/*#scoreboardTest {*/
+     /*position: relative;*/
+     /*right: 0;*/
+     /*/!*top: 100%;*!/*/
+     /*width: 30%;*/
+     /*min-height: 300px;*/
+     /*display: inline;*/
+     /*background-color: #010101;*/
+     /*border: 2px solid white;*/
+     /*margin-top: 0;*/
+     /*margin-left: 2%;*/
+     /*float: right;*/
+     /*color: white;*/
+ /*}*/
 
 
 /*/////////////////STATS PAGE///////////////////////*/
@@ -425,3 +575,44 @@ table tr:nth-child(even) {
     /*margin-top: 0;*/
     /*line-height: 10pt;*/
 /*}*/
+
+.navBar {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 0;
+    background-color: black;
+    color: white;
+    margin-bottom: 20px;
+    width: 100%;
+    z-index: 100;
+}
+
+/*.white {*/
+    /*color: white;*/
+/*}*/
+
+/*.yellow {*/
+    /*color: yellow;*/
+/*}*/
+
+.bottom {
+    position: fixed;
+    background-color: black;
+    color: #4a4a4a;
+    text-align: right;
+    padding-right: 10px;
+    bottom: 0;
+    display: block;
+    height: 25px;
+
+    /*right: 0;*/
+    width: 100%;
+    font-size: 8pt;
+
+}
+
+.bottom span {
+    vertical-align: middle;
+
+}
