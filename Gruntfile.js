@@ -28,7 +28,12 @@ module.exports = function(grunt){
                     "angular-route/angular-route.min.js",
                     "angular-route/angular-route.min.js.map",
                     "angular-animate/angular-animate.min.js",
-                    "angular-animate/angular-animate.min.js.map"
+                    "angular-animate/angular-animate.min.js.map",
+                    "angular-modal-service/dst/angular-modal-service.min.js",
+                    "angular-modal-service/dst/angular-modal-service.min.js.map",
+                    "ngmodal/dist/ng-modal.min.js",
+                    "angular-ui-bootstrap/ui-bootstrap.min.js",
+                    "angular-ui-bootstrap/ui-bootstrap-tpls.min.js"
                 ],
                 "dest": "server/public/vendors/"
             },

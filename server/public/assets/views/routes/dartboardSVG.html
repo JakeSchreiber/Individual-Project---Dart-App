@@ -1,4 +1,8 @@
 <div id="playDartsContainer">
+
+
+
+
 <div id="boardContainer">
     <?xml version="1.0" encoding="utf-8"?>
     <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -214,6 +218,8 @@
 <div id="scoreboard">
     <div id="scoreboardImage">
     <!--<img src="http://www.jakeschreiber.com/images/scoreboard.png" />-->
+
+        <div ng-show="showScoreboard">
         <div id="scoreboardHeader">Score</div>
             <div id="teamScores">
                 <div class="team1Score active">
@@ -242,6 +248,45 @@
 
     </div>
 
+
+        <div class="stats" ng-show="myvalue">
+            <!--<button ng-click="showPopup = true">Show Popup</button>-->
+            <!--<div><button id="mybutton" ng-click="showAlert()">Click me</button></div>-->
+            <div id="player1Stats">
+                <div id="firstname"> Player: {{playerArray[0].firstname}} {{playerArray[0].lastname}}</div>
+                <!--<div id="lastname"> Player: {{playerArray[0].lastname}}</div>-->
+                <div id="totalDartsThrown"> Darts Thrown: {{playerArray[0].dartsThrown}}</div>
+
+                <div id="ton">100+: {{playerArray[0]._100}}</div>
+                <div id="ton40">140+: {{playerArray[0]._140}}</div>
+                <div id="ton80">180: {{playerArray[0]._180}}</div>
+                <div id="hatTrick">Hat Tricks: {{playerArray[0].hattricks}}</div>
+                <div id="deadEye">Dead Eyes: {{playerArray[0].deadeyes}}</div>
+                <div id="dartAverage">PPD: {{playerArray[0].ppd}}</div>
+                <div id="roundAverage">Round Average: {{playerArray[0].roundAverage}}</div>
+
+            </div>
+
+            <div id="player2Stats">
+                <div id="firstname"> Player: {{playerArray[1].firstname}} {{playerArray[1].lastname}}</div>
+                <div id="totalDartsThrown"> Darts Thrown: {{playerArray[1].dartsThrown}}</div>
+
+                <div id="ton">100+: {{playerArray[1]._100}}</div>
+                <div id="ton40">140+: {{playerArray[1]._140}}</div>
+                <div id="ton80">180: {{playerArray[1]._180}}</div>
+                <div id="hatTrick">Hat Tricks: {{playerArray[1].hattricks}}</div>
+                <div id="deadEye">Dead Eyes: {{playerArray[1].deadeyes}}</div>
+                <div id="dartAverage">PPD: {{playerArray[1].ppd}}</div>
+                <div id="roundAverage">Round Average: {{playerArray[1].roundAverage}}</div>
+
+            </div>
+            <div id="statsButtons">
+            <button class="uploadStatsButton" ng-click="uploadStats()">Save stats</button>
+            <button class="cancelStatsButton" ng-click="cancelStats()">Don't save stats</button>
+            </div>
+
+        </div>
+    </div>
 
 </div>
 
@@ -317,10 +362,8 @@
 
 
 
+
 </div>
-
-
-
 
 
 
@@ -334,33 +377,7 @@
 
 
 
-<div class="container">
-    <h2>Modal Example</h2>
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
 
 </body>
 </html>

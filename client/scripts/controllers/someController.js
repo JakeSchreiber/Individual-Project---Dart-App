@@ -1,5 +1,5 @@
 
-myApp.controller('DartController', ['$scope','$http', '$interval', "PlayerService", function($scope, $http, $interval, PlayerService){
+myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerService', function($scope, $http, $interval, PlayerService){
     console.log("Dart Controller");
 
    //////GET PLAYERS///////
@@ -19,7 +19,13 @@ myApp.controller('DartController', ['$scope','$http', '$interval', "PlayerServic
 
 
     var i = 0;
+    ///displays only 4 round scores per player////
     $scope.filterLimit = 4;
+
+    ///stats popup default as false/////
+    $scope.myvalue = false;
+    $scope.showScoreboard = true;
+
 
     /////START GAMEPLAY////
 
@@ -153,6 +159,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', "PlayerServic
                     //roundScore();
                     //resetRound();
                     roundAverage();
+                    openStats();
 
                 }
                 if ($scope.currentPlayer.score < 0) {
@@ -165,8 +172,11 @@ myApp.controller('DartController', ['$scope','$http', '$interval', "PlayerServic
                     $scope.playerArray[el2].score += $scope.currentPlayer.roundScore;
                     //$scope.playerArray[el2].score = $scope.currentPlayer.score;
                     console.log($scope.playerArray[el2].score);
+                    setActivePlayer();
+
                     resetRound();
                     switchPlayer();
+
                 }
             }
 
@@ -209,9 +219,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', "PlayerServic
                 var el = i + 1;
                 if ((el) < $scope.playerArray.length) {
 
-
-
-
                     $scope.currentPlayer = $scope.playerArray[el];
                     i++;
 
@@ -232,7 +239,17 @@ myApp.controller('DartController', ['$scope','$http', '$interval', "PlayerServic
 
 
             }
+
+            function openStats(){
+                $scope.myvalue = true;
+                $scope.showScoreboard = false;
+
+            }
+
         };
+
+
+
     }
 }]);
 

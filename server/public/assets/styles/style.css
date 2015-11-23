@@ -616,3 +616,62 @@ table tr:nth-child(even) {
     vertical-align: middle;
 
 }
+
+/*/////////////STATS POPUP///////////*/
+.stats {
+
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-top: 10%;
+    height: 90%;
+    z-index: 1;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    /*text-align: center;*/
+
+
+    /*width: 50%;*/
+    /*position: absolute;*/
+    /*left: 25%;*/
+    /*z-index: 1;*/
+    /*background-color: rgba(30, 30, 30, 0.80);*/
+    /*color: white;*/
+    /*font-size: 18pt;*/
+    /*line-height: 20pt;*/
+    /*/!*font-weight: bold;*!/*/
+    /*border: 2px solid white;*/
+    /*margin-top: 20%;*/
+}
+
+#player1Stats{
+    width: 48%;
+    float: left;
+    text-align: right;
+}
+
+#player2Stats{
+    width: 48%;
+    float: right;
+    text-align: left;
+}
+
+#statsButtons {
+    position: absolute;
+    bottom: 0;
+    margin-top: 5%;
+}
+
+.uploadStatsButton {
+    float: right;
+    font-size: 12pt;
+    color: black;
+}
+.cancelStatsButton {
+    float: left;
+    margin-right: 5px;
+    font-size: 12pt;
+    color: black;
+}

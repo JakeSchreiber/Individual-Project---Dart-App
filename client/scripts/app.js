@@ -1,10 +1,10 @@
-var myApp = angular.module("myApp", ['ngRoute']);
+var myApp = angular.module("myApp", ['ngRoute', 'ui.bootstrap']);
 
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider.
         when('/home', {
             templateUrl: "/assets/views/routes/home.html",
-            controller: "SomeController"
+            controller: "AnotherController"
 
         }).
         when('/dartapp', {
@@ -54,3 +54,4 @@ myApp.service('PlayerService', ['$http', function($http) {
 //    });
 //
 //};
+
