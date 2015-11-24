@@ -605,6 +605,7 @@ table tr:nth-child(even) {
     bottom: 0;
     display: block;
     height: 25px;
+    z-index: 5;
 
     /*right: 0;*/
     width: 100%;
@@ -659,8 +660,7 @@ table tr:nth-child(even) {
 }
 
 #statsButtons {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     margin-top: 5%;
 }
 

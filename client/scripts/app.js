@@ -4,7 +4,7 @@ myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider.
         when('/home', {
             templateUrl: "/assets/views/routes/home.html",
-            controller: "AnotherController"
+            controller: "StatsController"
 
         }).
         when('/dartapp', {
@@ -13,10 +13,23 @@ myApp.config(['$routeProvider', function($routeProvider){
         }).
         when('/scoreboard', {
             templateUrl: "/assets/views/routes/projects.html",
-            controller: "AnotherController"
+            controller: "StatsController"
+        }).
+        when('/profile', {
+        templateUrl: "/assets/views/routes/profile.html",
+        controller: "ProfileController"
+        }).
+
+        when('/logout', {
+            templateUrl: "/assets/views/routes/home.html",
+            controller: "StatsController"
+        }).
+        when('/login', {
+            templateUrl: "/assets/views/routes/login.html",
+            controller: "StatsController"
         }).
         otherwise({
-            redirectTo: 'home'
+            redirectTo: '/home'
         })
 }]);
 

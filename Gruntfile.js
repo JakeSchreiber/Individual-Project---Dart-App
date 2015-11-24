@@ -39,9 +39,10 @@ module.exports = function(grunt){
             },
             bootstrap: {
                 expand: true,
-                cwd: 'node_modules/bootstrap/dist/css',
+                cwd: 'node_modules/bootstrap/dist',
                 src: [
-                    "bootstrap.min.css"
+                    "css/bootstrap.min.css",
+                    "js/bootstrap.min.js"
                 ],
                 "dest": "server/public/vendors/bootstrap"
             },
@@ -57,7 +58,9 @@ module.exports = function(grunt){
                 src: [
                     "dartboardSVG.html",
                     "home.html",
-                    "projects.html"
+                    "projects.html",
+                    "profile.html",
+                    "login.html"
                 ],
                 dest: "server/public/assets/views/routes/"
             },

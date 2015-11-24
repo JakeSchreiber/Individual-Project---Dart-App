@@ -1,5 +1,5 @@
-myApp.controller('AnotherController', ['$scope', '$http', function($scope, $http){
-    console.log("Another Controller");
+myApp.controller('StatsController', ['$scope', '$http', function($scope, $http){
+    console.log("Stats Controller");
 
     $scope.getStats = function(){
         $http.get('/stats').then(function(response){
