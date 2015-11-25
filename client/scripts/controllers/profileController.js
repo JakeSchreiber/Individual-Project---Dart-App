@@ -19,13 +19,18 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
 
 
     $scope.getProfileInfo = function(){
-        $http.get('/profileInfo').then(function(response){
+        $http.get('/profile').then(function(response){
             $scope.profileInfo = response.data;
-            console.log($scope.profileInfo);
+            console.log(response.data);
+            //console.log(document.cookie);
 
         });
     };
 
     $scope.getProfileInfo();
+
+
+
+    
 
 }]);

@@ -13,7 +13,7 @@ var jsonParser = bodyParser.json();
 app.set("port", (process.env.PORT || 5000));
 
 
-app.use('/', index);
+
 
 app.use(cookieParser());
 app.use(session({ secret: '4564f6s4fdsfdfd', resave: false, saveUninitialized: false }));
@@ -33,6 +33,7 @@ setupPassport(app);
 //setupPassport;
 
 app.use('/', appRouter);
+app.use('/', index);
 
 app.listen(app.get("port"), function(){
     console.log("Listening on port: " + app.get("port"));

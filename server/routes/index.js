@@ -41,13 +41,12 @@ router.get('/stats', function(req, res){
     })
 });
 
-//TEST FOR GET PROFILE INFO////
 
-router.get('/profileInfo', function(req, res){
+router.get('/profile', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){
-        var query = client.query("SELECT * FROM users WHERE users.username = username");
+        var query = client.query("SELECT * FROM stats where firstname = ($1)", [req.user.firstName]);
         //var query = client.query("SELECT * FROM users");
 
         query.on('row', function(row){
@@ -63,13 +62,6 @@ router.get('/profileInfo', function(req, res){
 
     })
 });
-
-
-//END PROFILE INFO TEST////
-
-
-
-
 
 
 router.get("/players", function(req, res){
