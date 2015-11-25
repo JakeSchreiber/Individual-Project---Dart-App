@@ -587,10 +587,25 @@ table tr:nth-child(even) {
     right: 0;
     top: 0;
     background-color: black;
-    color: white;
+    /*color: white;*/
     margin-bottom: 20px;
     width: 100%;
     z-index: 100;
+}
+
+#loginUsername {
+    display: inline;
+    width: 10%;
+}
+
+#loginPassword {
+    display: inline;
+    width: 10%;
+}
+
+#loginButton {
+    display: inline;
+    width: 10%;
 }
 
 /*.white {*/

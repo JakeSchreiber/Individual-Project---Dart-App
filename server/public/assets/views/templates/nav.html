@@ -5,6 +5,16 @@
             <li><a href="#home">HOME</a></li>
             <li><a href="#dartapp">DART APP</a></li>
             <li><a href="#scoreboard">SCOREBOARD</a></li>
+            <li>
+                <form method="POST" action="/login" class="form-signin">
+                    <!--<h2 class="form-signin-heading">Please log in</h2>-->
+                    <!--<label for="inputUsername" class="inputUsername">Username</label>-->
+                    <input type="text" id="inputUsername" name="username" class="loginUsername" placeholder="Username" required autofocus>
+                    <!--<label for="inputPassword" class="inputPassword">Password</label>-->
+                    <input type="password" id="inputPassword" name="password" class="loginPassword" placeholder="Password" required>
+                    <button class="loginButton" type="submit">Log in</button>
+                </form>
+            </li>
         </ul>
     </div>
 </div>
