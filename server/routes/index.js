@@ -78,7 +78,7 @@ router.get('/stats', function(req, res){
 /////if user name doesn't return a match at user to stats table with stats at 0
 
 
-router.get('/profile', function(req, res){
+router.get('/getprofile', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){

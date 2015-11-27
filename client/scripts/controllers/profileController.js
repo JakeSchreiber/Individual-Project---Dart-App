@@ -2,7 +2,7 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
     console.log("Profile Controller");
 
     $scope.getProfileInfo = function(){
-        $http.get('/profile').then(function(response){
+        $http.get('/getprofile').then(function(response){
             $scope.profileInfo = response.data;
             console.log(response.data);
             checkUser();
