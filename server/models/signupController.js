@@ -17,14 +17,14 @@ module.exports.signup = function(req, res) {
 
 
     if (!username || !password || !password2) {
-        req.flash('error', "Please, fill in all the fields.");
+        alert("Please, fill in all the fields.");
         console.log('error', "Please, fill in all the fields.");
 
         res.redirect('home');
     }
 
     if (password !== password2) {
-        req.flash('error', "Please, enter the same password twice.");
+        alert("Please, enter the same password twice.");
         res.redirect('home');
     }
 
@@ -44,7 +44,7 @@ module.exports.signup = function(req, res) {
     Model.User.create(newUser).then(function() {
         res.redirect('/#/login');
     }).catch(function(error) {
-        req.flash('error', "Please, choose a different username.");
+        alert("Please, choose a different username.");
         res.redirect('/home');
     })
 };

@@ -25,16 +25,16 @@ var attributes = {
         type: Sequelize.STRING,
     },
     salt: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
     },
     location: {
         type: Sequelize.STRING
     }
-}
+};
 
 var options = {
     freezeTableName: true
 }
 
-module.exports.attributes = attributes
-module.exports.options = options
+module.exports.attributes = attributes;
+module.exports.options = options;
