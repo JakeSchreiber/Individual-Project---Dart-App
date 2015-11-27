@@ -42,7 +42,7 @@ router.post('/login',
             // make passportjs setup the user object, serialize the user, ...
             req.login(user, {}, function(err) {
                 if (err) { return next(err) };
-                return res.redirect("/#/scoreboard");
+                return res.redirect("/#/profile");
             });
         })(req, res, next);
         return;
@@ -100,11 +100,32 @@ router.get('/getprofile', function(req, res){
 });
 
 
+//router.post('/createuser', function(req, res){
+//    var results=[];
+//
+//    pg.connect(connectionString, function(err, client, next){
+//        var query = client.query("INSERT INTO stats (username, firstname, lastname, location, date) VALUES ($1,$2,$3,$4,$5)", [req.user.username, req.user.firstName, req.user.lastName, req.user.location, "today"]);
+//        //var query = client.query("SELECT * FROM users");
+//
+//        query.on('row', function(row){
+//            results.push(row);
+//        });
+//
+//        query.on('end', function(){
+//            client.end();
+//            return res.json(results);
+//        });
+//
+//        if(err) console.log(err);
+//
+//    })
+//});
+
 router.post('/createuser', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){
-        var query = client.query("INSERT INTO stats (username, firstname, lastname, location, date) VALUES ($1,$2,$3,$4,$5)", [req.user.username, req.user.firstName, req.user.lastName, req.user.location, "today"]);
+        var query = client.query("INSERT INTO stats (username, firstname, lastname, location, date) SELECT username, firstName, lastName, location, 'today' from users");
         //var query = client.query("SELECT * FROM users");
 
         query.on('row', function(row){
