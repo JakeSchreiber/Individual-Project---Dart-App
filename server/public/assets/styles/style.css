@@ -695,3 +695,7 @@ table tr:nth-child(even) {
     font-size: 12pt;
     color: black;
 }
+
+.profileTable {
+    margin-top: 50px;
+}

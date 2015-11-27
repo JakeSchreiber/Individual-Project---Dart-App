@@ -5,23 +5,23 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
         $http.get('/profile').then(function(response){
             $scope.profileInfo = response.data;
             console.log(response.data);
+            checkUser();
         });
+    };
+
+    var checkUser = function() {
+        if ($scope.profileInfo.length === 0) {
+            $http.post('/createuser').then(function (response) {
+                $scope.profileInfo = response.data;
+                console.log(response.data);
+                console.log("Empty Array test fire");
+                $scope.getProfileInfo();
+
+            });
+        }
     };
 
     $scope.getProfileInfo();
 
-
-
-
-    //$scope.createUser = function(){
-    //    $http.get('/createUser').then(function(response){
-    //        $scope.createUser = response.data;
-    //        console.log(response.data);
-    //        //console.log(document.cookie);
-    //    });
-    //};
-    //
-    //$scope.createUser();
-    //
 
 }]);

@@ -1,18 +1,39 @@
-<h1>PLAYER PROFILE</h1>
+<table class="profileTable table table-bordered">
 
-<p>Name: {{profileInfo[0].firstname}} {{profileInfo[0].lastname}}</p>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Hat Tricks</th>
+        <th>100+</th>
+        <th>140+</th>
+        <th>180</th>
+        <th>Average</th>
+        <th>Dead Eyes</th>
+        <th>High In</th>
+        <th>High Out</th>
+        <th>PPD</th>
+        <th>Wins</th>
+        <th>Total Games</th>
+
+    </tr>
+
+    <tr id="profilestats" ng-repeat="player in profileInfo | orderBy: 'average':true" ng-class="rowClass(player)">
+        <td>{{player.firstname}}</td>
+        <td>{{player.lastname}}</td>
+        <td>{{player.hattricks}}</td>
+        <td>{{player._100}}</td>
+        <td>{{player._140}}</td>
+        <td>{{player._180}}</td>
+        <td>{{player.average}}</td>
+        <td>{{player.deadeyes}}</td>
+        <td>{{player.highin}}</td>
+        <td>{{player.highout}}</td>
+        <td>{{player.ppd}}</td>
+        <td>{{player.wins}}</td>
+        <td>{{player.totalgames}}</td>
 
 
-<p>Total Games: {{profileInfo[0].totalgames}}</p>
-<p>Wins: {{profileInfo[0].wins}}</p>
+        <!--<student-profile info="student"></student-profile>-->
+    </tr>
 
-<p>Average: {{profileInfo[0].average}}</p>
-<p>PPD: {{profileInfo[0].ppd}}</p>
-
-
-
-<p>Tons: {{profileInfo[0]._100}}</p>
-<p>140+: {{profileInfo[0]._140}}</p>
-<p>180: {{profileInfo[0]._180}}</p>
-<p>Dead Eyes: {{profileInfo[0].deadeyes}}</p>
-<p>Hat Tricks: {{profileInfo[0].hattricks}}</p>
+</table>

@@ -82,7 +82,7 @@ router.get('/profile', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){
-        var query = client.query("SELECT * FROM stats where firstname = ($1)", [req.user.firstName]);
+        var query = client.query("SELECT * FROM stats WHERE username = $1", [req.user.username]);
         //var query = client.query("SELECT * FROM users");
 
         query.on('row', function(row){
@@ -100,26 +100,26 @@ router.get('/profile', function(req, res){
 });
 
 
-//router.get('/createUser', function(req, res){
-//    var results=[];
-//
-//    pg.connect(connectionString, function(err, client, next){
-//        var query = client.query("INSERT INTO stats (username, firstname, lastname, location) VALUES $1, $2, $3, $4", [req.user.username, req.user.firstName, req.user.lastName, req.user.location]);
-//        //var query = client.query("SELECT * FROM users");
-//
-//        query.on('row', function(row){
-//            results.push(row);
-//        });
-//
-//        query.on('end', function(){
-//            client.end();
-//            return res.json(results);
-//        });
-//
-//        if(err) console.log(err);
-//
-//    })
-//});
+router.post('/createuser', function(req, res){
+    var results=[];
+
+    pg.connect(connectionString, function(err, client, next){
+        var query = client.query("INSERT INTO stats (username, firstname, lastname, location, date) VALUES ($1,$2,$3,$4,$5)", [req.user.username, req.user.firstName, req.user.lastName, req.user.location, "today"]);
+        //var query = client.query("SELECT * FROM users");
+
+        query.on('row', function(row){
+            results.push(row);
+        });
+
+        query.on('end', function(){
+            client.end();
+            return res.json(results);
+        });
+
+        if(err) console.log(err);
+
+    })
+});
 
 router.get("/players", function(req, res){
     res.send(playerArray);

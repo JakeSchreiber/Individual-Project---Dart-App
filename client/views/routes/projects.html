@@ -1,4 +1,3 @@
-<body ng-app="myApp" ng-controller="anotherController">
 
 
 <table class="statsTable table table-bordered">
@@ -20,7 +19,7 @@
 
     </tr>
 
-<tr id="stats" ng-repeat="player in stats | orderBy: 'lastname'" ng-class="rowClass(player)">
+<tr id="stats" ng-repeat="player in stats | orderBy: 'average':true" ng-class="rowClass(player)">
     <td>{{player.firstname}}</td>
     <td>{{player.lastname}}</td>
     <td>{{player.hattricks}}</td>
