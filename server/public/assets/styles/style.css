@@ -1,22 +1,23 @@
 body {
     background-image: url('http://www.jakeschreiber.com/images/chalkboard55.png');
     height: 100%;
+    margin-top: 60px;
 }
 
-p{
-    display: block;
-    text-align: center;
-    /*margin-left: 10px;*/
-    font-size: 14pt;
-    line-height: 12pt;
-    /*margin-top: -20pt;*/
-    font-weight: bold;
-}
+/*p{*/
+    /*display: block;*/
+    /*text-align: center;*/
+    /*/!*margin-left: 10px;*!/*/
+    /*font-size: 14pt;*/
+    /*line-height: 12pt;*/
+    /*/!*margin-top: -20pt;*!/*/
+    /*font-weight: bold;*/
+/*}*/
 
-h1 {
-    color: white;
-    font-size: 100pt;
-}
+/*h1 {*/
+    /*color: white;*/
+    /*font-size: 100pt;*/
+/*}*/
 
 #playDartsContainer {
     width: 100%;
@@ -28,7 +29,9 @@ h1 {
 
     position: relative;
     width: 60%;
-    padding: 2%;
+    /*padding: 2%;*/
+    float: left;
+
     /*height: 100%;*/
     display: inline-block;
     margin-top: 5%;
@@ -48,7 +51,7 @@ h1 {
     position: relative;
     float: right;
     margin-right: 2%;
-    margin-top: 10%;
+    margin-top: 5%;
     height: 90%;
 
 }
@@ -534,22 +537,16 @@ h1 {
         /*width: 33.3%;*/
     }
 
-}
+    .form-control {
+        margin-left: 2%;
+        margin-top: 2%;
+        height: 100px;
+        border: 0;
+        width: 100%;
 
-/*#scoreboardTest {*/
-     /*position: relative;*/
-     /*right: 0;*/
-     /*/!*top: 100%;*!/*/
-     /*width: 30%;*/
-     /*min-height: 300px;*/
-     /*display: inline;*/
-     /*background-color: #010101;*/
-     /*border: 2px solid white;*/
-     /*margin-top: 0;*/
-     /*margin-left: 2%;*/
-     /*float: right;*/
-     /*color: white;*/
- /*}*/
+    }
+
+}
 
 
 /*/////////////////STATS PAGE///////////////////////*/
@@ -566,26 +563,14 @@ table tr:nth-child(even) {
 }
 
 
-/*#stats {*/
-    /*position: relative;*/
-    /*/!*width: 100%;*!/*/
-    /*/!*min-height: 300px;*!/*/
-    /*display: inline-block;*/
-    /*margin-left: 2%;*/
-    /*/!*color: white;*!/*/
-/*}*/
-
-/*#stats p{*/
-    /*font-size: 12pt;*/
-    /*margin-top: 0;*/
-    /*line-height: 10pt;*/
-/*}*/
+/*/////////////////NAVIGATION///////////////////////*/
 
 .navBar {
     position: fixed;
     display: block;
     right: 0;
     top: 0;
+    height: 60px;
     background-color: black;
     /*color: white;*/
     margin-bottom: 20px;
@@ -593,28 +578,83 @@ table tr:nth-child(even) {
     z-index: 100;
 }
 
+.navBar a {
+    color: #cdcdcd;
+    text-decoration: none;
+}
+
+.navBar a:hover {
+    color: #727272;
+}
+
+#navPill {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    width: 10%;
+    margin-left: 5%;
+
+}
+
+#loginPill {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    color: white;
+    display: inline;
+    width: 20%;
+    margin-left: 5%;
+
+}
+
 #loginUsername {
+    background-color: #cdcdcd;
+    color: #000;
+    border: 0;
     display: inline;
     width: 10%;
+    height: 20px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+
 }
 
 #loginPassword {
+    background-color: #cdcdcd;
+    color: #000;
+    border: 0;
     display: inline;
     width: 10%;
+    height: 20px;
+    padding-left: 5px;
+    margin-left: 2%;
+    padding-bottom: 2px;
+
 }
 
 #loginButton {
+    background-color: #004b00;
+    color: #009000;
     display: inline;
-    width: 10%;
+    width: 5%;
+    height: 20px;
+    margin-left: 2%;
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+
 }
 
-/*.white {*/
-    /*color: white;*/
-/*}*/
+::-webkit-input-placeholder {
+    /*color: #000;*/
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 10pt;
+}
 
-/*.yellow {*/
-    /*color: yellow;*/
-/*}*/
+
+
+/*////////FOOTER////////////*/
 
 .bottom {
     position: fixed;
@@ -698,4 +738,70 @@ table tr:nth-child(even) {
 
 .profileTable {
     margin-top: 50px;
+}
+
+/*//////////////INDEX PAGE////////////*/
+
+
+#welcomeHeader {
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#welcomeHeader h1 {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-size: 50pt;
+        color: white;
+        text-align: center;
+    }
+
+#welcomeHeader p {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-weight: bold;
+        color: white;
+        font-size: 14pt;
+        text-align: center;
+}
+
+#fontGrey {
+    color: #cdcdcd;
+}
+
+.form-control {
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 20px;
+    border: 0;
+
+}
+
+.registerButton {
+    background-color: #004b00;
+    color: #009000;
+    display: inline;
+    width: 10%;
+    height: 20px;
+    margin-left: 2%;
+    /*float: right;*/
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    margin-top: 2%;
+
+}
+
+.createAccount {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+
+}
+
+.createAccountHeader {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 12pt;
+    color: white;
+    margin-left: 2%;
 }
