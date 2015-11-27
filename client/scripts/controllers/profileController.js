@@ -8,8 +8,9 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
                 $scope.getProfileInfo();
 
             });
-        }
+        };
 
+    $scope.createStatProfile();
 
     $scope.getProfileInfo = function(){
         $http.get('/getprofile').then(function(response){
