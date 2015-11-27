@@ -45,6 +45,6 @@ module.exports.signup = function(req, res) {
         res.redirect('/#/login');
     }).catch(function(error) {
         alert("Please, choose a different username.");
-        res.redirect('/home');
+        res.redirect('/#/home');
     })
 };
