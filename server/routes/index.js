@@ -26,8 +26,8 @@ var isAuthenticated = function (req, res, next) {
     res.redirect('/')
 };
 
-router.get('/home', signupController.show);
-router.post('/home', signupController.signup);
+router.get('/createAccount', signupController.show);
+router.post('/createAccount', signupController.signup);
 
 
 router.post('/login',
