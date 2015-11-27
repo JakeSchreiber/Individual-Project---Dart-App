@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 var Model = require('../strategies/models.js');
 
 module.exports.show = function(req, res) {
-    res.render('home')
+    res.render('/#/home')
 };
 
 module.exports.signup = function(req, res) {
@@ -20,12 +20,12 @@ module.exports.signup = function(req, res) {
         alert("Please, fill in all the fields.");
         console.log('error', "Please, fill in all the fields.");
 
-        res.redirect('home');
+        res.redirect('/#/home');
     }
 
     if (password !== password2) {
         alert("Please, enter the same password twice.");
-        res.redirect('home');
+        res.redirect('/#/home');
     }
 
     var salt = bcrypt.genSaltSync(10);
