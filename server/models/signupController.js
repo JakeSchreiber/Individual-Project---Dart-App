@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 var Model = require('../strategies/models.js');
 
 module.exports.show = function(req, res) {
-    res.render('/#/home')
+    res.redirect('/#/home')
 };
 
 module.exports.signup = function(req, res) {
