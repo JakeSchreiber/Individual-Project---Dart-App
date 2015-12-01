@@ -15,10 +15,10 @@ var attributes = {
             isEmail: true
         }
     },
-    firstName: {
+    firstname: {
         type: Sequelize.STRING,
     },
-    lastName: {
+    lastname: {
         type: Sequelize.STRING,
     },
     password: {
