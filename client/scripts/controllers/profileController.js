@@ -51,7 +51,7 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
                 $scope.profileInfo = response.data;
 
             }
-        }
+        };
 
 
     $scope.getProfileInfo();
