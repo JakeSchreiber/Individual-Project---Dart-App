@@ -32,22 +32,27 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
 
     $scope.getProfileInfo = function(){
         $http.get('/getprofile').then(function(response){
-            $scope.profileInfo = response.data;
+            //$scope.profileInfo = response.data;
+            return checkUser(response);
 
-            if ($scope.profileInfo.length === 0) {
-                $http.post('/createuser').then(function (response) {
-                    $scope.profileInfo = response.data;
-                    console.log(response.data);
-                    console.log("Empty Array test fire");
-                    //$scope.getProfileInfo();
+
 
         });
     };
-
-
-
+    var checkUser = function(response){
+        if (response.data.length === 0) {
+            $http.post('/createuser').then(function (response) {
+                $scope.profileInfo = response.data;
+                console.log(response.data);
+                console.log("Empty Array test fire");
+                //$scope.getProfileInfo();
             });
+        } else {
+                $scope.profileInfo = response.data;
+
+            }
         }
+
 
     $scope.getProfileInfo();
 
