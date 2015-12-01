@@ -127,7 +127,7 @@ router.post('/createuser', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){
-        var query = client.query("INSERT INTO stats (username, firstname, lastname, location, date) SELECT username, 'firstName', 'lastName', location, 'today' FROM users WHERE username = ($1)", [req.user.username]);
+        var query = client.query("INSERT INTO stats (username, firstname, lastname, location, date) SELECT username, firstName, lastName, location, 'today' FROM users WHERE username = ($1)", [req.user.username]);
         //var query = client.query("SELECT * FROM users");
 
         query.on('row', function(row){
