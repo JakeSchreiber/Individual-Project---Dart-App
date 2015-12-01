@@ -10,8 +10,8 @@ module.exports.signup = function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
     var password2 = req.body.password2;
-    var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
+    var firstname = req.body.firstName;
+    var lastname = req.body.lastName;
     var location = req.body.location;
     var email = req.body.email;
 
@@ -35,8 +35,8 @@ module.exports.signup = function(req, res) {
         username: username,
         salt: salt,
         password: hashedPassword,
-        firstName: firstName,
-        lastName: lastName,
+        firstname: firstname,
+        lastname: lastname,
         location: location,
         email: email
     };
