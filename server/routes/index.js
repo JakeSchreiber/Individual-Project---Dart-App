@@ -36,7 +36,7 @@ router.post('/login',
             if (err) { return next(err) }
             if (!user) {
                 res.local("username", req.param('username'));
-                return res.render('login', { error: true });
+                return res.redirect('/#/login', { error: true });
             }
 
             // make passportjs setup the user object, serialize the user, ...
