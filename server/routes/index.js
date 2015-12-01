@@ -42,7 +42,7 @@ router.post('/login',
             // make passportjs setup the user object, serialize the user, ...
             req.login(user, {}, function(err) {
                 if (err) { return next(err) };
-                return res.redirect("/#/home");
+                return res.redirect("/#/profile");
             });
         })(req, res, next);
         return;
