@@ -1,7 +1,8 @@
 body {
     background-image: url('http://www.jakeschreiber.com/images/chalkboard55.png');
     height: 100%;
-    margin-top: 60px;
+    margin: 0;
+
 }
 
 /*p{*/
@@ -421,6 +422,288 @@ body {
 
 
 
+/*/////////////////STATS PAGE///////////////////////*/
+table, th , td {
+    table-layout: fixed;
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+    margin-top:10%;
+    margin-left: 2.5%;
+    width: 95%;
+}
+
+table th{
+    width: 60%;
+}
+
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.table-firstname{
+    width: 100%;
+}
+
+.table-lastname{
+    width: 100%;
+}
+
+
+/*/////////////////NAVIGATION///////////////////////*/
+
+.navBar {
+    /*position: fixed;*/
+    display: block;
+    right: 0;
+    top: 0;
+    height: 60px;
+    background-color: black;
+    /*color: white;*/
+    margin-bottom: 20px;
+    width: 100%;
+    z-index: 100;
+}
+
+.navBar a {
+    color: #cdcdcd;
+    text-decoration: none;
+}
+
+.navBar a:hover {
+    color: #727272;
+}
+
+#navPill {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    width: 10%;
+    margin-left: 5%;
+
+}
+
+#loginPill {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    color: white;
+    display: inline;
+    width: 20%;
+    margin-left: 5%;
+
+}
+
+#loginUsername {
+    background-color: #cdcdcd;
+    color: #000;
+    border: 0;
+    display: inline;
+    width: 10%;
+    height: 20px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+
+}
+
+#loginPassword {
+    background-color: #cdcdcd;
+    color: #000;
+    border: 0;
+    display: inline;
+    width: 10%;
+    height: 20px;
+    padding-left: 5px;
+    margin-left: 2%;
+    padding-bottom: 2px;
+
+}
+
+#loginButton {
+    background-color: #004b00;
+    color: #009000;
+    display: inline;
+    width: 5%;
+    height: 20px;
+    margin-left: 2%;
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+
+}
+
+::-webkit-input-placeholder {
+    /*color: #000;*/
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+
+
+/*////////FOOTER////////////*/
+
+.bottom {
+    position: fixed;
+    background-color: black;
+    color: #7d7d7d;
+    /*text-align: right;*/
+    /*padding-right: 10%;*/
+    bottom: 0;
+    /*display: block;*/
+    height: 25px;
+    z-index: 5;
+    width: 100%;
+
+}
+
+.bottom span {
+    margin-top: 5px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 8pt;
+    float: right;
+    margin-right: 20px;
+
+}
+
+.bottom a{
+    color: white;
+    text-decoration: none;
+}
+
+/*/////////////STATS POPUP///////////*/
+.stats {
+
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-top: 10%;
+    height: 90%;
+    z-index: 1;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    /*text-align: center;*/
+
+
+    /*width: 50%;*/
+    /*position: absolute;*/
+    /*left: 25%;*/
+    /*z-index: 1;*/
+    /*background-color: rgba(30, 30, 30, 0.80);*/
+    /*color: white;*/
+    /*font-size: 18pt;*/
+    /*line-height: 20pt;*/
+    /*/!*font-weight: bold;*!/*/
+    /*border: 2px solid white;*/
+    /*margin-top: 20%;*/
+}
+
+#player1Stats{
+    width: 48%;
+    float: left;
+    text-align: right;
+}
+
+#player2Stats{
+    width: 48%;
+    float: right;
+    text-align: left;
+}
+
+#statsButtons {
+    position: relative;
+    margin-top: 5%;
+}
+
+.uploadStatsButton {
+    float: right;
+    font-size: 12pt;
+    color: black;
+}
+.cancelStatsButton {
+    float: left;
+    margin-right: 5px;
+    font-size: 12pt;
+    color: black;
+}
+
+.profileTable {
+    margin-top: 50px;
+}
+
+/*//////////////INDEX PAGE////////////*/
+
+
+#welcomeHeader {
+    position: relative;
+    /*margin-top: 15%;*/
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#welcomeHeader h1 {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-size: 50pt;
+        color: white;
+        text-align: center;
+    }
+
+#welcomeHeader p {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-weight: bold;
+        color: white;
+        font-size: 14pt;
+        text-align: center;
+}
+
+#fontGrey {
+    color: #cdcdcd;
+}
+
+.form-control {
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 20px;
+    border: 0;
+
+}
+
+.registerButton {
+    background-color: #004b00;
+    color: #009000;
+    display: inline;
+    width: 10%;
+    height: 20px;
+    margin-left: 2%;
+    /*float: right;*/
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    margin-top: 2%;
+
+}
+
+.createAccount {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+
+}
+
+.createAccountHeader {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 12pt;
+    color: white;
+    margin-left: 2%;
+}
+
 /*///////////////////////CELL PHONE SCREEN SIZE/////////////////////////*/
 
 @media screen and (max-device-width: 400px){
@@ -538,270 +821,85 @@ body {
     }
 
     .form-control {
+        font-size: 40px;
         margin-left: 2%;
         margin-top: 2%;
-        height: 100px;
+        height: 60px;
         border: 0;
         width: 100%;
 
     }
 
-}
-
-
-/*/////////////////STATS PAGE///////////////////////*/
-table, th , td {
-    border: 1px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-}
-table tr:nth-child(odd) {
-    background-color: #f1f1f1;
-}
-table tr:nth-child(even) {
-    background-color: #ffffff;
-}
-
-
-/*/////////////////NAVIGATION///////////////////////*/
-
-.navBar {
-    position: fixed;
-    display: block;
-    right: 0;
-    top: 0;
-    height: 60px;
-    background-color: black;
-    /*color: white;*/
-    margin-bottom: 20px;
-    width: 100%;
-    z-index: 100;
-}
-
-.navBar a {
-    color: #cdcdcd;
-    text-decoration: none;
-}
-
-.navBar a:hover {
-    color: #727272;
-}
-
-#navPill {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    color: white;
-    display: inline-block;
-    width: 10%;
-    margin-left: 5%;
-
-}
-
-#loginPill {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    color: white;
-    display: inline;
-    width: 20%;
-    margin-left: 5%;
-
-}
-
-#loginUsername {
-    background-color: #cdcdcd;
-    color: #000;
-    border: 0;
-    display: inline;
-    width: 10%;
-    height: 20px;
-    padding-left: 5px;
-    padding-bottom: 2px;
-
-}
-
-#loginPassword {
-    background-color: #cdcdcd;
-    color: #000;
-    border: 0;
-    display: inline;
-    width: 10%;
-    height: 20px;
-    padding-left: 5px;
-    margin-left: 2%;
-    padding-bottom: 2px;
-
-}
-
-#loginButton {
-    background-color: #004b00;
-    color: #009000;
-    display: inline;
-    width: 5%;
-    height: 20px;
-    margin-left: 2%;
-    border: 0;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-
-}
-
-::-webkit-input-placeholder {
-    /*color: #000;*/
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    font-size: 10pt;
-}
-
-
-
-/*////////FOOTER////////////*/
-
-.bottom {
-    position: fixed;
-    background-color: black;
-    color: #4a4a4a;
-    text-align: right;
-    padding-right: 10px;
-    bottom: 0;
-    display: block;
-    height: 25px;
-    z-index: 5;
-
-    /*right: 0;*/
-    width: 100%;
-    font-size: 8pt;
-
-}
-
-.bottom span {
-    vertical-align: middle;
-
-}
-
-/*/////////////STATS POPUP///////////*/
-.stats {
-
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    float: right;
-    margin-top: 10%;
-    height: 90%;
-    z-index: 1;
-    color: white;
-    font-weight: bold;
-    font-size: 14pt;
-    /*text-align: center;*/
-
-
-    /*width: 50%;*/
-    /*position: absolute;*/
-    /*left: 25%;*/
-    /*z-index: 1;*/
-    /*background-color: rgba(30, 30, 30, 0.80);*/
-    /*color: white;*/
-    /*font-size: 18pt;*/
-    /*line-height: 20pt;*/
-    /*/!*font-weight: bold;*!/*/
-    /*border: 2px solid white;*/
-    /*margin-top: 20%;*/
-}
-
-#player1Stats{
-    width: 48%;
-    float: left;
-    text-align: right;
-}
-
-#player2Stats{
-    width: 48%;
-    float: right;
-    text-align: left;
-}
-
-#statsButtons {
-    position: relative;
-    margin-top: 5%;
-}
-
-.uploadStatsButton {
-    float: right;
-    font-size: 12pt;
-    color: black;
-}
-.cancelStatsButton {
-    float: left;
-    margin-right: 5px;
-    font-size: 12pt;
-    color: black;
-}
-
-.profileTable {
-    margin-top: 50px;
-}
-
-/*//////////////INDEX PAGE////////////*/
-
-
-#welcomeHeader {
-    margin-top: 15%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-#welcomeHeader h1 {
-        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-        font-size: 50pt;
-        color: white;
-        text-align: center;
+    ::-webkit-input-placeholder {
+        font-size: 40px;
     }
 
-#welcomeHeader p {
+    .navBar.full {
+        display: none;
+    }
+
+    .navBar.mobile {
+        display: inline-block;
+        height: 460px;
+    }
+
+    #navPill {
+        width: 42%;
+        display: inline-block;
+        font-size: 35pt;
+        line-height: 15pt;
+    }
+
+    #loginPill {
         font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
         font-weight: bold;
         color: white;
-        font-size: 14pt;
-        text-align: center;
-}
+        display: inline;
+        width: 42%;
+        margin-left: 5%;
 
-#fontGrey {
-    color: #cdcdcd;
-}
+    }
 
-.form-control {
-    margin-left: 2%;
-    margin-top: 2%;
-    height: 20px;
-    border: 0;
+    #loginUsername {
+        width: 43%;
+        height: 60px;
+        font-size: 60pt;
 
-}
 
-.registerButton {
-    background-color: #004b00;
-    color: #009000;
-    display: inline;
-    width: 10%;
-    height: 20px;
-    margin-left: 2%;
-    /*float: right;*/
-    border: 0;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    margin-top: 2%;
+        background-color: #cdcdcd;
+        color: #000;
+        border: 0;
+        display: inline;
+        padding-left: 5px;
+        padding-bottom: 2px;
 
-}
+    }
 
-.createAccount {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 10%;
+    #loginPassword {
+        width: 40%;
+        height: 60px;
+        font-size: 60pt;
 
-}
 
-.createAccountHeader {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    font-size: 12pt;
-    color: white;
-    margin-left: 2%;
+        background-color: #cdcdcd;
+        color: #000;
+        border: 0;
+        display: inline;
+        padding-left: 5px;
+        margin-left: 5%;
+        padding-bottom: 2px;
+
+    }
+
+    #loginButton {
+        display: inline-block;
+        width: 90%;
+        height: 60px;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 32pt;
+
+
+    }
 }
