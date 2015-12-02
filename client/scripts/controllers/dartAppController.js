@@ -11,38 +11,18 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
 
         $scope.getLoggedInPlayer = function () {
-            var promise = $http.get('/getloggedinplayer').then(
-                function (response) {
-                    $scope.loggedInPlayer = response.data;
-                    $scope.playerArray = $scope.loggedInPlayer;
-                    console.log("Logged in player line 19:", $scope.loggedInPlayer);
-                    console.log("PlayerArray line 20:", $scope.playerArray);
-            });
+            $http.get('/getloggedinplayer').then(function (response) {
+                $scope.loggedInPlayer = response.data;
+                $scope.playerArray = $scope.loggedInPlayer;
+                $scope.playerArray[0].roundArray = [];
+                $scope.playerArray[0].dartArray = [];
+                console.log("Logged in player line 19:", $scope.loggedInPlayer);
+                console.log("PlayerArray line 20:", $scope.playerArray);
 
-            return promise;
+            });
         };
 
         $scope.getLoggedInPlayer();
-
-
-        $scope.playerArray[0].roundArray = [];
-        $scope.playerArray[0].dartArray = [];
-
-        //$scope.getLoggedInPlayer = function () {
-        //    $http.get('/getloggedinplayer').then(function (response) {
-        //        $scope.loggedInPlayer = response.data;
-        //        $scope.playerArray = $scope.loggedInPlayer;
-        //        $scope.playerArray[0].roundArray = [];
-        //        $scope.playerArray[0].dartArray = [];
-        //        console.log("Logged in player line 19:", $scope.loggedInPlayer);
-        //        console.log("PlayerArray line 20:", $scope.playerArray);
-        //
-        //    });
-        //};
-        //
-        //$scope.getLoggedInPlayer();
-
-
 
 
         //$scope.playerArray.push($scope.loggedInPlayer);
