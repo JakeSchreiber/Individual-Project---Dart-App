@@ -45,7 +45,7 @@ body {
     float: right;
     margin-right: 2%;
     margin-top: 2%;
-    height: 90%;
+    height: 100%;
 }
 
 #scoreboardImage {
@@ -91,6 +91,11 @@ body {
     float: left;
 }
 
+.team1Score p {
+    font-size: 16pt;
+    line-height: 1pt;
+}
+
 .team2Score {
     display: inline-block;
     font-family: sans-serif;
@@ -102,6 +107,11 @@ body {
     /*color: white;*/
     width: 50%;
     float: right;
+}
+
+.team2Score p {
+    font-size: 16pt;
+    line-height: 1pt;
 }
 
 .active {
@@ -504,16 +514,16 @@ table tr:nth-child(even) {
     color: black;
 }
 
-.profileTable {
-    margin-top: 50px;
-}
+/*.profileTable {*/
+    /*margin-top: 50px;*/
+/*}*/
 
 /*//////////////INDEX PAGE////////////*/
 
 
 #welcomeHeader {
     position: relative;
-    /*margin-top: 15%;*/
+    margin-top: 15%;
     margin-left: 5%;
     margin-right: 5%;
 }

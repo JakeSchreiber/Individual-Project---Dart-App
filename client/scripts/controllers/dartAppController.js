@@ -2,19 +2,68 @@
 myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerService', function($scope, $http, $interval, PlayerService){
     console.log("Dart Controller");
 
-   //////GET PLAYERS///////
-    $scope.playerArray = [];
-    $scope.playerService = PlayerService;
+    //GET ALL USERS FROM DATABASE ASSIGN ONE TO playerArray[1]/////
 
-    if($scope.playerService.playerData() === undefined) {
-        console.log("getting player list from user service");
-        $scope.playerService.playerList()
-            .then(function() {
-                $scope.playerArray = $scope.playerService.playerData();
-            });
-    } else {
-        $scope.playerArray = $scope.playerService.playerData();
+    $scope.playerArray = [];
+    $scope.chooseOpponent = true;
+
+
+
+    $scope.getAllUsers = function(){
+        $http.get('/getallplayers').then(function(response){
+            $scope.allPlayers = response.data;
+            console.log($scope.allPlayers);
+        });
     };
+
+    $scope.getAllUsers();
+
+
+    //$scope.selectedPlayer = false;
+
+    //$scope.toggleSelectedPlayer = function() {
+    //    $scope.selectedPlayer = !$scope.selectedPlayer;
+    //};
+
+
+    /////Grabs player from selected user////////
+
+    $scope.isSelectedPlayer = function() {
+        $scope.playerArray.push($scope.selectedPlayer);
+        console.log($scope.playerArray);
+        console.log($scope.selectedPlayer);
+        return $scope.selectedPlayer;
+        //$scope.chooseOpponent = false;
+    };
+
+
+    //GET PROFILE USER from login and enter them to playerArray[0]/////
+
+
+
+
+
+
+
+
+    //$scope.playerArray.push($scope.player.username);
+    //console.log($scope.playerArray);
+
+
+    //////GET PLAYERS From playerArray.js so long as they are supplied as two players in array///////
+
+
+    //$scope.playerService = PlayerService;
+
+    //if($scope.playerService.playerData() === undefined) {
+    //    console.log("getting player list from user service");
+    //    $scope.playerService.playerList()
+    //        .then(function() {
+    //            $scope.playerArray = $scope.playerService.playerData();
+    //        });
+    //} else {
+    //    $scope.playerArray = $scope.playerService.playerData();
+    //};
     //console.log($scope.playerArray);
 
 
@@ -62,9 +111,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             dartAverage();
             //roundScore();
 
-
-
-
             //when darts remaining = 0, meaning round is over. Popup confirms score.  Round score is pushed to
             //an array of round scores. functions check for tons and hat tricks, resets round, and would eventually
             //will switch player if needed. If cancel is clicked, round is reversed.
@@ -73,7 +119,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                     roundScore();
 
                     console.log($scope.currentPlayer.roundScore);
-
 
                         if ((confirm("Round Score: " + $scope.currentPlayer.roundScore + ". Remove Darts")) === true) {
                             $scope.currentPlayer.roundArray.unshift($scope.currentPlayer.roundScore);
@@ -84,16 +129,12 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                             roundAverage();
                             setActivePlayer();
 
-
                         } else {
                             $scope.currentPlayer.score += $scope.currentPlayer.roundScore;
                             $scope.currentPlayer.dartsThrown = $scope.currentPlayer.dartsThrown - 3;
                             resetRound();
 
-
                         }
-
-
                 };
 
 
@@ -149,7 +190,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
             //Checks score for value of zero, meaning the game has been won. Would have liked to require a double out.
             function checkZero() {
-
 
                 //var e = angular.element(document.querySelector("[double]"));
                 if ($scope.currentPlayer.score == 0) {
@@ -233,23 +273,15 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
                     i = 0;
                     $scope.currentPlayer = $scope.playerArray[0];
-
                     $scope.gameplay();
                 }
-
-
             }
 
             function openStats(){
                 $scope.myvalue = true;
                 $scope.showScoreboard = false;
-
             }
-
         };
-
-
-
     }
 }]);
 

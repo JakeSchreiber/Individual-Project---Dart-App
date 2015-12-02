@@ -286,13 +286,42 @@
             </div>
 
         </div>
+
+        <!-- Change code to take username in user as drop down need to call all users though-->
+
+        <!--<div ng-repeat='player in allPlayers'>-->
+            <!--<div class="width-200" ng-init="selectedPlayer = {username:player.username, name:player.firstname}">-->
+                <!--{{selectedPlayer}}-->
+                <!--<select ng-selected="{{player.username == selectedPlayer.username}}" ng-model="selectedPlayer" ng-options="player.username for player in allPlayers">-->
+                    <!--<option value="">Choose Opponent</option>-->
+                <!--</select>-->
+
+                <!--<select ng-model="selectedPlayer">-->
+                <!--<option ng-repeat="player in allPlayers" title="{{player.username}}" ng-selected="{{player.firstname == selectedPlayer.firstname}}" value="{{player}}">{{player.firstname}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!-- Change code to take username in user as drop down need to call all users though-->
+
+        <!--<ng-repeat="user in users" ng-click="toggleSelectedUser()" ng-switch on="isSelectedUser()" ng-init="user=user">-->
+
+
+        <!--<div ng-repeat='player in allPlayers'>-->
+        <div ng-show="chooseOpponent">
+            <!--{{selectedPlayer}}-->
+            <select ng-selected="{{selectedPlayer.username}}" ng-click="isSelectedPlayer()" ng-model="selectedPlayer" ng-options="player.username for player in allPlayers">
+                <option value="">Choose Opponent</option>
+            </select>
+        </div>
+        <!--</div>-->
+
     </div>
 
 </div>
 
 
-
-<!--<div id="mainScoreboardContainer">-->
+     <!--ng-click="toggleSelectedPlayer()" <div id="mainScoreboardContainer">-->
 <!--<div id="scoreboard">-->
     <!--<div id="mainScoreboard">-->
         <!--<div id="scoreHeader">Score</div>-->
@@ -357,6 +386,11 @@
 
     <!--<div id="roundAverage">Round Average: {{currentPlayer.firstname}}</div>-->
     <!--<div id="roundAverage">Round Average: {{currentPlayer.lastname}}</div>-->
+
+
+
+
+
 
 
 
