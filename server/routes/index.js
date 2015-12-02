@@ -146,6 +146,33 @@ router.get('/getallplayers', function(req, res){
     })
 });
 
+
+router.get('/getloggedinplayer', function(req, res){
+    var results=[];
+
+    pg.connect(connectionString, function(err, client, next){
+        var query = client.query("SELECT username, firstname FROM stats WHERE username = ($1)", [req.user.username]);
+
+        //var query = client.query("SELECT username FROM users WHERE username = ($1)", [req.user.username]);
+
+        //var query = client.query("SELECT * FROM users");
+
+        query.on('row', function(row){
+            results.push(row);
+        });
+
+        query.on('end', function(){
+            client.end();
+            return res.json(results);
+        });
+
+        if(err) console.log(err);
+
+    })
+});
+
+
+
 router.get("/players", function(req, res){
     res.send(playerArray);
 });

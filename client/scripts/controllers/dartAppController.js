@@ -2,70 +2,85 @@
 myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerService', function($scope, $http, $interval, PlayerService){
     console.log("Dart Controller");
 
-    //GET ALL USERS FROM DATABASE ASSIGN ONE TO playerArray[1]/////
+    /////SET PLAYERS FOR GAMEPLAY BY GETTING LOGGED IN USER AND CHOOSING OPPONENT FROM LIST/////
 
-    $scope.playerArray = [];
-    $scope.chooseOpponent = true;
+    $scope.setPlayers = function() {
+
+        $scope.playerArray = [];
+        $scope.chooseOpponent = true;
+
+        //GET PROFILE USER from login and enter them to playerArray[0]/////
+
+        $scope.getLoggedInPlayer = function () {
+            $http.get('/getloggedinplayer').then(function (response) {
+                $scope.loggedInPlayer = response.data;
+                $scope.playerArray = $scope.loggedInPlayer;
+
+                console.log("Logged in player line 19:", $scope.loggedInPlayer);
+                console.log("PlayerArray line 20:", $scope.playerArray);
+
+            });
+        };
+
+        $scope.getLoggedInPlayer();
+
+        //$scope.playerArray.push($scope.loggedInPlayer);
+        console.log("Player Array from line 26 (after getLoggedInPlayer):", $scope.playerArray);
 
 
+        //GETS ALL USERS TO FILL USER DROPDOWN TO CHOOSE OPPONENT//////
+        $scope.getAllUsers = function () {
+            $http.get('/getallplayers').then(function (response) {
+                $scope.allPlayers = response.data;
+                console.log($scope.allPlayers);
+            });
+        };
 
-    $scope.getAllUsers = function(){
-        $http.get('/getallplayers').then(function(response){
-            $scope.allPlayers = response.data;
-            console.log($scope.allPlayers);
-        });
+        $scope.getAllUsers();
+
+
+        //$scope.selectedPlayer = false;
+
+        //$scope.toggleSelectedPlayer = function() {
+        //    $scope.selectedPlayer = !$scope.selectedPlayer;
+        //};
+
+
+        /////SELECTS OPPONENT ADDS THEM TO PLAYER ARRAY////////
+
+        $scope.isSelectedPlayer = function () {
+            $scope.playerArray.push($scope.selectedPlayer);
+            console.log("Player Array from line 45-50 (isSelectedPlayer):", $scope.playerArray);
+            console.log($scope.selectedPlayer);
+            return $scope.selectedPlayer;
+            //$scope.chooseOpponent = false;
+        };
+
+
+        //$scope.playerArray.push($scope.player.username);
+        //console.log($scope.playerArray);
+
+
+        //////GET PLAYERS From playerArray.js so long as they are supplied as two players in array///////
+
+
+        //$scope.playerService = PlayerService;
+
+        //if($scope.playerService.playerData() === undefined) {
+        //    console.log("getting player list from user service");
+        //    $scope.playerService.playerList()
+        //        .then(function() {
+        //            $scope.playerArray = $scope.playerService.playerData();
+        //        });
+        //} else {
+        //    $scope.playerArray = $scope.playerService.playerData();
+        //};
+        //console.log($scope.playerArray);
+
     };
 
-    $scope.getAllUsers();
 
-
-    //$scope.selectedPlayer = false;
-
-    //$scope.toggleSelectedPlayer = function() {
-    //    $scope.selectedPlayer = !$scope.selectedPlayer;
-    //};
-
-
-    /////Grabs player from selected user////////
-
-    $scope.isSelectedPlayer = function() {
-        $scope.playerArray.push($scope.selectedPlayer);
-        console.log($scope.playerArray);
-        console.log($scope.selectedPlayer);
-        return $scope.selectedPlayer;
-        //$scope.chooseOpponent = false;
-    };
-
-
-    //GET PROFILE USER from login and enter them to playerArray[0]/////
-
-
-
-
-
-
-
-
-    //$scope.playerArray.push($scope.player.username);
-    //console.log($scope.playerArray);
-
-
-    //////GET PLAYERS From playerArray.js so long as they are supplied as two players in array///////
-
-
-    //$scope.playerService = PlayerService;
-
-    //if($scope.playerService.playerData() === undefined) {
-    //    console.log("getting player list from user service");
-    //    $scope.playerService.playerList()
-    //        .then(function() {
-    //            $scope.playerArray = $scope.playerService.playerData();
-    //        });
-    //} else {
-    //    $scope.playerArray = $scope.playerService.playerData();
-    //};
-    //console.log($scope.playerArray);
-
+    $scope.setPlayers();
 
     var i = 0;
     ///displays only 4 round scores per player////
@@ -79,6 +94,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
     /////START GAMEPLAY////
 
     $scope.gameplay = function() {
+
+        /////HIDE CHOOSE OPPONENT DROPDOWN////
+        $scope.chooseOpponent = false;
 
         /////SET CURRENT PLAYER////
         setCurrentPlayer();
