@@ -15,7 +15,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             $http.get('/getloggedinplayer').then(function (response) {
                 $scope.loggedInPlayer = response.data;
                 $scope.playerArray = $scope.loggedInPlayer;
-
+                $scope.playerArray[0].roundArray = [];
+                $scope.playerArray[0].dartArray = [];
                 console.log("Logged in player line 19:", $scope.loggedInPlayer);
                 console.log("PlayerArray line 20:", $scope.playerArray);
 
@@ -50,6 +51,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
         $scope.isSelectedPlayer = function () {
             $scope.playerArray.push($scope.selectedPlayer);
+            $scope.playerArray[1].roundArray = [];
+            $scope.playerArray[1].dartArray = [];
             console.log("Player Array from line 45-50 (isSelectedPlayer):", $scope.playerArray);
             console.log($scope.selectedPlayer);
             return $scope.selectedPlayer;
@@ -295,10 +298,66 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 }
             }
 
+            //ONCE GAME IS COMPLETE, HIDE SCORE, SHOW STATS/////
             function openStats(){
                 $scope.myvalue = true;
                 $scope.showScoreboard = false;
             }
+
+            $scope.uploadPlayer1Stats = function() {
+                $http({
+                    url: '/updateplayer1stats',
+                    method: "POST",
+                    data: JSON.stringify({username:$scope.playerArray[0].username,
+                                            _100:$scope.playerArray[0]._100,
+                                            _140:$scope.playerArray[0]._140,
+                                            _180:$scope.playerArray[0]._180,
+                                            hattricks:$scope.playerArray[0].hattricks,
+                                            deadeyes:$scope.playerArray[0].deadeyes,
+                                            totalgames:$scope.playerArray[0].totalgames,
+                                            wins:$scope.playerArray[0].wins,
+                                            average:$scope.playerArray[0].roundAverage,
+                                            ppd:$scope.playerArray[0].ppd
+                                            }),
+
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function (data, status, headers, config) {
+                    $scope.users = data.users; // assign  $scope.persons here as promise is resolved here
+                }).error(function (data, status, headers, config) {
+                    $scope.status = status + ' ' + headers;
+                });
+            };
+
+            $scope.uploadPlayer2Stats = function() {
+                $http({
+                    url: '/updateplayer2stats',
+                    method: "POST",
+                    data: JSON.stringify({username:$scope.playerArray[1].username,
+                        _100:$scope.playerArray[1]._100,
+                        _140:$scope.playerArray[1]._140,
+                        _180:$scope.playerArray[1]._180,
+                        hattricks:$scope.playerArray[1].hattricks,
+                        deadeyes:$scope.playerArray[1].deadeyes,
+                        totalgames:$scope.playerArray[1].totalgames,
+                        wins:$scope.playerArray[1].wins,
+                        average:$scope.playerArray[1].roundAverage,
+                        ppd:$scope.playerArray[1].ppd
+                    }),
+
+                    headers: {'Content-Type': 'application/json'}
+                }).success(function (data, status, headers, config) {
+                    $scope.users = data.users; // assign  $scope.persons here as promise is resolved here
+                }).error(function (data, status, headers, config) {
+                    $scope.status = status + ' ' + headers;
+                });
+            };
+
+            $scope.startNewGame = function(){
+                $scope.myvalue = false;
+                $scope.showScoreboard = true;
+                $scope.setPlayers();
+            }
+
         };
     }
 }]);

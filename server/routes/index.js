@@ -49,10 +49,6 @@ router.post('/login',
     }
 );
 
-//router.get("INSERT INTO stats (username, firstname, lastname, location) VALUES req.user.username, req.user.firstName, req.user.lastName, req.user.location");
-//              username, firstname, lastname, location ($1, $2, $3, $4)
-//              FROM  [req.user.username, req.user.firstName, req.user.lastName, req.user.location]
-//              UPDATE stats
 
 router.get('/stats', function(req, res){
     var results=[];
@@ -74,8 +70,6 @@ router.get('/stats', function(req, res){
 
     })
 });
-
-/////if user name doesn't return a match at user to stats table with stats at 0
 
 
 router.get('/getprofile', function(req, res){
@@ -126,7 +120,10 @@ router.get('/getallplayers', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){
-        var query = client.query("SELECT username, firstname FROM users");
+        var query = client.query("SELECT * FROM defaultstats CROSS JOIN stats");
+
+        //CURRENT WORKING VERSION
+        //var query = client.query("SELECT username, firstname FROM users");
 
         //var query = client.query("SELECT username FROM users WHERE username = ($1)", [req.user.username]);
 
@@ -151,7 +148,9 @@ router.get('/getloggedinplayer', function(req, res){
     var results=[];
 
     pg.connect(connectionString, function(err, client, next){
-        var query = client.query("SELECT username, firstname FROM stats WHERE username = ($1)", [req.user.username]);
+        var query = client.query("SELECT * FROM defaultstats CROSS JOIN stats WHERE stats.username = ($1)", [req.user.username]);
+
+        //var query = client.query("SELECT username, firstname FROM stats WHERE username = ($1)", [req.user.username]);
 
         //var query = client.query("SELECT username FROM users WHERE username = ($1)", [req.user.username]);
 
@@ -170,6 +169,131 @@ router.get('/getloggedinplayer', function(req, res){
 
     })
 });
+
+
+//ROUTER.post /player1stats
+//router.post("/updateplayer1stats", function(req,res){
+//    var results=[];
+//
+//    pg.connect(connectionString, function(err, client, data, next){
+//        var query = client.query("UPDATE stats SET _100 = ($1)," +
+//                                "_140 = ($2)," +
+//                                "_180 = ($3)," +
+//                                "hattricks = ($4)," +
+//                                "deadeyes = ($5)," +
+//                                "totalgames = ($6)," +
+//                                "wins = ($7)," +
+//                                "average = ($8)," +
+//                                "ppd = ($9) WHERE stats.username = ($10)", [_100, _140, _180, hattricks, deadeyes, totalgames, wins, average, ppd, username]);
+//        //var query = client.query("SELECT * FROM users");
+//
+//        query.on('row', function(row){
+//            results.push(row);
+//        });
+//
+//        query.on('end', function(){
+//            client.end();
+//            return res.json(results);
+//        });
+//
+//        if(err) console.log(err);
+//
+//    })
+//});
+
+
+
+router.post("/updateplayer1stats", function(req,res){
+    var results=[];
+
+    console.log(req);
+
+    var player1Stats = {
+        "_100" : req.body._100,
+        "_140" : req.body._140,
+        "_180" : req.body._180,
+        "hattricks" : req.body.hattricks,
+        "deadeyes" : req.body.deadeyes,
+        "totalgames" : req.body.totalgames,
+        "wins" : req.body.wins,
+        "ppd" : req.body.ppd,
+        "average" : req.body.average,
+        "username" : req.body.username
+    };
+
+    pg.connect(connectionString, function(err, client, next){
+        var query = client.query("UPDATE stats SET _100 = ($1)," +
+            "_140 = ($2)," +
+            "_180 = ($3)," +
+            "hattricks = ($4)," +
+            "deadeyes = ($5)," +
+            "totalgames = ($6)," +
+            "wins = ($7)," +
+            "average = ($8)," +
+            "ppd = ($9) WHERE stats.username = ($10)", [player1Stats._100, player1Stats._140, player1Stats._180, player1Stats.hattricks, player1Stats.deadeyes, player1Stats.totalgames, player1Stats.wins, player1Stats.average, player1Stats.ppd, player1Stats.username]);
+        //var query = client.query("SELECT * FROM users");
+
+        query.on('row', function(row){
+            results.push(row);
+        });
+
+        query.on('end', function(){
+            client.end();
+            return res.json(results);
+        });
+
+        if(err) console.log(err);
+
+    })
+});
+
+
+
+router.post("/updateplayer2stats", function(req,res){
+    var results=[];
+
+    console.log(req);
+
+    var player2Stats = {
+        "_100" : req.body._100,
+        "_140" : req.body._140,
+        "_180" : req.body._180,
+        "hattricks" : req.body.hattricks,
+        "deadeyes" : req.body.deadeyes,
+        "totalgames" : req.body.totalgames,
+        "wins" : req.body.wins,
+        "ppd" : req.body.ppd,
+        "average" : req.body.average,
+        "username" : req.body.username
+    };
+
+    pg.connect(connectionString, function(err, client, next){
+        var query = client.query("UPDATE stats SET _100 = ($1)," +
+            "_140 = ($2)," +
+            "_180 = ($3)," +
+            "hattricks = ($4)," +
+            "deadeyes = ($5)," +
+            "totalgames = ($6)," +
+            "wins = ($7)," +
+            "average = ($8)," +
+            "ppd = ($9) WHERE stats.username = ($10)", [player2Stats._100, player2Stats._140, player2Stats._180, player2Stats.hattricks, player2Stats.deadeyes, player2Stats.totalgames, player2Stats.wins, player2Stats.average, player2Stats.ppd, player2Stats.username]);
+        //var query = client.query("SELECT * FROM users");
+
+        query.on('row', function(row){
+            results.push(row);
+        });
+
+        query.on('end', function(){
+            client.end();
+            return res.json(results);
+        });
+
+        if(err) console.log(err);
+
+    })
+});
+
+//ROUTER.post /player2stats
 
 
 

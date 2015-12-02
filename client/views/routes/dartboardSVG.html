@@ -280,9 +280,22 @@
                 <div id="roundAverage">Round Average: {{playerArray[1].roundAverage}}</div>
 
             </div>
-            <div id="statsButtons">
-            <button class="uploadStatsButton" ng-click="uploadStats()">Save stats</button>
-            <button class="cancelStatsButton" ng-click="cancelStats()">Don't save stats</button>
+            <div id="statsButtonsContainer">
+
+                <div id="player1StatsButtons">
+                    <button class="uploadPlayer1StatsButton" ng-click="uploadPlayer1Stats()">Save {{playerArray[0].firstname}}'s stats</button>
+                    <button class="cancelPlayer1StatsButton" ng-click="cancelPlayer1Stats()">Don't save {{playerArray[0].firstname}}'s stats</button>
+                </div>
+
+                <div id="player2StatsButtons">
+                    <button class="uploadPlayer2StatsButton" ng-click="uploadPlayer2Stats()">Save {{playerArray[1].firstname}}'s stats</button>
+                    <button class="cancelPlayer2StatsButton" ng-click="cancelPlayer2Stats()">Don't save {{playerArray[1].firstname}}'s stats</button>
+                </div>
+
+                <div class="newGameTrigger">
+                    <button class="newGameButton" ng-click="startNewGame()">Start New Game</button>
+                </div>
+
             </div>
 
         </div>

@@ -303,7 +303,7 @@ body {
 /*/////////////////STATS PAGE///////////////////////*/
 table, th , td {
     table-layout: fixed;
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
     border-collapse: collapse;
     padding: 5px;
     /*margin-top:10%;*/
@@ -466,6 +466,7 @@ table tr:nth-child(even) {
     margin-top: 10%;
     height: 90%;
     z-index: 1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
     font-weight: bold;
     font-size: 14pt;
@@ -497,19 +498,27 @@ table tr:nth-child(even) {
     text-align: left;
 }
 
-#statsButtons {
+#statsButtonsContainer {
     position: relative;
+    display: inline-block;
     margin-top: 5%;
 }
 
-.uploadStatsButton {
-    float: right;
+#player1StatsButtons {
+    width: 45%;
+    display: block;
+    float: left;
+    margin-left: 5px;
+    margin-top: 10%;
     font-size: 12pt;
     color: black;
 }
-.cancelStatsButton {
-    float: left;
+#player2StatsButtons {
+    width: 45%;
+    display: block;
+    float: right;
     margin-right: 5px;
+    margin-top: 10%;
     font-size: 12pt;
     color: black;
 }
