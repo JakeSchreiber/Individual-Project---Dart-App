@@ -16,8 +16,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 function (response) {
                     $scope.loggedInPlayer = response.data;
                     $scope.playerArray = $scope.loggedInPlayer;
-                    $scope.playerArray[0].roundArray = [];
-                    $scope.playerArray[0].dartArray = [];
                     console.log("Logged in player line 19:", $scope.loggedInPlayer);
                     console.log("PlayerArray line 20:", $scope.playerArray);
             });
@@ -26,6 +24,10 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         };
 
         $scope.getLoggedInPlayer();
+
+
+        $scope.playerArray[0].roundArray = [];
+        $scope.playerArray[0].dartArray = [];
 
         //WORKING VERSION LOCALLY NOT TO HEROKU
         //$scope.getLoggedInPlayer = function () {
