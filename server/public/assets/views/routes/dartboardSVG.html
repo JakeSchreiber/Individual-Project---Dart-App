@@ -1,20 +1,10 @@
 <div id="playDartsContainer">
 
-
-
-
 <div id="boardContainer">
     <?xml version="1.0" encoding="utf-8"?>
     <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="-37.5 0 700 700" style="enable-background:new 0 0 615 615;" xml:space="preserve">
-
-
-        <!--<defs>-->
-        <!--<pattern id="imageBG" x="-32" y="-32" patternUnits="userSpaceOnUse" height="64" width="64">-->
-            <!--<image x="0" y="0" height="64" width="64" xlink:href="http://thumbs.dreamstime.com/x/dartboard-texture-13051032.jpg"/>-->
-        <!--</pattern>-->
-    <!--</defs>-->
 
 
     <svg style="border: thin solid white;">
@@ -38,24 +28,12 @@
              </filter>
 
         </defs>
-     <!--<defs>-->
-        <!--<pattern id="image" x="-32" y="-32" patternUnits="userSpaceOnUse" height="64" width="64">-->
-            <!--<image x="0" y="0" height="64" width="64" xlink:href="http://thumbs.dreamstime.com/x/dartboard-texture-13051032.jpg"/>-->
-        <!--</pattern>-->
-    <!--</defs>-->
-
-        <!--<defs>-->
-        <!--<pattern id="image" x="-32" y="-32" patternUnits="userSpaceOnUse" height="64" width="64">-->
-            <!--<image x="0" y="0" height="64" width="64" xlink:href="http://thumbs.dreamstime.com/x/dartboard-texture-13051032.jpg"/>-->
-        <!--</pattern>-->
-    <!--</defs>-->
 
 
 <circle filter="url(#bigBoard-shadow)" cx="306.7" cy="306.7" r="306.7"/>
 <!--<circle class="st0" cx="304.8" cy="306.7" r="240.1"/>-->
 
         <!--<path class="single5" id="btn" fill=white filter="url(#inset-shadow)" ng-click="changeValue(5)" d="M305.5,306.8L198.8,97.4c23.1-11.8,44.3-18.7,70-22.7L305.5,306.8z"/>-->
-
         <!--<path class="single5" id="btn" data-value="5" fill="url(#image)" d="M305.5,306.8L198.8,97.4c23.1-11.8,44.3-18.7,70-22.7L305.5,306.8z"/>-->
 
         <path class="single5 color1" id="btn" ng-click="changeValue(5)" d="M305.5,306.8L198.8,97.4c23.1-11.8,44.3-18.7,70-22.7L305.5,306.8z"/>
@@ -300,25 +278,6 @@
 
         </div>
 
-        <!-- Change code to take username in user as drop down need to call all users though-->
-
-        <!--<div ng-repeat='player in allPlayers'>-->
-            <!--<div class="width-200" ng-init="selectedPlayer = {username:player.username, name:player.firstname}">-->
-                <!--{{selectedPlayer}}-->
-                <!--<select ng-selected="{{player.username == selectedPlayer.username}}" ng-model="selectedPlayer" ng-options="player.username for player in allPlayers">-->
-                    <!--<option value="">Choose Opponent</option>-->
-                <!--</select>-->
-
-                <!--<select ng-model="selectedPlayer">-->
-                <!--<option ng-repeat="player in allPlayers" title="{{player.username}}" ng-selected="{{player.firstname == selectedPlayer.firstname}}" value="{{player}}">{{player.firstname}}</option>-->
-                <!--</select>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!-- Change code to take username in user as drop down need to call all users though-->
-
-        <!--<ng-repeat="user in users" ng-click="toggleSelectedUser()" ng-switch on="isSelectedUser()" ng-init="user=user">-->
-
 
         <!--<div ng-repeat='player in allPlayers'>-->
         <div ng-show="chooseOpponent">
@@ -333,97 +292,7 @@
 
 </div>
 
-
-     <!--ng-click="toggleSelectedPlayer()" <div id="mainScoreboardContainer">-->
-<!--<div id="scoreboard">-->
-    <!--<div id="mainScoreboard">-->
-        <!--<div id="scoreHeader">Score</div>-->
-
-        <!--<div id="leftColumn">-->
-
-            <!--<div id="roundScore" class="yellow">-->
-                <!--{{playerArray[0].firstname}} &lt;!&ndash;Round Score&ndash;&gt;-->
-                <!--&lt;!&ndash;<div ng-repeat="round in roundArray track by $index">{{currentPlayer.roundScore}}</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;{{roundScore}}&ndash;&gt;-->
-            <!--</div>-->
-
-        <!--</div>-->
-
-
-        <!--<div id="centerColumn">-->
-
-            <!--<div id="score1">{{currentPlayer.score}}</div>-->
-
-        <!--</div>-->
-
-        <!--<div id="rightColumn">-->
-
-            <!--<div id="roundScore2" class="white">-->
-                <!--{{playerArray[1].firstname}}  &lt;!&ndash;Round Score&ndash;&gt;-->
-                <!--&lt;!&ndash;<div ng-repeat="round in roundArray track by $index">{{playerArray[1].roundScore}}</div>&ndash;&gt;-->
-
-            <!--</div>-->
-
-        <!--</div>-->
-
-        <!--&lt;!&ndash;<p>{{roundScore}}</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>{{score}}</p>&ndash;&gt;-->
-
-    <!--<div id="detailScoreboard">-->
-        <!--<div id="dart1">Dart 1: {{dart1}}</div>-->
-        <!--<div id="dart2">Dart 2: {{dart2}}</div>-->
-        <!--<div id="dart3">Dart 3: {{dart3}}</div>-->
-        <!--<div id="dartsRemaining">Darts Remaining: {{currentPlayer.dartsRemaining}}</div>-->
-        <!--<div id="dartsThrown">Total Darts Thrown: {{currentPlayer.dartsThrown}}</div>-->
-        <!--<button class="miss" ng-click="changeValue(0)">Miss</button>-->
-        <!--<button type="button" ng-click="gameplay()">Start</button>-->
-    <!--</div>-->
-    <!--</div>-->
-
-<!--</div>-->
-
-<!--</div>-->
-
-
-
-
-
-<!--<div id="scoreboardTest">-->
-    <!--<div id="ton">Ton: {{currentPlayer._100}}</div>-->
-    <!--<div id="ton40">Ton40: {{currentPlayer._140}}</div>-->
-    <!--<div id="ton80">Ton80: {{currentPlayer._180}}</div>-->
-    <!--<div id="hatTrick">Hat Trick: {{currentPlayer.hattricks}}</div>-->
-    <!--<div id="deadEye">Dead Eye: {{currentPlayer.deadeyes}}</div>-->
-    <!--<div id="dartAverage">PPD: {{currentPlayer.dartAverage}}</div>-->
-    <!--<div id="roundAverage">Round Average: {{currentPlayer.roundAverage}}</div>-->
-
-    <!--<div id="roundAverage">Round Average: {{currentPlayer.firstname}}</div>-->
-    <!--<div id="roundAverage">Round Average: {{currentPlayer.lastname}}</div>-->
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-<!--<defs>-->
-<!--<pattern id="imgpattern" x="0" y="0" width="1" height="1">-->
-<!--<image width="120" height="250"-->
-<!--xlink:href="DB textureWhite.png"/>-->
-<!--</pattern>-->
-<!--</defs>-->
-<!--<div ng-include="'assets/views/templates/scoreboard.html'"></div>-->
-
-
-
 
 
 </body>

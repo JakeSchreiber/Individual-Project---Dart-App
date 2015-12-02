@@ -170,39 +170,6 @@ router.get('/getloggedinplayer', function(req, res){
     })
 });
 
-
-//ROUTER.post /player1stats
-//router.post("/updateplayer1stats", function(req,res){
-//    var results=[];
-//
-//    pg.connect(connectionString, function(err, client, data, next){
-//        var query = client.query("UPDATE stats SET _100 = ($1)," +
-//                                "_140 = ($2)," +
-//                                "_180 = ($3)," +
-//                                "hattricks = ($4)," +
-//                                "deadeyes = ($5)," +
-//                                "totalgames = ($6)," +
-//                                "wins = ($7)," +
-//                                "average = ($8)," +
-//                                "ppd = ($9) WHERE stats.username = ($10)", [_100, _140, _180, hattricks, deadeyes, totalgames, wins, average, ppd, username]);
-//        //var query = client.query("SELECT * FROM users");
-//
-//        query.on('row', function(row){
-//            results.push(row);
-//        });
-//
-//        query.on('end', function(){
-//            client.end();
-//            return res.json(results);
-//        });
-//
-//        if(err) console.log(err);
-//
-//    })
-//});
-
-
-
 router.post("/updateplayer1stats", function(req,res){
     var results=[];
 
@@ -292,10 +259,6 @@ router.post("/updateplayer2stats", function(req,res){
 
     })
 });
-
-//ROUTER.post /player2stats
-
-
 
 router.get("/players", function(req, res){
     res.send(playerArray);

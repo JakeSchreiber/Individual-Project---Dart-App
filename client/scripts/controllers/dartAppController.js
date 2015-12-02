@@ -9,7 +9,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         $scope.playerArray = [];
         $scope.chooseOpponent = true;
 
-
         $scope.getLoggedInPlayer = function () {
             $http.get('/getloggedinplayer').then(function (response) {
                 $scope.loggedInPlayer = response.data;
@@ -18,16 +17,12 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 $scope.playerArray[0].dartArray = [];
                 console.log("Logged in player line 19:", $scope.loggedInPlayer);
                 console.log("PlayerArray line 20:", $scope.playerArray);
-
             });
         };
 
         $scope.getLoggedInPlayer();
 
-
-        //$scope.playerArray.push($scope.loggedInPlayer);
         console.log("Player Array from line 26 (after getLoggedInPlayer):", $scope.playerArray);
-
 
         //GETS ALL USERS TO FILL USER DROPDOWN TO CHOOSE OPPONENT//////
         $scope.getAllUsers = function () {
@@ -38,14 +33,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         };
 
         $scope.getAllUsers();
-
-
-        //$scope.selectedPlayer = false;
-
-        //$scope.toggleSelectedPlayer = function() {
-        //    $scope.selectedPlayer = !$scope.selectedPlayer;
-        //};
-
 
         /////SELECTS OPPONENT ADDS THEM TO PLAYER ARRAY////////
 
@@ -58,34 +45,14 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             return $scope.selectedPlayer;
             //$scope.chooseOpponent = false;
         };
-
-
-        //$scope.playerArray.push($scope.player.username);
-        //console.log($scope.playerArray);
-
-
-        //////GET PLAYERS From playerArray.js so long as they are supplied as two players in array///////
-
-
-        //$scope.playerService = PlayerService;
-
-        //if($scope.playerService.playerData() === undefined) {
-        //    console.log("getting player list from user service");
-        //    $scope.playerService.playerList()
-        //        .then(function() {
-        //            $scope.playerArray = $scope.playerService.playerData();
-        //        });
-        //} else {
-        //    $scope.playerArray = $scope.playerService.playerData();
-        //};
-        //console.log($scope.playerArray);
-
     };
 
+    //CALL SET PLAYERS FUNCTION LISTED ABOVE//
 
     $scope.setPlayers();
 
     var i = 0;
+
     ///displays only 4 round scores per player////
     $scope.filterLimit = 4;
 
@@ -304,6 +271,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 $scope.showScoreboard = false;
             }
 
+
+            //ONCE GAME IS COMPLETE, ALLOW OPTION TO SAVE STATS, UPLOAD STATS TO SERVER/////
+            //FOR PLAYER 1//
             $scope.uploadPlayer1Stats = function() {
                 $http({
                     url: '/updateplayer1stats',
@@ -327,6 +297,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                     $scope.status = status + ' ' + headers;
                 });
             };
+
+
+            //FOR PLAYER 2//
 
             $scope.uploadPlayer2Stats = function() {
                 $http({
@@ -352,6 +325,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 });
             };
 
+            //START GAME RESETS VALUES AND CONTINUES//
             $scope.startNewGame = function(){
                 $scope.myvalue = false;
                 $scope.showScoreboard = true;

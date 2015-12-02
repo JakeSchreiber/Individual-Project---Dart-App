@@ -59,12 +59,3 @@ myApp.service('PlayerService', ['$http', function($http) {
     return publicApi;
 
 }]);
-//
-//$scope.getPlayers = function(){
-//    $http.get('/players').then(function(response){
-//        $scope.playerArray = response.data;
-//        console.log($scope.playerArray[0]);
-//    });
-//
-//};
-
