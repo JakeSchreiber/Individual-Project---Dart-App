@@ -25,8 +25,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 $scope.playerArray = $scope.loggedInPlayer;
                 $scope.playerArray[0].roundArray = [];
                 $scope.playerArray[0].dartArray = [];
-                console.log("Logged in player line 19:", $scope.loggedInPlayer);
-                console.log("PlayerArray line 20:", $scope.playerArray);
+                console.log("Logged in player line 28:", $scope.loggedInPlayer);
+                console.log("PlayerArray line 29:", $scope.playerArray);
             });
         };
 
@@ -50,7 +50,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             $scope.playerArray.push($scope.selectedPlayer);
             $scope.playerArray[1].roundArray = [];
             $scope.playerArray[1].dartArray = [];
-            console.log("Player Array from line 45-50 (isSelectedPlayer):", $scope.playerArray);
+            console.log("Player Array from line 53 (isSelectedPlayer):", $scope.playerArray);
             console.log($scope.selectedPlayer);
             return $scope.selectedPlayer;
             //$scope.chooseOpponent = false;
