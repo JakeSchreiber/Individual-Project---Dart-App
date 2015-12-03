@@ -2,6 +2,16 @@
 myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerService', function($scope, $http, $interval, PlayerService){
     console.log("Dart Controller");
 
+
+    //START GAME//
+
+    $scope.startNewGame = function(){
+        $scope.myvalue = false;
+        $scope.showScoreboard = true;
+        $scope.setPlayers();
+    };
+
+
     /////SET PLAYERS FOR GAMEPLAY BY GETTING LOGGED IN USER AND CHOOSING OPPONENT FROM LIST/////
 
     $scope.setPlayers = function() {
@@ -325,14 +335,11 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 });
             };
 
-            //START GAME RESETS VALUES AND CONTINUES//
-            $scope.startNewGame = function(){
-                $scope.myvalue = false;
-                $scope.showScoreboard = true;
-                $scope.setPlayers();
-            }
+
 
         };
-    }
+    };
+
+
 }]);
 
