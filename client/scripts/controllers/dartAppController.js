@@ -49,6 +49,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
         $scope.isSelectedPlayer = function () {
             $scope.playerArray.push($scope.selectedPlayer);
+            $scope.playerArray[1].roundArray = [];
+            $scope.playerArray[1].dartArray = [];
             console.log("Player Array from line 53(69) (isSelectedPlayer):", $scope.playerArray);
             console.log($scope.selectedPlayer);
             return $scope.selectedPlayer;
@@ -71,10 +73,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
     $scope.myvalue = false;
     $scope.showScoreboard = true;
 
-    $scope.playerArray[0].roundArray = [];
-    $scope.playerArray[0].dartArray = [];
-    $scope.playerArray[1].roundArray = [];
-    $scope.playerArray[1].dartArray = [];
+
+
 
 
     /////START GAMEPLAY////
