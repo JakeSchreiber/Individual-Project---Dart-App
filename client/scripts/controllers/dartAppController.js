@@ -212,6 +212,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
                 //var e = angular.element(document.querySelector("[double]"));
                 if ($scope.currentPlayer.score == 0) {
+                    $scope.currentPlayer.wins++;
+                    $scope.playerArray[0].totalgames++;
+                    $scope.playerArray[1].totalgames++;
                     alert("Game complete");
                     checkTon();
                     //$scope.roundArray.push($scope.roundScore);

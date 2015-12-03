@@ -1,43 +1,95 @@
-<div id="largeDartBoard">
+<div id="profileLargeDartBoard">
 
-<table class="profileTable table table-bordered">
+        <div id="profileStats" ng-repeat="player in profileInfo | orderBy: 'average':true" ng-class="rowClass(player)">
+            <img src="http://www.jakeschreiber.com/images/profile2.png">
+            <div id="profileTextContainer">
+                <h1>Player Name: </br>{{player.firstname}} {{player.lastname}}</h1>
+                <h2>Username: {{player.username}}</h2>
+                <p>Hometown: {{player.location}}</p>
+                <p>Member Since: {{player.date | date}}</p>
+                <h1>Stats</h1>
+
+
+                <h2>Total Games: {{player.totalgames}}</h2>
+                <p>Wins: {{player.wins}}</p>
+                <p>Average: {{player.average}}</p>
+                <p>Points Per Dart: {{player.ppd}}</p>
+
+            </div>
+    <table class="profileTable table table-bordered">
+
 
     <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Hat Tricks</th>
-        <th>100+</th>
-        <th>140+</th>
-        <th>180</th>
-        <th>Average</th>
-        <th>Dead Eyes</th>
-        <th>High In</th>
-        <th>High Out</th>
-        <th>PPD</th>
-        <th>Wins</th>
-        <th>Total Games</th>
+            <th>100+</th>
+            <th>140+</th>
+            <th>180</th>
+            <th>Hat Tricks</th>
+            <th>Dead Eyes</th>
+            <th>High In</th>
+            <th>High Out</th>
 
-    </tr>
+        </tr>
 
-    <tr id="profilestats" ng-repeat="player in profileInfo | orderBy: 'average':true" ng-class="rowClass(player)">
-        <td>{{player.firstname}}</td>
-        <td>{{player.lastname}}</td>
-        <td>{{player.hattricks}}</td>
-        <td>{{player._100}}</td>
-        <td>{{player._140}}</td>
-        <td>{{player._180}}</td>
-        <td>{{player.average}}</td>
-        <td>{{player.deadeyes}}</td>
-        <td>{{player.highin}}</td>
-        <td>{{player.highout}}</td>
-        <td>{{player.ppd}}</td>
-        <td>{{player.wins}}</td>
-        <td>{{player.totalgames}}</td>
+        <tr id="profilestats" ">
+            <td>{{player._100}}</td>
+            <td>{{player._140}}</td>
+            <td>{{player._180}}</td>
+            <td>{{player.hattricks}}</td>
+            <td>{{player.deadeyes}}</td>
+            <td>{{player.highin}}</td>
+            <td>{{player.highout}}</td>
 
 
-        <!--<student-profile info="student"></student-profile>-->
-    </tr>
 
-</table>
+            <!--<student-profile info="student"></student-profile>-->
+        </tr>
 
-    </div>
+</div>
+
+</div>
+
+
+
+<!--<div id="largeDartBoard">-->
+
+<!--<table class="profileTable table table-bordered">-->
+
+    <!--<tr>-->
+        <!--<th>First Name</th>-->
+        <!--<th>Last Name</th>-->
+        <!--<th>Hat Tricks</th>-->
+        <!--<th>100+</th>-->
+        <!--<th>140+</th>-->
+        <!--<th>180</th>-->
+        <!--<th>Average</th>-->
+        <!--<th>Dead Eyes</th>-->
+        <!--<th>High In</th>-->
+        <!--<th>High Out</th>-->
+        <!--<th>PPD</th>-->
+        <!--<th>Wins</th>-->
+        <!--<th>Total Games</th>-->
+
+    <!--</tr>-->
+
+    <!--<tr id="profilestats" ng-repeat="player in profileInfo | orderBy: 'average':true" ng-class="rowClass(player)">-->
+        <!--<td>{{player.firstname}}</td>-->
+        <!--<td>{{player.lastname}}</td>-->
+        <!--<td>{{player.hattricks}}</td>-->
+        <!--<td>{{player._100}}</td>-->
+        <!--<td>{{player._140}}</td>-->
+        <!--<td>{{player._180}}</td>-->
+        <!--<td>{{player.average}}</td>-->
+        <!--<td>{{player.deadeyes}}</td>-->
+        <!--<td>{{player.highin}}</td>-->
+        <!--<td>{{player.highout}}</td>-->
+        <!--<td>{{player.ppd}}</td>-->
+        <!--<td>{{player.wins}}</td>-->
+        <!--<td>{{player.totalgames}}</td>-->
+
+
+        <!--&lt;!&ndash;<student-profile info="student"></student-profile>&ndash;&gt;-->
+    <!--</tr>-->
+
+<!--</table>-->
+
+    <!--</div>-->

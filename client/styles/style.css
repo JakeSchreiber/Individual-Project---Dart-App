@@ -192,28 +192,32 @@ body {
 
 
 #startButton {
-    background-color: #db0400;
+    background-color: rgba(255, 255, 255, 0.11);
     color: white;
     display: inline;
     width: 48%;
     height: 20px;
     margin-left: 2%;
     float: right;
-    border: 0;
+    border: 1px solid #5d5d5d;
+
+    /*border: 0;*/
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     font-weight: bold;
     margin-top: 2%;
 }
 
 #missButton {
-    background-color: #db0400;
+    background-color: rgba(255, 255, 255, 0.11);
     color: white;
     display: inline;
     width: 48%;
     height: 20px;
     margin-left: 2%;
     float: left;
-    border: 0;
+    border: 1px solid #5d5d5d;
+
+    /*border: 0;*/
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     font-weight: bold;
     margin-top: 2%;
@@ -234,7 +238,7 @@ body {
     background-color: black;
     color: #5d5d5d;
     width: 98%;
-    padding-left: 30%;
+    padding-left: 26%;
     font-size: 10pt;
     text-align: center;
     margin-top: 2%;
@@ -338,6 +342,77 @@ body {
 /*.st1{fill: #004dff;}*/
 /*.st2{fill: #000dba;stroke:#FFFFFF;stroke-miterlimit:10;}*/
 
+/*/////////////////PROFILE PAGE/////////////////////*/
+
+#profileLargeDartBoard {
+    background-image: url('http://www.jakeschreiber.com/images/scoreboardLG.png');
+    /*width: 90%;*/
+    background-repeat: no-repeat;
+    /*background-size:contain;*/
+    background-position: top;
+    background-size: 100% 100%;
+    background-size: 100% auto;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 9.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 800px;
+}
+
+#profileStats img {
+    float: left;
+    width: 40%;
+    margin-left: 2.5%;
+    margin-bottom: 2%;
+    opacity: .5;
+    margin-right: 5%;
+
+}
+
+#profileTextContainer {
+    /*position: absolute;*/
+    bottom: 0;
+}
+
+#profileStats h1{
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24pt;
+    color: rgba(204, 204, 0, 0.7);
+    margin: 0;
+    /*float: right;*/
+}
+
+#profileStats h2{
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20pt;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 1%;
+    /*float: right;*/
+
+}
+
+#profileStats p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+    color: rgba(255, 255, 255, 0.65);
+    /*float: right;*/
+    margin: 1%;
+}
+
+
+.profileTable td{
+    text-align: center;
+}
+
+.profileTable table {
+    width: 100%;
+}
 
 
 /*/////////////////STATS PAGE///////////////////////*/
@@ -350,8 +425,10 @@ table, th , td {
     margin-left: 2.5%;
     width: 95%;
     color: white;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif ;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12pt;
 }
+
 
 table th{
     width: 60%;
@@ -365,11 +442,11 @@ table tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-.table-firstname{
+.table-firstname {
     width: 100%;
 }
 
-.table-lastname{
+.table-lastname {
     width: 100%;
 }
 
@@ -673,10 +750,27 @@ table tr:nth-child(even) {
         font-size: 10pt;
     }
 
+
+    #profileStats h1{
+        font-size: 18pt;
+    }
+
+    #profileStats h2{
+        font-size: 14pt;
+    }
+
+    #profileStats p {
+        font-size: 10pt;
+    }
+
+    table, th , td {
+        font-size: 8pt;
+    }
+
 }
 
 
-/*///////////////////////900PX WIDE SCREEN SIZE/////////////////////////*/
+/*///////////////////////800PX WIDE SCREEN SIZE/////////////////////////*/
 
 @media screen and (max-width: 800px) {
     #navPill{
@@ -714,12 +808,50 @@ table tr:nth-child(even) {
         font-size: 6pt;
         padding-top: 1%;
     }
+
+    #profileStats h1{
+        font-size: 14pt;
+    }
+
+    #profileStats h2{
+        font-size: 10pt;
+    }
+
+    #profileStats p {
+        font-size: 7pt;
+    }
+
+    table, th , td {
+        font-size: 6pt;
+    }
+
+}
+
+/*///////////////////////675PX WIDE SCREEN SIZE/////////////////////////*/
+
+@media screen and (max-width: 500px) {
+    #profileStats h1{
+        font-size: 12pt;
+    }
+
+    #profileStats h2{
+        font-size: 8pt;
+    }
+
+    #profileStats p {
+        font-size: 5pt;
+    }
+
+    table, th , td {
+        font-size: 5pt;
+    }
+
 }
 
 
 /*///////////////////////CELL PHONE SCREEN SIZE/////////////////////////*/
 
-@media screen and (max-device-width: 400px) {
+@media screen and (max-device-width: 415px) {
     #boardContainer {
         width: 100%;
         display: block;

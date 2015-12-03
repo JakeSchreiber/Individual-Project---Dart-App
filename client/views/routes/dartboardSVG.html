@@ -198,6 +198,23 @@
     <!--<img src="http://www.jakeschreiber.com/images/scoreboard.png" />-->
 
         <div ng-show="showScoreboard">
+
+            <button id="missButton" ng-click="changeValue(0)">Missed Dart</button>
+            <button id="startButton" ng-click="gameplay()">Start</button>
+            <div ng-show="chooseOpponent">
+                <!--{{selectedPlayer}}-->
+                <div class="selectDropdown">
+                    <select ng-selected="{{selectedPlayer.username}}" ng-model="selectedPlayer" ng-change="isSelectedPlayer()" ng-options="player.username for player in allPlayers">
+                        <option value="">Choose Opponent</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div ng-show="switchPlayerContainer">
+                <button class="switchPlayerButton" ng-click="chooseWhoStarts()">Switch Who Starts</button>
+            </div>
+
         <div id="scoreboardHeader">Score</div>
             <div id="teamScores">
                 <div class="team1Score active">
@@ -219,8 +236,7 @@
             <div id="dart3">Dart 3: {{dart3}}</div>
             <div id="dartsRemaining">Darts Remaining: {{currentPlayer.dartsRemaining}}</div>
             <div id="dartsThrown">Total Darts Thrown: {{currentPlayer.dartsThrown}}</div>
-            <button id="missButton" ng-click="changeValue(0)">Missed Dart</button>
-            <button id="startButton" ng-click="gameplay()">Start</button>
+
 
         </div>
 
@@ -277,19 +293,7 @@
         </div>
 
         <!--<div ng-repeat='player in allPlayers'>-->
-        <div ng-show="chooseOpponent">
-            <!--{{selectedPlayer}}-->
-            <div class="selectDropdown">
-            <select ng-selected="{{selectedPlayer.username}}" ng-model="selectedPlayer" ng-change="isSelectedPlayer()" ng-options="player.username for player in allPlayers">
-                <option value="">Choose Opponent</option>
-            </select>
-            </div>
-        </div>
 
-
-        <div ng-show="switchPlayerContainer">
-            <button class="switchPlayerButton" ng-click="chooseWhoStarts()">Switch Who Starts</button>
-        </div>
 
     </div>
 
