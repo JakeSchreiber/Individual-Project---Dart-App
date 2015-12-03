@@ -392,6 +392,7 @@ table tr:nth-child(even) {
 .navBar a {
     color: #cdcdcd;
     text-decoration: none;
+    font-size: 12pt;
 }
 
 .navBar a:hover {
@@ -448,7 +449,7 @@ table tr:nth-child(even) {
     color: #009000;
     display: inline;
     width: 5%;
-    height: 20px;
+    height: 25px;
     margin-left: 2%;
     border: 0;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
@@ -633,6 +634,88 @@ table tr:nth-child(even) {
     color: white;
     margin-left: 2%;
 }
+/*///////////////////////1000PX WIDE SCREEN SIZE/////////////////////////*/
+
+@media screen and (max-width: 1000px) {
+    #loginButton {
+        margin-left: 1%;
+        font-size: 7pt;
+        height: 24px;
+        top: 0;
+        padding-top 1%;
+    }
+
+    #loginPassword{
+        width: 8%;
+        margin-left: 1%;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 8pt;
+    }
+
+    }
+
+/*///////////////////////900PX WIDE SCREEN SIZE/////////////////////////*/
+
+
+@media screen and (max-width: 900px) {
+
+    #loginPill{
+        width: 30%;
+    }
+
+    #loginButton {
+        width: 6%;
+    }
+
+    .navBar a {
+        font-size: 10pt;
+    }
+
+}
+
+
+/*///////////////////////900PX WIDE SCREEN SIZE/////////////////////////*/
+
+@media screen and (max-width: 800px) {
+    #navPill{
+        width: 8%;
+    }
+
+    #loginPill{
+        width: 20%;
+        margin-left: 10%;
+    }
+
+    .navBar a {
+    font-size: 8pt;
+}
+    #loginButton {
+        font-size: 6pt;
+    }
+}
+
+/*///////////////////////900PX WIDE SCREEN SIZE/////////////////////////*/
+
+@media screen and (max-width: 675px) {
+    #navPill{
+        margin-left: 3%;
+        margin-top: 1%;
+    }
+
+    #loginPill{
+        width: 20%;
+        margin-left: 13%;
+    }
+
+    #loginButton {
+        width: 10%;
+        font-size: 6pt;
+        padding-top: 1%;
+    }
+}
+
 
 /*///////////////////////CELL PHONE SCREEN SIZE/////////////////////////*/
 
@@ -763,7 +846,7 @@ table tr:nth-child(even) {
         margin-top: 2%;
         height: 80px;
         border: 0;
-        width: 96%;
+        width: 95%;
 
     }
 
