@@ -759,11 +759,13 @@ table tr:nth-child(even) {
 
     .form-control {
         font-size: 40px;
-        margin-left: 2%;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        margin-left: 0;
         margin-top: 2%;
-        height: 60px;
+        height: 80px;
         border: 0;
-        width: 100%;
+        width: 98%;
 
     }
 
@@ -777,7 +779,7 @@ table tr:nth-child(even) {
 
     .navBar.mobile {
         display: inline-block;
-        height: 460px;
+        height: 445px;
     }
 
     #navPill {
@@ -800,9 +802,11 @@ table tr:nth-child(even) {
     #loginUsername {
         width: 40%;
         height: 60px;
-        font-size: 60pt;
+        font-size: 40pt;
         /*float: left;*/
         margin-left: 0;
+        padding-left: 2%;
+        padding-top: 10px;
 
     }
 
@@ -810,17 +814,19 @@ table tr:nth-child(even) {
         width: 43%;
         /*margin-left: 5%;*/
         height: 60px;
-        font-size: 60pt;
+        font-size: 40pt;
         float: right;
-        padding-left: 0;
+        padding-left: 2%;
+        padding-top: 10px;
         margin-right: 5%;
 
     }
 
     #loginButton {
         display: inline-block;
+        color: white;;
         width: 90%;
-        height: 60px;
+        height: 80px;
         margin-top: 3%;
         margin-left: 5%;
         margin-right: 5%;
@@ -829,11 +835,29 @@ table tr:nth-child(even) {
 
     .registerButton {
         width: 100%;
-        height: 60px;
+        height: 80px;
+        color: white;
         margin-top: 3%;
         font-size: 32pt;
-        /*margin-left: 5%;*/
+        margin-left: 0;
         /*margin-right: 5%;*/
+
+    }
+
+    #welcomeHeader{
+    margin-top: 0;
+    }
+
+    #welcomeHeader h1 {
+        font-size: 80pt;
+    }
+
+    #welcomeHeader p {
+        font-size: 12pt;
+    }
+
+    .createAccountHeader {
+        margin-top: 5%;
 
     }
 
