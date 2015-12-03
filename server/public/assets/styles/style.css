@@ -1105,4 +1105,20 @@ table tr:nth-child(even) {
         height: 60px;
         font-size: 32pt;
     }
+
+    #profileStats h1{
+        font-size: 35pt;
+    }
+
+    #profileStats h2{
+        font-size: 20pt;
+    }
+
+    #profileStats p {
+        font-size: 12pt;
+    }
+
+    table, th , td {
+        font-size: 10pt;
+    }
 }
