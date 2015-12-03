@@ -282,7 +282,7 @@
         <!--<div ng-repeat='player in allPlayers'>-->
         <div ng-show="chooseOpponent">
             <!--{{selectedPlayer}}-->
-            <select ng-selected="{{selectedPlayer.username}}" ng-model="selectedPlayer" ng-change="isSelectedPlayer()" ng-options="player.username for player in allPlayers">
+            <select ng-selected="{{selectedPlayer.username}}" ng-model="selectedPlayer" ng-change="isSelectedPlayer" ng-options="player.username for player in allPlayers">
                 <option value="">Choose Opponent</option>
             </select>
         </div>

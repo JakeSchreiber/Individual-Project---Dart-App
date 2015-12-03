@@ -32,13 +32,13 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
         $scope.getLoggedInPlayer();
 
-        console.log("Player Array from line 26 (after getLoggedInPlayer):", $scope.playerArray);
+        console.log("Player Array from line 35 (after getLoggedInPlayer):", $scope.playerArray);
 
         //GETS ALL USERS TO FILL USER DROPDOWN TO CHOOSE OPPONENT//////
         $scope.getAllUsers = function () {
             $http.get('/getallplayers').then(function (response) {
                 $scope.allPlayers = response.data;
-                console.log($scope.allPlayers);
+                console.log("Get all Players, Line 41", $scope.allPlayers);
             });
         };
 
@@ -55,6 +55,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             return $scope.selectedPlayer;
             //$scope.chooseOpponent = false;
         };
+
+        $scope.isSelectedPlayer();
     };
 
     //CALL SET PLAYERS FUNCTION LISTED ABOVE//
