@@ -756,19 +756,19 @@ table tr:nth-child(even) {
     }
 
     .form-control {
-        font-size: 40px;
+        font-size: 40pt;
         /*margin-left: 2%;*/
         padding-left: 2%;
         margin-left: 0;
         margin-top: 2%;
         height: 80px;
         border: 0;
-        width: 98%;
+        width: 96%;
 
     }
 
     ::-webkit-input-placeholder {
-        font-size: 40px;
+        font-size: 40pt;
     }
 
     .navBar.full {
@@ -851,7 +851,7 @@ table tr:nth-child(even) {
     }
 
     #welcomeHeader p {
-        font-size: 22pt;
+        font-size: 30pt;
     }
 
     .createAccountHeader {
