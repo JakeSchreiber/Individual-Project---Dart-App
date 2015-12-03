@@ -696,7 +696,7 @@ table tr:nth-child(even) {
     }
 }
 
-/*///////////////////////900PX WIDE SCREEN SIZE/////////////////////////*/
+/*///////////////////////675PX WIDE SCREEN SIZE/////////////////////////*/
 
 @media screen and (max-width: 675px) {
     #navPill{
@@ -846,6 +846,7 @@ table tr:nth-child(even) {
         margin-top: 2%;
         height: 80px;
         border: 0;
+        border-radius: 0;
         width: 95%;
 
     }
@@ -863,12 +864,18 @@ table tr:nth-child(even) {
         height: 445px;
     }
 
+    .navBar a {
+        font-size: 40pt;
+    }
+
     #navPill {
         width: 42%;
         display: inline-block;
         font-size: 35pt;
         line-height: 15pt;
     }
+
+
 
     #loginPill {
         font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
@@ -888,6 +895,7 @@ table tr:nth-child(even) {
         margin-left: 0;
         padding-left: 2%;
         padding-top: 10px;
+        border-radius: 0;
 
     }
 
@@ -900,7 +908,7 @@ table tr:nth-child(even) {
         padding-left: 2%;
         padding-top: 10px;
         margin-right: 5%;
-
+        border-radius: 0;
     }
 
     #loginButton {
