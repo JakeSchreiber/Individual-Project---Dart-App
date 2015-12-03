@@ -19,6 +19,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
         $scope.playerArray = [];
         $scope.chooseOpponent = true;
+        $scope.switchPlayerContainer = true;
 
         $scope.getLoggedInPlayer = function () {
             $http.get('/getloggedinplayer').then(function (response) {
@@ -48,9 +49,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         /////SELECTS OPPONENT ADDS THEM TO PLAYER ARRAY////////
 
         $scope.isSelectedPlayer = function () {
-            $scope.playerArray.push($scope.selectedPlayer);
-            $scope.playerArray[1].roundArray = [];
-            $scope.playerArray[1].dartArray = [];
+            $scope.playerArray[1] = $scope.selectedPlayer;
+            //$scope.playerArray[1].roundArray = [];
+            //$scope.playerArray[1].dartArray = [];
             console.log("Player Array from line 53(69) (isSelectedPlayer):", $scope.playerArray);
             console.log($scope.selectedPlayer);
             return $scope.selectedPlayer;
@@ -67,22 +68,35 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
     var i = 0;
 
     ///displays only 4 round scores per player////
-    $scope.filterLimit = 4;
+    $scope.filterLimit = 8;
 
     ///stats popup default as false/////
     $scope.myvalue = false;
     $scope.showScoreboard = true;
 
 
+    $scope.chooseWhoStarts = function(){
+        if(i == 0){
+            i = 1;
+        } else {
+            i = 0;
+        }
+        var myEl = angular.element(document.querySelector('.team1Score'));
+        myEl.toggleClass('active inactive');
 
+        var myEl2 = angular.element(document.querySelector('.team2Score'));
+        myEl2.toggleClass('active inactive');
+
+    };
 
 
     /////START GAMEPLAY////
 
     $scope.gameplay = function() {
 
-        /////HIDE CHOOSE OPPONENT DROPDOWN////
+        /////HIDE CHOOSE OPPONENT DROPDOWN AND WHO STARTS////
         $scope.chooseOpponent = false;
+        $scope.switchPlayerContainer = false;
 
         /////SET CURRENT PLAYER////
         setCurrentPlayer();
@@ -125,7 +139,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                     console.log($scope.currentPlayer.roundScore);
 
                         if ((confirm("Round Score: " + $scope.currentPlayer.roundScore + ". Remove Darts")) === true) {
-                            $scope.currentPlayer.roundArray.unshift($scope.currentPlayer.roundScore);
+                            $scope.currentPlayer.roundArray.push($scope.currentPlayer.roundScore);
                             //console.log($scope.roundArray);
                             checkTon();
                             resetRound();
@@ -141,6 +155,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                         }
                 };
 
+            //Highlight active player color
 
             function setActivePlayer() {
                 var myEl = angular.element(document.querySelector('.team1Score'));

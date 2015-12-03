@@ -219,6 +219,17 @@ body {
     margin-top: 2%;
 }
 
+.switchPlayerButton{
+    width:98%;
+    background-color: black;
+    border: 1px solid #5d5d5d;
+    color: #5d5d5d;
+    font-size: 10pt;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
 .selectDropdown select{
     background-color: black;
     color: #5d5d5d;
@@ -741,26 +752,6 @@ table tr:nth-child(even) {
         /*width: 33.3%;*/
     }
 
-    /*.startbutton {*/
-        /*display: inline-block;*/
-        /*width: 50%;*/
-        /*margin-top: 20px;*/
-        /*bottom: 0;*/
-        /*float: right;*/
-        /*height: 60px;*/
-        /*font-size: 32pt;*/
-
-    /*}*/
-
-    /*.missbutton {*/
-        /*display: inline-block;*/
-        /*width: 50%;*/
-        /*margin-top: 20px;*/
-        /*bottom: 0;*/
-        /*float: left;*/
-        /*height: 60px;*/
-        /*font-size: 32pt;*/
-    /*}*/
 
     .stats {
         font-size: 32pt;
@@ -860,4 +851,8 @@ table tr:nth-child(even) {
         height: 60px;
         font-size: 32pt;
     }
-}
+
+    .switchPlayerButton{
+        height: 60px;
+        font-size: 32pt;
+    }

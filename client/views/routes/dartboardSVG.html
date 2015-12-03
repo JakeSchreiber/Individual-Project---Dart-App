@@ -273,11 +273,8 @@
                 <div class="newGameTrigger">
                     <button class="newGameButton" ng-click="startNewGame()">Start New Game</button>
                 </div>
-
             </div>
-
         </div>
-
 
         <!--<div ng-repeat='player in allPlayers'>-->
         <div ng-show="chooseOpponent">
@@ -288,7 +285,11 @@
             </select>
             </div>
         </div>
-        <!--</div>-->
+
+
+        <div ng-show="switchPlayerContainer">
+            <button class="switchPlayerButton" ng-click="chooseWhoStarts()">Switch Who Starts</button>
+        </div>
 
     </div>
 
