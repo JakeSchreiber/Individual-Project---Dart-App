@@ -190,21 +190,50 @@ body {
     width: 33.3%;
 }
 
-.startbutton {
-    margin-top: 20px;
-    bottom: 0;
+
+#startButton {
+    background-color: #db0400;
+    color: white;
+    display: inline;
+    width: 48%;
+    height: 20px;
+    margin-left: 2%;
     float: right;
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    margin-top: 2%;
 }
 
-.missbutton {
-    margin-top: 20px;
-
-    bottom: 0;
+#missButton {
+    background-color: #db0400;
+    color: white;
+    display: inline;
+    width: 48%;
+    height: 20px;
+    margin-left: 2%;
     float: left;
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    margin-top: 2%;
 }
 
+.selectDropdown select{
+    background-color: black;
+    color: #5d5d5d;
+    width: 98%;
+    padding-left: 30%;
+    font-size: 10pt;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid #5d5d5d;
+    border-radius: 0;
+    height: 20px;
+    -webkit-appearance: none;
 
-
+}
 /*
 //////////////DARTBOARD COLORS//////////////////
 */
@@ -596,9 +625,9 @@ table tr:nth-child(even) {
 
 /*///////////////////////CELL PHONE SCREEN SIZE/////////////////////////*/
 
-@media screen and (max-device-width: 400px){
+@media screen and (max-device-width: 400px) {
     #boardContainer {
-        width:100%;
+        width: 100%;
         display: block;
         margin: 0;
 
@@ -642,23 +671,35 @@ table tr:nth-child(even) {
         line-height: 12pt;
     }
 
+    .team1Score p{
+        font-size: 40pt;
+        line-height: 12pt;
+    }
+
     .team2Score {
         font-size: 70pt;
         line-height: 12pt;
+    }
 
+    .team2Score p{
+        font-size: 40pt;
+        line-height: 12pt;
     }
 
 
     #dartsRemaining {
         display: inline-block;
-        font-size: 36pt;
+        font-size: 28pt;
         width: 100%;
+        text-align: center;
     }
 
     #dartsThrown {
         display: inline-block;
-        font-size: 36pt;
+        font-size: 28pt;
         width: 100%;
+        text-align: center;
+
     }
 
     #dart1 {
@@ -700,28 +741,26 @@ table tr:nth-child(even) {
         /*width: 33.3%;*/
     }
 
-    .startbutton {
-        display: inline-block;
-        width: 50%;
-        margin-top: 20px;
-        bottom: 0;
-        float: right;
-        height: 60px;
-        font-size: 32pt;
+    /*.startbutton {*/
+        /*display: inline-block;*/
+        /*width: 50%;*/
+        /*margin-top: 20px;*/
+        /*bottom: 0;*/
+        /*float: right;*/
+        /*height: 60px;*/
+        /*font-size: 32pt;*/
 
+    /*}*/
 
-    }
-
-    .missbutton {
-        display: inline-block;
-        width: 50%;
-        margin-top: 20px;
-        bottom: 0;
-        float: left;
-        height: 60px;
-        font-size: 32pt;
-    }
-
+    /*.missbutton {*/
+        /*display: inline-block;*/
+        /*width: 50%;*/
+        /*margin-top: 20px;*/
+        /*bottom: 0;*/
+        /*float: left;*/
+        /*height: 60px;*/
+        /*font-size: 32pt;*/
+    /*}*/
 
     .stats {
         font-size: 32pt;
@@ -774,7 +813,6 @@ table tr:nth-child(even) {
         /*float: left;*/
         margin-left: 0;
 
-
     }
 
     #loginPassword {
@@ -806,5 +844,20 @@ table tr:nth-child(even) {
         /*margin-left: 5%;*/
         /*margin-right: 5%;*/
 
+    }
+
+    .selectDropdown select {
+        height: 60px;
+        font-size: 32pt;
+    }
+
+    #startButton {
+        height: 60px;
+        font-size: 32pt;
+    }
+
+    #missButton {
+        height: 60px;
+        font-size: 32pt;
     }
 }

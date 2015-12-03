@@ -219,8 +219,8 @@
             <div id="dart3">Dart 3: {{dart3}}</div>
             <div id="dartsRemaining">Darts Remaining: {{currentPlayer.dartsRemaining}}</div>
             <div id="dartsThrown">Total Darts Thrown: {{currentPlayer.dartsThrown}}</div>
-            <button class="missbutton" ng-click="changeValue(0)">Miss</button>
-            <button class="startbutton" ng-click="gameplay()">Start</button>
+            <button id="missButton" ng-click="changeValue(0)">Missed Dart</button>
+            <button id="startButton" ng-click="gameplay()">Start</button>
 
         </div>
 
@@ -282,9 +282,11 @@
         <!--<div ng-repeat='player in allPlayers'>-->
         <div ng-show="chooseOpponent">
             <!--{{selectedPlayer}}-->
+            <div class="selectDropdown">
             <select ng-selected="{{selectedPlayer.username}}" ng-model="selectedPlayer" ng-change="isSelectedPlayer()" ng-options="player.username for player in allPlayers">
                 <option value="">Choose Opponent</option>
             </select>
+            </div>
         </div>
         <!--</div>-->
 
