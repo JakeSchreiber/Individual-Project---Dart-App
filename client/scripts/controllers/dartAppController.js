@@ -19,35 +19,18 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         $scope.playerArray = [];
         $scope.chooseOpponent = true;
 
-        //$scope.getLoggedInPlayer = function () {
-        //    $http.get('/getloggedinplayer').then(function (response) {
-        //        $scope.loggedInPlayer = response.data;
-        //        $scope.playerArray = $scope.loggedInPlayer;
-        //        $scope.playerArray[0].roundArray = [];
-        //        $scope.playerArray[0].dartArray = [];
-        //        console.log("Logged in player line 28:", $scope.loggedInPlayer);
-        //        console.log("PlayerArray line 29:", $scope.playerArray);
-        //    });
-        //};
-        //
-        //$scope.getLoggedInPlayer();
-
         $scope.getLoggedInPlayer = function () {
-            var promise = $http.get('/getloggedinplayer').then(function (response) {
+            $http.get('/getloggedinplayer').then(function (response) {
                 $scope.loggedInPlayer = response.data;
                 $scope.playerArray = $scope.loggedInPlayer;
                 $scope.playerArray[0].roundArray = [];
                 $scope.playerArray[0].dartArray = [];
-                console.log("Logged in player line 28(41):", $scope.loggedInPlayer);
-                console.log("PlayerArray line 29(42):", $scope.playerArray);
+                console.log("Logged in player line 28:", $scope.loggedInPlayer);
+                console.log("PlayerArray line 29:", $scope.playerArray);
             });
-            return promise;
         };
 
         $scope.getLoggedInPlayer();
-
-
-
 
         console.log("Player Array from line 35(51) (after getLoggedInPlayer):", $scope.playerArray);
 
@@ -65,8 +48,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
         $scope.isSelectedPlayer = function () {
             $scope.playerArray.push($scope.selectedPlayer);
-            $scope.playerArray[1].roundArray = [];
-            $scope.playerArray[1].dartArray = [];
             console.log("Player Array from line 53(69) (isSelectedPlayer):", $scope.playerArray);
             console.log($scope.selectedPlayer);
             return $scope.selectedPlayer;
@@ -93,6 +74,13 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
     /////START GAMEPLAY////
 
     $scope.gameplay = function() {
+
+
+        $scope.playerArray[0].roundArray = [];
+        $scope.playerArray[0].dartArray = [];
+        $scope.playerArray[1].roundArray = [];
+        $scope.playerArray[1].dartArray = [];
+
 
         /////HIDE CHOOSE OPPONENT DROPDOWN////
         $scope.chooseOpponent = false;
