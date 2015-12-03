@@ -8,6 +8,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
     $scope.startNewGame = function(){
         $scope.myvalue = false;
         $scope.showScoreboard = true;
+        $scope.selectedPlayer = false;
         $scope.setPlayers();
     };
 
