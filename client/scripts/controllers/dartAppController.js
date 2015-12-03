@@ -56,7 +56,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             //$scope.chooseOpponent = false;
         };
 
-        $scope.isSelectedPlayer();
+        //$scope.isSelectedPlayer();
     };
 
     //CALL SET PLAYERS FUNCTION LISTED ABOVE//
