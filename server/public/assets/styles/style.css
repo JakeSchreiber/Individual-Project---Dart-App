@@ -1106,8 +1106,20 @@ table tr:nth-child(even) {
         font-size: 32pt;
     }
 
+    #profileLargeDartBoard{
+        background-image: url('http://www.jakeschreiber.com/images/scoreboard.png');
+        min-height: 1200px;
+        padding: 12%;
+    }
+
+    #profileStats img {
+        width: 55%;
+        margin-left: 2%;
+        margin-bottom: 5%;
+    }
+
     #profileStats h1{
-        font-size: 35pt;
+        font-size: 30pt;
     }
 
     #profileStats h2{
