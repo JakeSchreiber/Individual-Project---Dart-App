@@ -71,17 +71,15 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
     $scope.myvalue = false;
     $scope.showScoreboard = true;
 
+    $scope.playerArray[0].roundArray = [];
+    $scope.playerArray[0].dartArray = [];
+    $scope.playerArray[1].roundArray = [];
+    $scope.playerArray[1].dartArray = [];
+
 
     /////START GAMEPLAY////
 
     $scope.gameplay = function() {
-
-
-        $scope.playerArray[0].roundArray = [];
-        $scope.playerArray[0].dartArray = [];
-        $scope.playerArray[1].roundArray = [];
-        $scope.playerArray[1].dartArray = [];
-
 
         /////HIDE CHOOSE OPPONENT DROPDOWN////
         $scope.chooseOpponent = false;
