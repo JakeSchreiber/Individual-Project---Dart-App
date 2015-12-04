@@ -187,7 +187,9 @@ router.post("/updateplayer1stats", function(req,res){
         "average" : req.body.average,
         "username" : req.body.username,
         "totaldartsthrown" : req.body.totaldartsthrown,
-        "totalpointsscored" : req.body.totalpointsscored
+        "totalpointsscored" : req.body.totalpointsscored,
+        "averagedartspergame" : req.body.averagedartspergame
+
     };
 
     pg.connect(connectionString, function(err, client, next){
@@ -201,7 +203,8 @@ router.post("/updateplayer1stats", function(req,res){
             "average = ($8)," +
             "ppd = ($9)," +
             "totaldartsthrown = ($10)," +
-            "totalpointsscored = ($11) WHERE stats.username = ($12)", [player1Stats._100, player1Stats._140, player1Stats._180, player1Stats.hattricks, player1Stats.deadeyes, player1Stats.totalgames, player1Stats.wins, player1Stats.average, player1Stats.ppd, player1Stats.totaldartsthrown, player1Stats.totalpointsscored, player1Stats.username]);
+            "averagedartspergame = ($11)," +
+            "totalpointsscored = ($12) WHERE stats.username = ($13)", [player1Stats._100, player1Stats._140, player1Stats._180, player1Stats.hattricks, player1Stats.deadeyes, player1Stats.totalgames, player1Stats.wins, player1Stats.average, player1Stats.ppd, player1Stats.totaldartsthrown, player1Stats.averagedartspergame, player1Stats.totalpointsscored, player1Stats.username]);
         //var query = client.query("SELECT * FROM users");
 
         query.on('row', function(row){
@@ -237,7 +240,8 @@ router.post("/updateplayer2stats", function(req,res){
         "average" : req.body.average,
         "username" : req.body.username,
         "totaldartsthrown" : req.body.totaldartsthrown,
-        "totalpointsscored" : req.body.totalpointsscored
+        "totalpointsscored" : req.body.totalpointsscored,
+        "averagedartspergame" : req.body.averagedartspergame
     };
 
     pg.connect(connectionString, function(err, client, next){
@@ -251,7 +255,8 @@ router.post("/updateplayer2stats", function(req,res){
             "average = ($8)," +
             "ppd = ($9)," +
             "totaldartsthrown = ($10)," +
-            "totalpointsscored = ($11) WHERE stats.username = ($12)", [player2Stats._100, player2Stats._140, player2Stats._180, player2Stats.hattricks, player2Stats.deadeyes, player2Stats.totalgames, player2Stats.wins, player2Stats.average, player2Stats.ppd, player2Stats.totaldartsthrown, player2Stats.totalpointsscored, player2Stats.username]);
+            "averagedartspergame = ($11)," +
+            "totalpointsscored = ($12) WHERE stats.username = ($13)", [player2Stats._100, player2Stats._140, player2Stats._180, player2Stats.hattricks, player2Stats.deadeyes, player2Stats.totalgames, player2Stats.wins, player2Stats.average, player2Stats.ppd, player2Stats.totaldartsthrown, player2Stats.averagedartspergame, player2Stats.totalpointsscored, player2Stats.username]);
         //var query = client.query("SELECT * FROM users");
 
         query.on('row', function(row){
