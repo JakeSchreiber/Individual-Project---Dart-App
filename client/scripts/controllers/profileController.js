@@ -2,6 +2,7 @@ myApp.controller('ProfileController', ['$scope', '$http', function($scope, $http
     console.log("Profile Controller");
 
 //WORKS IN HEROKU
+//    $scope.showNavbar = false;
 
     $scope.getProfileInfo = function(){
         $http.get('/getprofile').then(function(response){

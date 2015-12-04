@@ -7,7 +7,7 @@ myApp.config(['$routeProvider', function($routeProvider){
             controller: "StatsController"
 
         }).
-        when('/dartapp', {
+        when('/chalk501', {
             templateUrl: "/assets/views/routes/dartboardSVG.html",
             controller: "DartController"
         }).

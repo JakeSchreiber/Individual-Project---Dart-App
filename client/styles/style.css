@@ -5,22 +5,6 @@ body {
 
 }
 
-#largeDartBoard {
-    background-image: url('http://www.jakeschreiber.com/images/scoreboardLG.png');
-    /*width: 90%;*/
-    background-repeat:no-repeat;
-    /*background-size:contain;*/
-    background-position: top;
-    background-size: 100% 100%;
-    background-size: 100% auto;
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 12%;
-    margin-left: 5%;
-    margin-right: 5%;
-    min-height: 800px;
-}
-
 #playDartsContainer {
     width: 100%;
     height: 800px;
@@ -414,6 +398,34 @@ body {
 
 
 /*/////////////////STATS PAGE///////////////////////*/
+
+
+#largeDartBoard {
+    background-image: url('http://www.jakeschreiber.com/images/scoreboardLG.png');
+    /*width: 90%;*/
+    background-repeat:no-repeat;
+    /*background-size:contain;*/
+    background-position: top;
+    background-size: 100% 100%;
+    background-size: 100% auto;
+    padding-left: 9%;
+    padding-right: 8%;
+    padding-top: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 800px;
+}
+
+#top5Header {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 36pt;
+    font-weight: bold;
+    border-bottom: 5px solid rgba(204, 204, 0, 0.7);
+    margin-bottom: 2%;
+}
+
+
 table, th , td {
     table-layout: fixed;
     /*border: 1px solid grey;*/
@@ -425,6 +437,65 @@ table, th , td {
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12pt;
+}
+
+#stats{
+    border-bottom: 2px solid rgba(204, 204, 0, 0.7);
+    margin-bottom: 1%;
+}
+
+#statsImageContainer {
+    display: inline-block;
+    width: 8%;
+    opacity: .5;
+    margin: 0;
+
+}
+
+#statsImageContainer img {
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+#statsTextContainer {
+    display: inline-block;
+    width: 87%;
+    margin-left: 4%;
+    vertical-align: top;
+}
+
+#stats h1{
+    color: rgba(204, 204, 0, 0.7);
+    font-size: 20pt;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#stats h2{
+    color: white;
+    font-size: 14pt;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin: 0 0 0 5%;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+#stats p{
+    display: inline-block;
+    margin: 0 0 0 5%;
+
+    color: white;
+    font-size: 10pt;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: top;
+
 }
 
 
@@ -453,6 +524,7 @@ table tr:nth-child(even) {
 
 .navBar {
     /*position: fixed;*/
+    /*display: none;*/
     display: block;
     right: 0;
     top: 0;
