@@ -117,11 +117,12 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             $scope.currentPlayer.dartArray.push(dartValue);
             $scope.currentPlayer.score -= dartValue;
             $scope.currentPlayer.scoreForAverage += dartValue;
-            //console.log($scope.scoreForAverage);
+            $scope.currentPlayer.totalpointsscored += dartValue;
             $scope.dart1 = $scope.currentPlayer.dartArray[0];
             $scope.dart2 = $scope.currentPlayer.dartArray[1];
             $scope.dart3 = $scope.currentPlayer.dartArray[2];
             $scope.currentPlayer.dartsThrown++;
+            $scope.currentPlayer.totaldartsthrown++;
             $scope.currentPlayer.dartsRemaining--;
 
             checkHatTrick();
@@ -150,6 +151,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                         } else {
                             $scope.currentPlayer.score += $scope.currentPlayer.roundScore;
                             $scope.currentPlayer.dartsThrown = $scope.currentPlayer.dartsThrown - 3;
+                            $scope.currentPlayer.totalpointsscored -= $scope.currentPlayer.roundScore;
+                            $scope.currentPlayer.totaldartsthrown = $scope.currentPlayer.totaldartsthrown - 3;
                             resetRound();
 
                         }
@@ -230,9 +233,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
                     alert("BUST!");
                     /////Working line/////
-                    //$scope.currentPlayer.score += $scope.currentPlayer.roundScore;
+                    $scope.playerArray[el2].totalpointsscored -= $scope.currentPlayer.roundScore;
+                    $scope.playerArray[el2].totaldartsthrown -= $scope.currentPlayer.dartArray.length;
                     $scope.playerArray[el2].score += $scope.currentPlayer.roundScore;
-                    //$scope.playerArray[el2].score = $scope.currentPlayer.score;
                     console.log($scope.playerArray[el2].score);
                     setActivePlayer();
 
@@ -244,11 +247,11 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
 
             function dartAverage() {
-                $scope.currentPlayer.ppd = parseFloat($scope.currentPlayer.scoreForAverage / $scope.currentPlayer.dartsThrown).toFixed(2);
+                $scope.currentPlayer.ppd = parseFloat($scope.currentPlayer.totalpointsscored / $scope.currentPlayer.totaldartsthrown).toFixed(2);
             }
 
             function roundAverage() {
-                $scope.currentPlayer.roundAverage = parseFloat($scope.currentPlayer.scoreForAverage / ($scope.currentPlayer.dartsThrown / 3)).toFixed(2);
+                $scope.currentPlayer.roundAverage = parseFloat($scope.currentPlayer.totalpointsscored / ($scope.currentPlayer.totaldartsthrown / 3)).toFixed(2);
             }
 
 
@@ -321,7 +324,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                                             totalgames:$scope.playerArray[0].totalgames,
                                             wins:$scope.playerArray[0].wins,
                                             average:$scope.playerArray[0].roundAverage,
-                                            ppd:$scope.playerArray[0].ppd
+                                            ppd:$scope.playerArray[0].ppd,
+                                            totaldartsthrown:$scope.playerArray[0].totaldartsthrown,
+                                            totalpointsscored:$scope.playerArray[0].totalpointsscored
                                             }),
 
                     headers: {'Content-Type': 'application/json'}
@@ -348,7 +353,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                         totalgames:$scope.playerArray[1].totalgames,
                         wins:$scope.playerArray[1].wins,
                         average:$scope.playerArray[1].roundAverage,
-                        ppd:$scope.playerArray[1].ppd
+                        ppd:$scope.playerArray[1].ppd,
+                        totaldartsthrown:$scope.playerArray[1].totaldartsthrown,
+                        totalpointsscored:$scope.playerArray[1].totalpointsscored
                     }),
 
                     headers: {'Content-Type': 'application/json'}
