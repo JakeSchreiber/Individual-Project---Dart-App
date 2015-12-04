@@ -3,6 +3,8 @@
 <table class="statsTable table table-bordered">
 
     <tr>
+        <th></th>
+        <th>Rank</th>
         <th class="table-firstname">First Name</th>
         <th class="table-lastname">Last Name</th>
         <th>Hat Tricks</th>
@@ -19,7 +21,9 @@
 
     </tr>
 
-<tr id="stats" ng-repeat="player in stats | orderBy: 'average':true" ng-class="rowClass(player)">
+<tr id="stats" ng-repeat="player in stats | orderBy: 'average':true track by $index" ng-class="rowClass(player)">
+    <td><img src="http://www.jakeschreiber.com/images/profile2.png" alt="" style="width:auto; height:10%; opacity: .5;"></td>
+    <td>{{$index + 1}}</td>
     <td>{{player.firstname}}</td>
     <td>{{player.lastname}}</td>
     <td>{{player.hattricks}}</td>

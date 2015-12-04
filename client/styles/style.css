@@ -148,9 +148,6 @@ body {
     color: white;
 }
 
-
-
-
 #dart1 {
     display: inline-block;
     font-family: sans-serif;
@@ -200,7 +197,7 @@ body {
     margin-left: 2%;
     float: right;
     border: 1px solid #5d5d5d;
-
+    font-size: 10pt;
     /*border: 0;*/
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     font-weight: bold;
@@ -210,6 +207,7 @@ body {
 #missButton {
     background-color: rgba(255, 255, 255, 0.11);
     color: white;
+    font-size: 10pt;
     display: inline;
     width: 48%;
     height: 20px;
@@ -581,13 +579,12 @@ table tr:nth-child(even) {
     display: inline-block;
     position: relative;
     float: right;
-    margin-top: 10%;
     height: 90%;
     z-index: 1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
-    font-weight: bold;
-    font-size: 14pt;
+    /*font-weight: bold;*/
+    font-size: 12pt;
     /*text-align: center;*/
 
 
@@ -616,29 +613,97 @@ table tr:nth-child(even) {
     text-align: left;
 }
 
-#statsButtonsContainer {
-    position: relative;
-    display: inline-block;
-    margin-top: 5%;
+/*#statsButtonsContainer {*/
+    /*position: relative;*/
+    /*display: block;*/
+    /*margin-top: 5%;*/
+/*}*/
+
+
+#player1StatsButtons{
+    width: 48%;
+    float: left;
 }
 
-#player1StatsButtons {
-    width: 45%;
+#player2StatsButtons{
+    width: 48%;
+    float: right;
+}
+
+.uploadPlayer1StatsButton {
+    background-color: rgba(255, 255, 255, 0.20);
+    border: 1px solid #5d5d5d;
+    width: 100%;
     display: block;
     float: left;
-    margin-left: 5px;
-    margin-top: 10%;
-    font-size: 12pt;
-    color: black;
+    margin-left: 2%;
+    color: white;
+    height: 40px;
+    font-weight: bold;
+    margin-top: 2%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-size: 10pt;
 }
-#player2StatsButtons {
-    width: 45%;
+
+.cancelPlayer1StatsButton {
+    background-color: rgba(255, 255, 255, 0.20);
+    border: 1px solid #5d5d5d;
+    width: 100%;
+    display: block;
+    float: left;
+    margin-left: 2%;
+    color: white;
+    height: 40px;
+    font-weight: bold;
+    margin-top: 5%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-size: 10pt;
+}
+
+.uploadPlayer2StatsButton {
+    background-color: rgba(255, 255, 255, 0.20);
+    border: 1px solid #5d5d5d;
+    width: 100%;
     display: block;
     float: right;
-    margin-right: 5px;
-    margin-top: 10%;
-    font-size: 12pt;
-    color: black;
+    margin-left: 2%;
+    color: white;
+    height: 40px;
+    font-weight: bold;
+    margin-top: 2%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-size: 10pt;
+}
+
+.cancelPlayer2StatsButton {
+    background-color: rgba(255, 255, 255, 0.20);
+    border: 1px solid #5d5d5d;
+    width: 100%;
+    display: block;
+    float: right;
+    margin-left: 2%;
+    color: white;
+    height: 40px;
+    font-weight: bold;
+    margin-top: 5%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-size: 10pt;
+}
+
+.newGameButton{
+    background-color: rgba(255, 255, 255, 0.20);
+    border: 1px solid #5d5d5d;
+    width: 99%;
+    display: inline;
+    float: right;
+    margin-left: 2%;
+    font-size: 10pt;
+    color: white;
+    height: 20px;
+    font-weight: bold;
+    margin-top: 3%;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+
 }
 
 /*.profileTable {*/
@@ -679,14 +744,14 @@ table tr:nth-child(even) {
     margin-top: 2%;
     height: 20px;
     border: 0;
-
+    width: 15%
 }
 
 .registerButton {
     background-color: #004b00;
     color: #009000;
     display: inline;
-    width: 10%;
+    width: 15%;
     height: 20px;
     margin-left: 2%;
     /*float: right;*/
@@ -767,7 +832,80 @@ table tr:nth-child(even) {
         font-size: 8pt;
     }
 
-}
+    #scoreboardHeader {
+        font-size: 18pt;
+    }
+
+    .team1Score {
+        font-size: 18pt;
+    }
+
+    .team1Score p{
+        font-size: 12pt;
+    }
+
+    .team2Score {
+        font-size: 18pt;
+    }
+
+    .team2Score p{
+        font-size: 12pt;
+    }
+
+    #dart1 {
+        font-size: 8pt;
+        display: inline;
+    }
+
+    #dart2 {
+        font-size: 8pt;
+        display: inline;
+        float: left;
+    }
+
+    #dart3 {
+        font-size: 8pt;
+        display: inline;
+    }
+
+    #dartsRemaining {
+        display: inline-block;
+        font-size: 8pt;
+        width: 100%;
+        text-align: center;
+    }
+
+    #dartsThrown {
+        display: inline-block;
+        font-size: 8pt;
+        width: 100%;
+        text-align: center;
+    }
+
+    .stats {
+        font-size: 10pt;
+    }
+
+    .uploadPlayer1StatsButton {
+        font-size: 8pt;
+        height: 30px;
+    }
+
+    .uploadPlayer2StatsButton {
+        font-size: 8pt;
+        height: 30px;
+    }
+
+    .cancelPlayer1StatsButton {
+        font-size: 8pt;
+        height: 30px;
+    }
+
+    .cancelPlayer2StatsButton {
+        font-size: 8pt;
+        height: 30px;
+    }
+    }
 
 
 /*///////////////////////800PX WIDE SCREEN SIZE/////////////////////////*/
@@ -788,6 +926,27 @@ table tr:nth-child(even) {
     #loginButton {
         font-size: 6pt;
     }
+
+    .stats {
+        font-size: 8pt;
+    }
+
+    #startButton{
+        font-size: 7pt;
+    }
+
+    #missButton{
+        font-size: 7pt;
+    }
+
+    .switchPlayerButton{
+        font-size: 8pt;
+    }
+
+    .selectDropdown select{
+        font-size: 8pt;
+    }
+
 }
 
 /*///////////////////////675PX WIDE SCREEN SIZE/////////////////////////*/
@@ -825,9 +984,41 @@ table tr:nth-child(even) {
         font-size: 6pt;
     }
 
+    #scoreboardHeader {
+        font-size: 14pt;
+    }
+
+    .team1Score {
+        font-size: 14pt;
+    }
+
+    .team1Score p{
+        font-size: 10pt;
+    }
+
+    .team2Score {
+        font-size: 14pt;
+    }
+
+    .team2Score p{
+        font-size: 1pt;
+    }
+
+    #dart1 {
+        font-size: 6pt;
+    }
+
+    #dart2 {
+        font-size: 6pt;
+    }
+
+    #dart3 {
+        font-size: 6pt;
+    }
+
 }
 
-/*///////////////////////675PX WIDE SCREEN SIZE/////////////////////////*/
+/*///////////////////////500PX WIDE SCREEN SIZE/////////////////////////*/
 
 @media screen and (max-width: 500px) {
     #profileStats h1{
@@ -1113,6 +1304,7 @@ table tr:nth-child(even) {
     }
 
     #profileStats img {
+        float: right;
         width: 55%;
         margin-left: 2%;
         margin-bottom: 5%;
@@ -1131,6 +1323,6 @@ table tr:nth-child(even) {
     }
 
     table, th , td {
-        font-size: 10pt;
+        font-size: 20pt;
     }
 }
