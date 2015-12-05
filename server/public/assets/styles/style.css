@@ -1032,32 +1032,32 @@ table tr:nth-child(even) {
 }
 
 
-@media only screen
-and (min-device-width: 800px)
-and (max-device-width: 1280px)
-and (-webkit-min-device-pixel-ratio: 1.5)
-and (orientation: portrait) {
+/*@media only screen*/
+/*and (min-device-width: 800px)*/
+/*and (max-device-width: 1280px)*/
+/*and (-webkit-min-device-pixel-ratio: 1.5)*/
+/*and (orientation: portrait) {*/
 
-    #boardContainer {
-        width: 100%;
-        display: block;
-        margin: 0;
+    /*#boardContainer {*/
+        /*width: 100%;*/
+        /*display: block;*/
+        /*margin: 0;*/
 
-    }
+    /*}*/
 
-    #scoreboard {
-        position: relative;
-        width: 100%;
-        min-height: 1200px;
-        display: block;
-        margin-right: 0;
-    }
+    /*#scoreboard {*/
+        /*position: relative;*/
+        /*width: 100%;*/
+        /*min-height: 1200px;*/
+        /*display: block;*/
+        /*margin-right: 0;*/
+    /*}*/
 
-    #scoreboardImage {
-        margin-right: 0;
-        padding: 12%;
-    }
-}
+    /*#scoreboardImage {*/
+        /*margin-right: 0;*/
+        /*padding: 12%;*/
+    /*}*/
+/*}*/
 
 
 
