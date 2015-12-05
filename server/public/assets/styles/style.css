@@ -1187,41 +1187,31 @@ table tr:nth-child(even) {
         font-size: 32pt;
     }
 
-    .form-control {
-        font-size: 40pt;
-        /*margin-left: 2%;*/
-        padding-left: 2%;
-        margin-left: 0;
-        margin-top: 2%;
-        height: 80px;
-        border: 0;
-        border-radius: 0;
-        width: 95%;
-    }
-
-    ::-webkit-input-placeholder {
-        vertical-align: middle;
-        font-size: 40pt;
-    }
-
-    .navBar.full {
-        display: none;
-    }
 
     .navBar.mobile {
         display: inline-block;
-        height: 350px;
+        position: relative;
+        top: 0;
+        height: 400px;
+        width: 100%;
+        background-color: black;
+        margin-bottom: 5%;
     }
 
     .navBar a {
-        font-size: 40pt;
+        font-size: 50pt;
+        /*line-height: 40pt;*/
+
     }
 
     #navPill {
         width: 100%;
         display: inline-block;
-        font-size: 35pt;
-        line-height: 15pt;
+        margin:0;
+        padding-top: 2%;
+        padding-bottom: 3%;
+        border-bottom: 5px solid #5d5d5d;
+        text-align: center;
     }
 
 
@@ -1304,24 +1294,27 @@ table tr:nth-child(even) {
     }
 
     #loginUsername {
-        width: 90%;
+        width: 88%;
         height: 80px;
         font-size: 40pt;
         float: none;
         margin-top: 5%;
         margin-left: 5%;
         margin-right: 5%;
+        padding-left: 2%;
 
     }
 
     #loginPassword {
-        width: 90%;
+        width: 88%;
         height: 80px;
         font-size: 40pt;
         float: none;
         margin-top: 3%;
         margin-left: 5%;
         margin-right: 5%;
+        padding-left: 2%;
+
     }
 
     #indexLoginButton {
@@ -1365,6 +1358,24 @@ table tr:nth-child(even) {
         margin-top: 5%;
         font-size: 22pt;
 
+    }
+
+    .form-control {
+        font-size: 40pt;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        margin-left: 0;
+        margin-top: 2%;
+        height: 80px;
+        border: 0;
+        border-radius: 0;
+        width: 98%;
+    }
+
+    ::-webkit-input-placeholder {
+        vertical-align: middle;
+        font-size: 40pt;
+        padding: 0;
     }
 
 
