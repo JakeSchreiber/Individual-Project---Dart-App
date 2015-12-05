@@ -228,7 +228,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                     openStats();
 
                 }
-                if ($scope.currentPlayer.score < 0) {
+                if ($scope.currentPlayer.score < 0 || $scope.currentPlayer.score === 1) {
                     var el2 = i;
                     roundScore();
 

@@ -23,32 +23,50 @@ var isAuthenticated = function (req, res, next) {
     if (req.isAuthenticated())
         return next();
     req.flash('error', 'You have to be logged in to access the page.');
-    res.redirect('/')
+    res.redirect("/#/home");
 };
 
 router.get('/createAccount', signupController.show);
 router.post('/createAccount', signupController.signup);
 
 
-router.post('/login',
-    function(req, res, next) {
-        passport.authenticate('local', function(err, user) {
-            if (err) { return next(err) }
-            if (!user) {
-                res.local("username", req.param('username'));
-                return res.redirect('/#/login', { error: true });
-            }
 
-            // make passportjs setup the user object, serialize the user, ...
-            req.login(user, {}, function(err) {
-                if (err) { return next(err) }
-                return res.redirect("/#/profile");
-            });
-        })(req, res, next);
-        return;
-    }
-);
+//router.post('/login',
+//    function(req, res, next) {
+//        passport.authenticate('local', function(err, user) {
+//            if (err) { return next(err) }
+//            if (!user) {
+//                res.local("username", req.param('username'));
+//                return res.redirect('/#/login', { error: true });
+//            }
+//
+//            // make passportjs setup the user object, serialize the user, ...
+//            req.login(user, {}, function(err) {
+//                if (err) { return next(err) }
+//                return res.redirect("/#/profile");
+//            });
+//        })(req, res, next);
+//        return;
+//    }
+//);
 
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/#/profile',
+    failureRedirect: '/#/home',
+    failureFlash: 'Invalid username or password.'
+}));
+
+//function loggedIn(req, res, next) {
+//    if (req.user.username) {
+//        next();
+//    } else if (req.user == undefined){
+//        console.log("UNDEFINED")
+//        res.redirect('/#/login');
+//    } else {
+//        console.log("WTF")
+//
+//    }
+//}
 
 router.get('/stats', function(req, res){
     var results=[];
@@ -89,8 +107,8 @@ router.get('/getprofile', function(req, res){
         });
 
         if(err) console.log(err);
-
     })
+
 });
 
 
