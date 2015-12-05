@@ -87,7 +87,6 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
 
         function setCurrentPlayer(){
             $scope.currentPlayer = $scope.playerArray[i];
-            console.log($scope.currentPlayer);
         }
 
 
@@ -97,7 +96,6 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
         //Check for Zero, and dart average. Increments total darts thrown.
 
         $scope.changeValue = function (dartValue) {
-            //$scope.value = x;
             $scope.currentPlayer.dartArray.push(dartValue);
             $scope.currentPlayer.score -= dartValue;
             $scope.currentPlayer.scoreForAverage += dartValue;
@@ -112,7 +110,6 @@ myApp.controller('DartController', ['$scope','$http', function($scope, $http){
             checkHatTrick();
             checkZero();
             dartAverage();
-            //roundScore();
 
             //when darts remaining = 0, meaning round is over. Popup confirms score.  Round score is pushed to
             //an array of round scores. functions check for tons and hat tricks, resets round, and would eventually

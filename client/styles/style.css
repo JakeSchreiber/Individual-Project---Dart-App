@@ -5,6 +5,145 @@ body {
 
 }
 
+/*//////////////INDEX PAGE////////////*/
+
+
+#indexNavbar{
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+}
+
+#indexLogin{
+    width: 50%;
+    float: right;
+    vertical-align: middle;
+    height: 20px;
+}
+
+#loginUsername {
+    background-color: #cdcdcd;
+    color: #000;
+    border: 0;
+    display: inline;
+    width: 35%;
+    height: 20px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    margin-top: 2%;
+
+}
+
+#loginPassword {
+    background-color: #cdcdcd;
+    color: #000;
+    border: 0;
+    display: inline;
+    width: 35%;
+    height: 20px;
+    padding-left: 5px;
+    margin-left: 2%;
+    padding-bottom: 2px;
+    margin-top: 2%;
+
+
+}
+
+#indexLoginButton {
+    background-color: #004b00;
+    color: #009000;
+    display: inline;
+    width: 20%;
+    height: 20px;
+    margin-left: 2%;
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    padding-bottom: 2px;
+    font-size: 10pt;
+
+}
+
+::-webkit-input-placeholder {
+    /*color: #000;*/
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+
+
+#welcomeHeader {
+    position: relative;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#welcomeHeader h1 {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-size: 50pt;
+    color: white;
+    text-align: center;
+}
+
+#welcomeHeader p {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    color: white;
+    font-size: 14pt;
+    text-align: center;
+}
+
+#fontGrey {
+    color: #cdcdcd;
+}
+
+.form-control {
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 20px;
+    border: 0;
+    width: 15%
+}
+
+.registerButton {
+    background-color: #004b00;
+    color: #009000;
+    display: inline;
+    width: 15%;
+    height: 20px;
+    margin-left: 2%;
+    /*float: right;*/
+    border: 0;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    margin-top: 2%;
+
+}
+
+.createAccount {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+
+}
+
+.createAccountHeader {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    font-weight: bold;
+    font-size: 12pt;
+    color: white;
+    margin-left: 2%;
+}
+
+
+
+
+
+
 #playDartsContainer {
     width: 100%;
     height: 800px;
@@ -556,62 +695,6 @@ table tr:nth-child(even) {
 
 }
 
-#loginPill {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    color: white;
-    display: inline;
-    width: 20%;
-    margin-left: 5%;
-
-}
-
-#loginUsername {
-    background-color: #cdcdcd;
-    color: #000;
-    border: 0;
-    display: inline;
-    width: 10%;
-    height: 20px;
-    padding-left: 5px;
-    padding-bottom: 2px;
-
-}
-
-#loginPassword {
-    background-color: #cdcdcd;
-    color: #000;
-    border: 0;
-    display: inline;
-    width: 10%;
-    height: 20px;
-    padding-left: 5px;
-    margin-left: 2%;
-    padding-bottom: 2px;
-
-}
-
-#loginButton {
-    background-color: #004b00;
-    color: #009000;
-    display: inline;
-    width: 5%;
-    height: 25px;
-    margin-left: 2%;
-    border: 0;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-
-}
-
-::-webkit-input-placeholder {
-    /*color: #000;*/
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    font-size: 10pt;
-}
-
-
 
 /*////////FOOTER////////////*/
 
@@ -782,93 +865,6 @@ table tr:nth-child(even) {
     /*margin-top: 50px;*/
 /*}*/
 
-/*//////////////INDEX PAGE////////////*/
-
-
-#welcomeHeader {
-    position: relative;
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-#welcomeHeader h1 {
-        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-        font-size: 50pt;
-        color: white;
-        text-align: center;
-    }
-
-#welcomeHeader p {
-        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-        font-weight: bold;
-        color: white;
-        font-size: 14pt;
-        text-align: center;
-}
-
-#fontGrey {
-    color: #cdcdcd;
-}
-
-.form-control {
-    margin-left: 2%;
-    margin-top: 2%;
-    height: 20px;
-    border: 0;
-    width: 15%
-}
-
-.registerButton {
-    background-color: #004b00;
-    color: #009000;
-    display: inline;
-    width: 15%;
-    height: 20px;
-    margin-left: 2%;
-    /*float: right;*/
-    border: 0;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    margin-top: 2%;
-
-}
-
-.createAccount {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 10%;
-
-}
-
-.createAccountHeader {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    font-weight: bold;
-    font-size: 12pt;
-    color: white;
-    margin-left: 2%;
-}
-/*///////////////////////1000PX WIDE SCREEN SIZE/////////////////////////*/
-
-@media screen and (max-width: 1000px) {
-    #loginButton {
-        margin-left: 1%;
-        font-size: 7pt;
-        height: 24px;
-        top: 0;
-        padding-top 1%;
-    }
-
-    #loginPassword{
-        width: 8%;
-        margin-left: 1%;
-    }
-
-    ::-webkit-input-placeholder {
-        font-size: 8pt;
-    }
-
-    }
 
 /*///////////////////////900PX WIDE SCREEN SIZE/////////////////////////*/
 
@@ -1128,31 +1124,16 @@ table tr:nth-child(even) {
         min-height: 1200px;
         display: block;
         margin-right: 0;
-        /*background-color: #010101;*/
-        /*border: 2px solid white;*/
-        /*margin-top: 0;*/
-        /*margin-left: 2%;*/
-        /*float: right;*/
-        /*color: white;*/
     }
 
     #scoreboardImage {
-
-        /*height: auto;*/
         margin-right: 0;
         padding: 12%;
-        /*max-width:100%;*/
-        /*max-height:100%;*/
-        /*position: fixed;*/
     }
 
     #scoreboardHeader {
-        /*font-family: sans-serif;*/
-        /*font-weight: bold;*/
         font-size: 90pt;
         margin-bottom: 10%;
-        /*margin: 0px;*/
-        /*text-align: center;*/
     }
 
     .team1Score {
@@ -1191,42 +1172,15 @@ table tr:nth-child(even) {
     }
 
     #dart1 {
-        /*display: inline-block;*/
-        /*font-family: sans-serif;*/
-        /*font-weight: bold;*/
         font-size: 36pt;
-        /*margin: auto;*/
-        /*margin-right: auto;*/
-        /*text-align: center;*/
-        /*float: left;*/
-        /*color: white;*/
-        /*width: 33.3%;*/
     }
 
     #dart2 {
-        /*display: inline-block;*/
-        /*font-family: sans-serif;*/
-        /*font-weight: bold;*/
         font-size: 36pt;
-        /*margin: auto;*/
-        /*/!*margin-right: auto;*!/*/
-        /*text-align: center;*/
-        /*/!*float: left;*!/*/
-        /*color: white;*/
-        /*width: 33.3%;*/
     }
 
     #dart3 {
-        /*display: inline-block;*/
-        /*font-family: sans-serif;*/
-        /*font-weight: bold;*/
         font-size: 36pt;
-        /*margin: auto;*/
-        /*margin-right: auto;*/
-        /*text-align: center;*/
-        /*float: right;*/
-        /*color: white;*/
-        /*width: 33.3%;*/
     }
 
     .stats {
@@ -1243,7 +1197,6 @@ table tr:nth-child(even) {
         border: 0;
         border-radius: 0;
         width: 95%;
-
     }
 
     ::-webkit-input-placeholder {
@@ -1257,7 +1210,7 @@ table tr:nth-child(even) {
 
     .navBar.mobile {
         display: inline-block;
-        height: 445px;
+        height: 350px;
     }
 
     .navBar a {
@@ -1265,89 +1218,13 @@ table tr:nth-child(even) {
     }
 
     #navPill {
-        width: 42%;
+        width: 100%;
         display: inline-block;
         font-size: 35pt;
         line-height: 15pt;
     }
 
 
-
-    #loginPill {
-        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-        font-weight: bold;
-        color: white;
-        display: inline;
-        padding-right: 5%;
-        width: 100%;
-
-    }
-
-    #loginUsername {
-        width: 35%;
-        height: 60px;
-        font-size: 40pt;
-        /*float: left;*/
-        margin-left: 0;
-        padding-left: 2%;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        border-radius: 0;
-
-    }
-
-    #loginPassword {
-        width: 40%;
-        /*margin-left: 5%;*/
-        height: 60px;
-        font-size: 40pt;
-        float: right;
-        padding-left: 2%;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-right: 5%;
-        border-radius: 0;
-    }
-
-    #loginButton {
-        display: inline-block;
-        color: white;;
-        width: 90%;
-        height: 80px;
-        margin-top: 3%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 32pt;
-    }
-
-    .registerButton {
-        width: 100%;
-        height: 100px;
-        color: white;
-        margin-top: 3%;
-        font-size: 32pt;
-        margin-left: 0;
-        /*margin-right: 5%;*/
-
-    }
-
-    #welcomeHeader {
-        margin-top: 0;
-    }
-
-    #welcomeHeader h1 {
-        font-size: 80pt;
-    }
-
-    #welcomeHeader p {
-        font-size: 30pt;
-    }
-
-    .createAccountHeader {
-        margin-top: 5%;
-        font-size: 22pt;
-
-    }
 
     .selectDropdown select {
         height: 60px;
@@ -1397,4 +1274,100 @@ table tr:nth-child(even) {
     table, th , td {
         font-size: 20pt;
     }
+
+    /*//////////////INDEX PAGE////////////*/
+
+
+    #indexNavbar{
+        position: relative;
+        top: 0;
+        height: 400px;
+        width: 100%;
+        background-color: black;
+    }
+
+    #indexLogin{
+        width: 100%;
+        float: none;
+        vertical-align: middle;
+        /*height: 20px;*/
+    }
+
+    #loginPill {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-weight: bold;
+        color: white;
+        display: inline;
+        padding-right: 5%;
+        width: 100%;
+
+    }
+
+    #loginUsername {
+        width: 90%;
+        height: 80px;
+        font-size: 40pt;
+        float: none;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+
+    #loginPassword {
+        width: 90%;
+        height: 80px;
+        font-size: 40pt;
+        float: none;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #indexLoginButton {
+        display: inline-block;
+        color: white;;
+        width: 90%;
+        height: 80px;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 32pt;
+    }
+
+    input {
+        -webkit-appearance: textfield;
+        padding: 0px;
+    }
+
+    .registerButton {
+        width: 100%;
+        height: 100px;
+        color: white;
+        margin-top: 5%;
+        font-size: 32pt;
+        margin-left: 0;
+    }
+
+    #welcomeHeader {
+        margin-top: 0;
+    }
+
+    #welcomeHeader h1 {
+        font-size: 80pt;
+    }
+
+    #welcomeHeader p {
+        font-size: 30pt;
+    }
+
+    .createAccountHeader {
+        margin-top: 5%;
+        font-size: 22pt;
+
+    }
+
+
+
 }
+
