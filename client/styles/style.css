@@ -1021,35 +1021,6 @@ table tr:nth-child(even) {
 
 @media screen and (max-width: 800px) {
 
-
-    #boardContainer {
-        width: 100%;
-        display: block;
-        margin: 0;
-
-    }
-
-    #scoreboard {
-        position: relative;
-        width: 100%;
-        min-height: 1200px;
-        display: block;
-        margin-right: 0;
-    }
-
-    #scoreboardImage {
-        margin-right: 0;
-        padding: 12%;
-    }
-}
-
-
-
-
-
-
-
-
 #navPill{
         width: 8%;
     }
