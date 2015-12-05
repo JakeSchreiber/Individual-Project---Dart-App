@@ -1,5 +1,4 @@
 myApp.controller('StatsController', ['$scope', '$http', function($scope, $http){
-    console.log("Stats Controller");
 
     $scope.getStats = function(){
         $http.get('/stats').then(function(response){
@@ -9,8 +8,5 @@ myApp.controller('StatsController', ['$scope', '$http', function($scope, $http){
     };
 
     $scope.getStats();
-
-
-
 
 }]);

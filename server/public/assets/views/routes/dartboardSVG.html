@@ -1,9 +1,10 @@
+<div ng-include="'/assets/views/templates/nav.html'"></div>
+
 <div id="playDartsContainer">
 
 <div id="boardContainer">
     <?xml version="1.0" encoding="utf-8"?>
-    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
      viewBox="-37.5 0 700 700" style="enable-background:new 0 0 615 615;" xml:space="preserve">
 
 
@@ -31,10 +32,6 @@
 
 
 <circle filter="url(#bigBoard-shadow)" cx="306.7" cy="306.7" r="306.7"/>
-<!--<circle class="st0" cx="304.8" cy="306.7" r="240.1"/>-->
-
-        <!--<path class="single5" id="btn" fill=white filter="url(#inset-shadow)" ng-click="changeValue(5)" d="M305.5,306.8L198.8,97.4c23.1-11.8,44.3-18.7,70-22.7L305.5,306.8z"/>-->
-        <!--<path class="single5" id="btn" data-value="5" fill="url(#image)" d="M305.5,306.8L198.8,97.4c23.1-11.8,44.3-18.7,70-22.7L305.5,306.8z"/>-->
 
         <path class="single5 color1" id="btn" ng-click="changeValue(5)" d="M305.5,306.8L198.8,97.4c23.1-11.8,44.3-18.7,70-22.7L305.5,306.8z"/>
         <path class="single12 color2" id="btn" filter="url(#inset-shadow)" ng-click="changeValue(12)" d="M305.5,306.8L139.3,140.6c18.4-18.4,36.4-31.4,59.5-43.2L305.5,306.8z"/>
@@ -112,12 +109,6 @@
     C214.7,316.3,214.4,311.6,214.4,306.7z"/>
 
 
-<!--<path class="st0" d="M305.5,108.2c-110,0-199.1,89.1-199.1,199.1s89.1,199.1,199.1,199.1s199.1-89.1,199.1-199.1-->
-    <!--S415.5,108.2,305.5,108.2z M305.5,502.5c-107.8,0-195.2-87.4-195.2-195.2s87.4-195.2,195.2-195.2s195.2,87.4,195.2,195.2-->
-    <!--S413.3,502.5,305.5,502.5z"/>-->
-<!--<path class="st0" d="M305.5,162.2c-79.8,0-144.5,64.7-144.5,144.5s64.7,144.5,144.5,144.5s144.5-64.7,144.5-144.5-->
-    <!--S385.4,162.2,305.5,162.2z M305.5,448.4c-78.3,0-141.7-63.4-141.7-141.7S227.3,165,305.5,165s141.7,63.4,141.7,141.7-->
-    <!--S383.8,448.4,305.5,448.4z"/>-->
 <path class="st0" d="M307.4,213.4c-51.6,0-93.4,41.8-93.4,93.4s41.8,93.4,93.4,93.4s93.4-41.8,93.4-93.4S359,213.4,307.4,213.4z
      M307.4,398.2c-50.5,0-91.5-41-91.5-91.5s41-91.5,91.5-91.5s91.5,41,91.5,91.5S357.9,398.2,307.4,398.2z"/>
 <path class="st0" d="M278.4,52.1v-4.2l3.9-3.4c6.6-5.9,9.8-9.3,9.9-12.9c0-2.5-1.4-4.4-5-4.4c-2.6,0-4.8,1.3-6.5,2.5l-2-5
@@ -187,22 +178,18 @@
     c0,5.5-4.8,10.5-13,10.5c-3.7,0-6.7-0.8-8.4-1.8l1.3-5.3c1.3,0.7,4,1.5,6.7,1.5c2.9,0,6-1.4,6-4.6c0-3.1-2.5-5-8.5-5
     c-1.7,0-2.8,0.1-4,0.2l1.9-15.8h16.6v6H227.7z"/>
 
-
 </svg>
 
 </div>
-<!--<button class="miss" ng-click="missedDart()">Miss</button>-->
 
 <div id="scoreboard">
     <div id="scoreboardImage">
-    <!--<img src="http://www.jakeschreiber.com/images/scoreboard.png" />-->
 
         <div ng-show="showScoreboard">
 
             <button id="missButton" ng-click="changeValue(0)">Missed Dart</button>
             <button id="startButton" ng-click="gameplay()">Start</button>
             <div ng-show="chooseOpponent">
-                <!--{{selectedPlayer}}-->
                 <div class="selectDropdown">
                     <select ng-selected="{{selectedPlayer.username}}" ng-model="selectedPlayer" ng-change="isSelectedPlayer()" ng-options="player.username for player in allPlayers">
                         <option value="">Choose Opponent</option>
@@ -236,21 +223,14 @@
             <div id="dart3">Dart 3: {{dart3}}</div>
             <div id="dartsRemaining">Darts Remaining: {{currentPlayer.dartsRemaining}}</div>
             <div id="dartsThrown">Total Darts Thrown: {{currentPlayer.dartsThrown}}</div>
-
-
         </div>
 
     </div>
 
-
         <div class="stats" ng-show="myvalue">
-            <!--<button ng-click="showPopup = true">Show Popup</button>-->
-            <!--<div><button id="mybutton" ng-click="showAlert()">Click me</button></div>-->
             <div id="player1Stats">
                 <div id="firstname"> Player: {{playerArray[0].firstname}} {{playerArray[0].lastname}}</div>
-                <!--<div id="lastname"> Player: {{playerArray[0].lastname}}</div>-->
                 <div id="totalDartsThrown"> Darts Thrown: {{playerArray[0].dartsThrown}}</div>
-
                 <div id="ton">100+: {{playerArray[0]._100}}</div>
                 <div id="ton40">140+: {{playerArray[0]._140}}</div>
                 <div id="ton80">180: {{playerArray[0]._180}}</div>
@@ -264,7 +244,6 @@
             <div id="player2Stats">
                 <div id="firstname"> Player: {{playerArray[1].firstname}} {{playerArray[1].lastname}}</div>
                 <div id="totalDartsThrown"> Darts Thrown: {{playerArray[1].dartsThrown}}</div>
-
                 <div id="ton">100+: {{playerArray[1]._100}}</div>
                 <div id="ton40">140+: {{playerArray[1]._140}}</div>
                 <div id="ton80">180: {{playerArray[1]._180}}</div>
@@ -272,8 +251,8 @@
                 <div id="deadEye">Dead Eyes: {{playerArray[1].deadeyes}}</div>
                 <div id="dartAverage">PPD: {{playerArray[1].ppd}}</div>
                 <div id="roundAverage">Average: {{playerArray[1].roundAverage}}</div>
-
             </div>
+
             <div id="statsButtonsContainer">
 
                 <div id="player1StatsButtons">
@@ -289,12 +268,10 @@
                 <div class="newGameTrigger">
                     <button class="newGameButton" ng-click="startNewGame()">Start New Game</button>
                 </div>
+
             </div>
+
         </div>
-
-        <!--<div ng-repeat='player in allPlayers'>-->
-
-
     </div>
 
 </div>

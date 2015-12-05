@@ -1,42 +1,40 @@
+<div class="indexNavbar">
+    <form method="POST" action="/login" class="form-signin" id="indexLogin">
+        <input type="text" id="loginUsername" name="username" class="loginUsername" placeholder="USERNAME" required autofocus>
+        <input type="password" id="loginPassword" name="password" class="loginPassword" placeholder="PASSWORD" required>
+        <button id="indexLoginButton" type="submit">LOG IN</button>
+    </form>
+</div>
+
+
 <div id="welcomeHeader">
     <h1><span id="fontGrey">WELCOME TO</span> CHALK 501</h1>
     <p>Chalk 501 exists to help chalkers verify scores quickly.<span id="fontGrey">
         It also serves as a database for keeping a player’s dart statistics.
         In order for your stats to be tracked, we’ll need you to create an account.
         Already registered? Great, sign in above.</span></p>
-    </div>
+</div>
 
 
 <div class="createAccount">
     <form method="POST" action="/createAccount" class="form-signin">
         <h2 class="createAccountHeader">Create an account:</h2>
 
-
-        <!--<label for="inputUsername" class="sr-only">Username</label>-->
         <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
 
-        <!--<label for="inputPassword" class="sr-only">Password</label>-->
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
 
-        <!--<label for="inputPassword" class="sr-only">Repeat Password</label>-->
         <input type="password" id="inputPassword2" name="password2" class="form-control" placeholder="Repeat Password" required>
 
-        <!--<label for="inputFirstName" class="sr-only">First Name</label>-->
         <input type="firstName" id="inputFirstName" name="firstName" class="form-control" placeholder="First Name" required>
 
-        <!--<label for="inputLastName" class="sr-only">Last Name</label>-->
         <input type="lastName" id="inputLastName" name="lastName" class="form-control" placeholder="Last Name" required>
 
-        <!--<label for="inputLocation" class="sr-only">Location</label>-->
         <input type="location" id="inputLocation" name="location" class="form-control" placeholder="Location" required>
 
-        <!--<label for="inputEmail" class="sr-only">Email</label>-->
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required>
 
         <button class="registerButton" type="submit">REGISTER</button>
 
-
     </form>
-
-
 </div>

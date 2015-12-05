@@ -1,3 +1,5 @@
+<div ng-include="'/assets/views/templates/nav.html'"></div>
+
 <div id="profileLargeDartBoard">
 
         <div id="profileStats" ng-repeat="player in profileInfo | orderBy: 'average':true" ng-class="rowClass(player)">
@@ -16,10 +18,11 @@
                 <p>Points Per Dart: {{player.ppd}}</p>
 
             </div>
+
+
     <table class="profileTable table table-bordered">
 
-
-    <tr>
+      <tr>
             <th>100+</th>
             <th>140+</th>
             <th>180</th>
@@ -27,8 +30,7 @@
             <th>Dead Eyes</th>
             <th>High In</th>
             <th>High Out</th>
-
-        </tr>
+      </tr>
 
         <tr id="profilestats" ">
             <td>{{player._100}}</td>
@@ -39,57 +41,7 @@
             <td>{{player.highin}}</td>
             <td>{{player.highout}}</td>
 
-
-
-            <!--<student-profile info="student"></student-profile>-->
         </tr>
 
 </div>
-
 </div>
-
-
-
-<!--<div id="largeDartBoard">-->
-
-<!--<table class="profileTable table table-bordered">-->
-
-    <!--<tr>-->
-        <!--<th>First Name</th>-->
-        <!--<th>Last Name</th>-->
-        <!--<th>Hat Tricks</th>-->
-        <!--<th>100+</th>-->
-        <!--<th>140+</th>-->
-        <!--<th>180</th>-->
-        <!--<th>Average</th>-->
-        <!--<th>Dead Eyes</th>-->
-        <!--<th>High In</th>-->
-        <!--<th>High Out</th>-->
-        <!--<th>PPD</th>-->
-        <!--<th>Wins</th>-->
-        <!--<th>Total Games</th>-->
-
-    <!--</tr>-->
-
-    <!--<tr id="profilestats" ng-repeat="player in profileInfo | orderBy: 'average':true" ng-class="rowClass(player)">-->
-        <!--<td>{{player.firstname}}</td>-->
-        <!--<td>{{player.lastname}}</td>-->
-        <!--<td>{{player.hattricks}}</td>-->
-        <!--<td>{{player._100}}</td>-->
-        <!--<td>{{player._140}}</td>-->
-        <!--<td>{{player._180}}</td>-->
-        <!--<td>{{player.average}}</td>-->
-        <!--<td>{{player.deadeyes}}</td>-->
-        <!--<td>{{player.highin}}</td>-->
-        <!--<td>{{player.highout}}</td>-->
-        <!--<td>{{player.ppd}}</td>-->
-        <!--<td>{{player.wins}}</td>-->
-        <!--<td>{{player.totalgames}}</td>-->
-
-
-        <!--&lt;!&ndash;<student-profile info="student"></student-profile>&ndash;&gt;-->
-    <!--</tr>-->
-
-<!--</table>-->
-
-    <!--</div>-->

@@ -1,7 +1,4 @@
-
-myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerService', function($scope, $http, $interval, PlayerService){
-    console.log("Dart Controller");
-
+myApp.controller('DartController', ['$scope','$http', function($scope, $http){
 
     //START GAME//
 
@@ -11,7 +8,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         $scope.selectedPlayer = false;
         $scope.setPlayers();
     };
-
 
     /////SET PLAYERS FOR GAMEPLAY BY GETTING LOGGED IN USER AND CHOOSING OPPONENT FROM LIST/////
 
@@ -27,20 +23,15 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 $scope.playerArray = $scope.loggedInPlayer;
                 $scope.playerArray[0].roundArray = [];
                 $scope.playerArray[0].dartArray = [];
-                console.log("Logged in player line 28:", $scope.loggedInPlayer);
-                console.log("PlayerArray line 29:", $scope.playerArray);
             });
         };
 
         $scope.getLoggedInPlayer();
 
-        console.log("Player Array from line 35(51) (after getLoggedInPlayer):", $scope.playerArray);
-
         //GETS ALL USERS TO FILL USER DROPDOWN TO CHOOSE OPPONENT//////
         $scope.getAllUsers = function () {
             $http.get('/getallplayers').then(function (response) {
                 $scope.allPlayers = response.data;
-                console.log("Get all Players, Line 41(57)", $scope.allPlayers);
             });
         };
 
@@ -50,15 +41,9 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
 
         $scope.isSelectedPlayer = function () {
             $scope.playerArray[1] = $scope.selectedPlayer;
-            //$scope.playerArray[1].roundArray = [];
-            //$scope.playerArray[1].dartArray = [];
-            console.log("Player Array from line 53(69) (isSelectedPlayer):", $scope.playerArray);
-            console.log($scope.selectedPlayer);
             return $scope.selectedPlayer;
-            //$scope.chooseOpponent = false;
         };
 
-        //$scope.isSelectedPlayer();
     };
 
     //CALL SET PLAYERS FUNCTION LISTED ABOVE//
@@ -88,7 +73,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
         myEl2.toggleClass('active inactive');
 
     };
-
 
     /////START GAMEPLAY////
 
@@ -137,11 +121,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 if ($scope.currentPlayer.dartsRemaining == 0) {
                     roundScore();
 
-                    console.log($scope.currentPlayer.roundScore);
-
                         if ((confirm("Round Score: " + $scope.currentPlayer.roundScore + ". Remove Darts")) === true) {
                             $scope.currentPlayer.roundArray.push($scope.currentPlayer.roundScore);
-                            //console.log($scope.roundArray);
                             checkTon();
                             resetRound();
                             switchPlayer();
@@ -154,9 +135,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                             $scope.currentPlayer.totalpointsscored -= $scope.currentPlayer.roundScore;
                             $scope.currentPlayer.totaldartsthrown = $scope.currentPlayer.totaldartsthrown - 3;
                             resetRound();
-
                         }
-                };
+                }
 
             //Highlight active player color
 
@@ -172,8 +152,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             function roundScore() {
                 if ($scope.currentPlayer.dartArray.length == 3) {
                     $scope.currentPlayer.roundScore = $scope.currentPlayer.dartArray[0] + $scope.currentPlayer.dartArray[1] + $scope.currentPlayer.dartArray[2];
-                    //var myEl = angular.element( document.querySelector( '#roundScore' ) );
-                    //myEl.append('<br/>' + $scope.currentPlayer.roundScore);
                 }
 
                 if ($scope.currentPlayer.dartArray.length == 2) {
@@ -183,22 +161,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 if ($scope.currentPlayer.dartArray.length == 1) {
                     $scope.currentPlayer.roundScore = $scope.currentPlayer.dartArray[0];
                 }
-
-                console.log($scope.currentPlayer.roundScore);
             }
-
-            //Weird for loop that didn't work
-            //function roundScore() {
-            //    //for (var i in $scope.dartArray) {
-            //    //    var tempScore = 0;
-            //    //
-            //    //    tempScore = $scope.dartArray[i];
-            //    //    console.log(tempScore);
-            //    //
-            //    //    return tempScore;
-            //    //}
-            //}
-
 
             //Resets variables after each round
             function resetRound() {
@@ -213,36 +176,27 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             //Checks score for value of zero, meaning the game has been won. Would have liked to require a double out.
             function checkZero() {
 
-                //var e = angular.element(document.querySelector("[double]"));
                 if ($scope.currentPlayer.score == 0) {
                     $scope.currentPlayer.wins++;
                     $scope.playerArray[0].totalgames++;
                     $scope.playerArray[1].totalgames++;
                     alert("Game complete");
                     checkTon();
-                    //$scope.roundArray.push($scope.roundScore);
-                    //roundScore();
-                    //resetRound();
                     roundAverage();
                     calcAverageDartsPerGame();
                     openStats();
-
                 }
+
                 if ($scope.currentPlayer.score < 0 || $scope.currentPlayer.score === 1) {
                     var el2 = i;
                     roundScore();
-
                     alert("BUST!");
-                    /////Working line/////
                     $scope.playerArray[el2].totalpointsscored -= $scope.currentPlayer.roundScore;
                     $scope.playerArray[el2].totaldartsthrown -= $scope.currentPlayer.dartArray.length;
                     $scope.playerArray[el2].score += $scope.currentPlayer.roundScore;
-                    console.log($scope.playerArray[el2].score);
                     setActivePlayer();
-
                     resetRound();
                     switchPlayer();
-
                 }
             }
 
@@ -258,9 +212,7 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
             function calcAverageDartsPerGame() {
                 $scope.playerArray[0].averagedartspergame = parseFloat($scope.playerArray[0].totaldartsthrown / $scope.playerArray[0].totalgames).toFixed(2);
                 $scope.playerArray[1].averagedartspergame = parseFloat($scope.playerArray[1].totaldartsthrown / $scope.playerArray[1].totalgames).toFixed(2);
-
             }
-
 
             function checkHatTrick() {
                 if (($scope.dart1 === 25 || $scope.dart1 === 50) && ($scope.dart2 === 25 || $scope.dart2 === 50) && ($scope.dart3 === 25 || $scope.dart3 === 50)) {
@@ -270,7 +222,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                     $scope.currentPlayer.deadeyes++;
                 }
             }
-
 
             function checkTon() {
                 if ($scope.currentPlayer.roundScore >= 100 && $scope.currentPlayer.roundScore < 140) {
@@ -283,25 +234,16 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 if ($scope.currentPlayer.roundScore == 180) {
                     $scope.currentPlayer._180++;
                 }
-
             }
-
 
             function switchPlayer() {
                 var el = i + 1;
                 if ((el) < $scope.playerArray.length) {
-
                     $scope.currentPlayer = $scope.playerArray[el];
                     i++;
-
-
                     $scope.gameplay();
 
                 } else {
-
-                    //$scope.playerArray[i].score.addClass('active');
-                    //var myEl = angular.element( document.querySelector( '.team2Score' ) );
-                    //myEl.toggleClass('inactive active ');
 
                     i = 0;
                     $scope.currentPlayer = $scope.playerArray[0];
@@ -314,7 +256,6 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 $scope.myvalue = true;
                 $scope.showScoreboard = false;
             }
-
 
             //ONCE GAME IS COMPLETE, ALLOW OPTION TO SAVE STATS, UPLOAD STATS TO SERVER/////
             //FOR PLAYER 1//
@@ -376,11 +317,8 @@ myApp.controller('DartController', ['$scope','$http', '$interval', 'PlayerServic
                 });
             };
 
-
-
         };
     };
-
 
 }]);
 
