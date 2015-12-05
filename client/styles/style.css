@@ -14,6 +14,7 @@ body {
     height: 60px;
     width: 100%;
     background-color: black;
+    z-index: 1;
 }
 
 #indexLogin{
@@ -24,24 +25,27 @@ body {
 }
 
 #loginUsername {
+    position: relative;
     background-color: #cdcdcd;
     color: #000;
     border: 0;
     display: inline;
-    width: 35%;
+    width: 34%;
     height: 20px;
     padding-left: 5px;
     padding-bottom: 2px;
     margin-top: 2%;
+    margin-left: 2%;
 
 }
 
 #loginPassword {
+    position: relative;
     background-color: #cdcdcd;
     color: #000;
     border: 0;
     display: inline;
-    width: 35%;
+    width: 34%;
     height: 20px;
     padding-left: 5px;
     margin-left: 2%;
@@ -56,7 +60,7 @@ body {
     color: #009000;
     display: inline;
     width: 20%;
-    height: 20px;
+    height: 25px;
     margin-left: 2%;
     border: 0;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
@@ -66,6 +70,10 @@ body {
 
 }
 
+/*form {*/
+/*margin-top: 5%;*/
+/*}*/
+
 ::-webkit-input-placeholder {
     /*color: #000;*/
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
@@ -73,6 +81,10 @@ body {
     font-size: 10pt;
 }
 
+::-webkit-file-upload-button, button {
+    padding: 0;
+    align-items: baseline;
+}
 
 
 #welcomeHeader {
@@ -1036,6 +1048,12 @@ table tr:nth-child(even) {
         padding-top: 1%;
     }
 
+    #indexLogin{
+        width: 100%;
+        float: none;
+        vertical-align: middle;
+        height: 20px;
+
     #profileStats h1{
         font-size: 14pt;
     }
@@ -1210,7 +1228,7 @@ table tr:nth-child(even) {
         margin:0;
         padding-top: 2%;
         padding-bottom: 3%;
-        border-bottom: 5px solid #5d5d5d;
+        border-top: 5px solid #5d5d5d;
         text-align: center;
     }
 
@@ -1378,7 +1396,280 @@ table tr:nth-child(even) {
         padding: 0;
     }
 
+}
 
+@media only screen
+and (min-device-width: 800px)
+and (max-device-width: 1280px)
+and (-webkit-min-device-pixel-ratio: 1.5)
+and (orientation: portrait) {
+
+    #boardContainer {
+        width: 100%;
+        display: block;
+        margin: 0;
+
+    }
+
+    #scoreboard {
+        position: relative;
+        width: 100%;
+        min-height: 1200px;
+        display: block;
+        margin-right: 0;
+    }
+
+    #scoreboardImage {
+        margin-right: 0;
+        padding: 12%;
+    }
+
+    #scoreboardHeader {
+        font-size: 90pt;
+        margin-bottom: 10%;
+    }
+
+    .team1Score {
+        font-size: 70pt;
+        line-height: 12pt;
+    }
+
+    .team1Score p {
+        font-size: 40pt;
+        line-height: 12pt;
+    }
+
+    .team2Score {
+        font-size: 70pt;
+        line-height: 12pt;
+    }
+
+    .team2Score p {
+        font-size: 40pt;
+        line-height: 12pt;
+    }
+
+    #dartsRemaining {
+        display: inline-block;
+        font-size: 28pt;
+        width: 100%;
+        text-align: center;
+    }
+
+    #dartsThrown {
+        display: inline-block;
+        font-size: 28pt;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    #dart1 {
+        font-size: 36pt;
+    }
+
+    #dart2 {
+        font-size: 36pt;
+    }
+
+    #dart3 {
+        font-size: 36pt;
+    }
+
+    .stats {
+        font-size: 32pt;
+    }
+
+
+    .navBar.mobile {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        height: 400px;
+        width: 100%;
+        background-color: black;
+        margin-bottom: 5%;
+    }
+
+    .navBar a {
+        font-size: 50pt;
+        /*line-height: 40pt;*/
+
+    }
+
+    #navPill {
+        width: 100%;
+        display: inline-block;
+        margin:0;
+        padding-top: 2%;
+        padding-bottom: 3%;
+        border-top: 5px solid #5d5d5d;
+        text-align: center;
+    }
+
+
+
+    .selectDropdown select {
+        height: 60px;
+        font-size: 32pt;
+    }
+
+    #startButton {
+        height: 60px;
+        font-size: 32pt;
+    }
+
+    #missButton {
+        height: 60px;
+        font-size: 32pt;
+    }
+
+    .switchPlayerButton {
+        height: 60px;
+        font-size: 32pt;
+    }
+
+    #profileLargeDartBoard{
+        background-image: url('http://www.jakeschreiber.com/images/scoreboard.png');
+        min-height: 1200px;
+        padding: 12%;
+    }
+
+    #profileStats img {
+        float: right;
+        width: 55%;
+        margin-left: 2%;
+        margin-bottom: 5%;
+    }
+
+    #profileStats h1{
+        font-size: 30pt;
+    }
+
+    #profileStats h2{
+        font-size: 20pt;
+    }
+
+    #profileStats p {
+        font-size: 12pt;
+    }
+
+    table, th , td {
+        font-size: 20pt;
+    }
+
+    /*//////////////INDEX PAGE////////////*/
+
+
+    #indexNavbar{
+        position: relative;
+        top: 0;
+        height: 400px;
+        width: 100%;
+        background-color: black;
+    }
+
+    #indexLogin{
+        width: 100%;
+        float: none;
+        vertical-align: middle;
+        /*height: 20px;*/
+    }
+
+    #loginPill {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-weight: bold;
+        color: white;
+        display: inline;
+        padding-right: 5%;
+        width: 100%;
+
+    }
+
+    #loginUsername {
+        width: 88%;
+        height: 80px;
+        font-size: 40pt;
+        float: none;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-left: 2%;
+
+    }
+
+    #loginPassword {
+        width: 88%;
+        height: 80px;
+        font-size: 40pt;
+        float: none;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-left: 2%;
+
+    }
+
+    #indexLoginButton {
+        display: inline-block;
+        color: white;;
+        width: 90%;
+        height: 80px;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 32pt;
+    }
+
+    input {
+        -webkit-appearance: textfield;
+        padding: 0px;
+    }
+
+    .registerButton {
+        width: 100%;
+        height: 100px;
+        color: white;
+        margin-top: 5%;
+        font-size: 32pt;
+        margin-left: 0;
+    }
+
+    #welcomeHeader {
+        margin-top: 0;
+    }
+
+    #welcomeHeader h1 {
+        font-size: 80pt;
+    }
+
+    #welcomeHeader p {
+        font-size: 30pt;
+    }
+
+    .createAccountHeader {
+        margin-top: 5%;
+        font-size: 22pt;
+
+    }
+
+    .form-control {
+        font-size: 40pt;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        margin-left: 0;
+        margin-top: 2%;
+        height: 80px;
+        border: 0;
+        border-radius: 0;
+        width: 98%;
+    }
+
+    ::-webkit-input-placeholder {
+        vertical-align: middle;
+        font-size: 40pt;
+        padding: 0;
+    }
 
 }
 
