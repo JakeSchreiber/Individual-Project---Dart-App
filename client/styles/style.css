@@ -688,13 +688,16 @@ table tr:nth-child(even) {
 }
 
 .navBar a {
+
     color: #cdcdcd;
     text-decoration: none;
-    font-size: 12pt;
+    font-size: 16pt;
 }
 
 .navBar a:hover {
-    color: #727272;
+    /*color: #727272;*/
+    color: #cccc00;
+
 }
 
 #navPill {
@@ -702,8 +705,10 @@ table tr:nth-child(even) {
     font-weight: bold;
     color: white;
     display: inline-block;
-    width: 10%;
-    margin-left: 5%;
+    width: 32%;
+    /*margin-left: 5%;*/
+    text-align: center;
+    /*border-left: 2px solid #727272;*/
 
 }
 
@@ -993,13 +998,13 @@ table tr:nth-child(even) {
 
 @media screen and (max-width: 800px) {
 
-#navPill{
-        width: 8%;
-    }
+/*#navPill{*/
+        /*width: 8%;*/
+    /*}*/
 
     #loginPill{
         width: 20%;
-        margin-left: 10%;
+        /*margin-left: 10%;*/
     }
 
     .navBar a {
@@ -1064,15 +1069,15 @@ table tr:nth-child(even) {
 /*///////////////////////675PX WIDE SCREEN SIZE/////////////////////////*/
 
 @media screen and (max-width: 675px) {
-    #navPill{
-        margin-left: 3%;
-        margin-top: 1%;
-    }
+    /*#navPill{*/
+        /*/!*margin-left: 3%;*!/*/
+        /*margin-top: 1%;*/
+    /*}*/
 
-    #loginPill{
-        width: 20%;
-        margin-left: 13%;
-    }
+    /*#loginPill{*/
+        /*width: 20%;*/
+        /*margin-left: 13%;*/
+    /*}*/
 
     #loginButton {
         width: 10%;
